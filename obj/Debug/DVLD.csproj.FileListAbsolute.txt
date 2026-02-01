@@ -7,4 +7,7 @@ C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.csproj.GenerateResource.cache
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.csproj.CoreCompileInputs.cache
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.exe
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.pdb
+C:\Users\Hp\source\repos\DVLD\bin\Debug\DVLD_Business.dll
+C:\Users\Hp\source\repos\DVLD\bin\Debug\DVLD_Business.pdb
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.exe.config
+C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.csproj.Up2Date
