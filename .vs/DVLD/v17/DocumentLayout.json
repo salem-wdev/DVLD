@@ -6,14 +6,23 @@
       "AbsoluteMoniker": "D:0:0:{695DCEDE-5C5D-4237-99D7-51D252D6D8A8}|..\\DVLD_DataAccess\\DVLD_DataAccess.csproj|c:\\users\\hp\\source\\repos\\dvld_dataaccess\\clspersondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{695DCEDE-5C5D-4237-99D7-51D252D6D8A8}|..\\DVLD_DataAccess\\DVLD_DataAccess.csproj|c:\\users\\hp\\source\\repos\\dvld_dataaccess\\clsdataaccesssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{45BFF457-AD05-4A4C-8155-00D5C523C0F1}|..\\DVLD_Business\\DVLD_Business.csproj|c:\\users\\hp\\source\\repos\\dvld_business\\clsperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\ctrlshowpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:ctrlshowpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,7 +32,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,52 +48,76 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ctrlShowPersonInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\ctrlShowPersonInfo.cs",
+              "RelativeDocumentMoniker": "ctrlShowPersonInfo.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\ctrlShowPersonInfo.cs [Design]",
+              "RelativeToolTip": "ctrlShowPersonInfo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T15:50:13.194Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "test.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs",
+              "RelativeDocumentMoniker": "test.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs",
+              "RelativeToolTip": "test.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAywBwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T13:46:43.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T13:46:18.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "test.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs",
+              "RelativeDocumentMoniker": "test.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs [Design]",
+              "RelativeToolTip": "test.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T13:42:02.526Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "clsPersonData.cs",
               "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD_DataAccess\\clsPersonData.cs",
               "RelativeDocumentMoniker": "..\\DVLD_DataAccess\\clsPersonData.cs",
               "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD_DataAccess\\clsPersonData.cs",
               "RelativeToolTip": "..\\DVLD_DataAccess\\clsPersonData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8BAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T12:44:56.093Z",
+              "WhenOpened": "2026-02-03T12:41:17.727Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "clsDataAccessSettings.cs",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD_DataAccess\\clsDataAccessSettings.cs",
-              "RelativeDocumentMoniker": "..\\DVLD_DataAccess\\clsDataAccessSettings.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD_DataAccess\\clsDataAccessSettings.cs",
-              "RelativeToolTip": "..\\DVLD_DataAccess\\clsDataAccessSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T12:21:30.306Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "clsPerson.cs",
               "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD_Business\\clsPerson.cs",
               "RelativeDocumentMoniker": "..\\DVLD_Business\\clsPerson.cs",
               "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD_Business\\clsPerson.cs",
               "RelativeToolTip": "..\\DVLD_Business\\clsPerson.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIgAAAAAAAAAAAA0wO0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T12:21:17.673Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Main.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Main.cs",
-              "RelativeDocumentMoniker": "Main.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Main.cs [Design]",
-              "RelativeToolTip": "Main.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T11:48:35.314Z"
+              "WhenOpened": "2026-02-01T12:21:17.673Z",
+              "EditorCaption": ""
             }
           ]
         }
