@@ -17,12 +17,20 @@ namespace DVLD.People.Forms
         {
             InitializeComponent();
             ctrlAddAndEditPersonInfo AddAndEditPersonInfo = new ctrlAddAndEditPersonInfo();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
         }
 
         public frmAddNewPerson(clsPerson clsPerson)
         {
             InitializeComponent();
             ctrlAddAndEditPersonInfo AddAndEditPersonInfo = new ctrlAddAndEditPersonInfo(clsPerson);
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
         }
 
         private void frmAddNewPerson_Load(object sender, EventArgs e)

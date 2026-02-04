@@ -16,6 +16,9 @@ namespace DVLD.People.Forms
         public frmShowAllPeople()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void FillDataGridView()
@@ -34,7 +37,7 @@ namespace DVLD.People.Forms
             frmAddNewPerson frm = new frmAddNewPerson();
             frm.ShowDialog();
             frm.Dispose();
-            dataGridView1.Refresh();
+            dataGridView1.Update();
         }
     }
 }
