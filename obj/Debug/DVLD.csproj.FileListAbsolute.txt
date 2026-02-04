@@ -17,3 +17,5 @@ C:\Users\Hp\source\repos\DVLD\bin\Debug\DVLD_DataAccess.pdb
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.ctrlShowPersonInfo.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.ctrlAddAndEditPersonInfo.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.exe.config
+C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.People.Forms.frmShowAllPeople.resources
+C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.People.Forms.frmAddNewPerson.resources

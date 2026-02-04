@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD.People.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,13 @@ namespace DVLD
         private void accountSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmShowAllPeople frm = new frmShowAllPeople();
+            frm.ShowDialog();
+            frm.Dispose();
         }
     }
 }

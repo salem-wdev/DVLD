@@ -34,13 +34,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNationalNo = new System.Windows.Forms.TextBox();
             this.txtSecondName = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtThirdName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.rbMail = new System.Windows.Forms.RadioButton();
-            this.rbFemail = new System.Windows.Forms.RadioButton();
+            this.rbMale = new System.Windows.Forms.RadioButton();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -58,11 +58,14 @@
             this.pbPersonPhoto = new System.Windows.Forms.PictureBox();
             this.llSetImage = new System.Windows.Forms.LinkLabel();
             this.llRemoveImage = new System.Windows.Forms.LinkLabel();
-            this.txtDateOfBirth = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.cbCountry = new System.Windows.Forms.ComboBox();
+            this.cmbNationality = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -126,19 +129,19 @@
             this.txtSecondName.Size = new System.Drawing.Size(147, 26);
             this.txtSecondName.TabIndex = 5;
             // 
-            // textBox3
+            // txtThirdName
             // 
-            this.textBox3.Location = new System.Drawing.Point(453, 51);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(147, 26);
-            this.textBox3.TabIndex = 6;
+            this.txtThirdName.Location = new System.Drawing.Point(453, 51);
+            this.txtThirdName.Name = "txtThirdName";
+            this.txtThirdName.Size = new System.Drawing.Size(147, 26);
+            this.txtThirdName.TabIndex = 6;
             // 
-            // textBox4
+            // txtLastName
             // 
-            this.textBox4.Location = new System.Drawing.Point(608, 51);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(147, 26);
-            this.textBox4.TabIndex = 7;
+            this.txtLastName.Location = new System.Drawing.Point(608, 51);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(147, 26);
+            this.txtLastName.TabIndex = 7;
             // 
             // label4
             // 
@@ -170,31 +173,31 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Address";
             // 
-            // rbMail
+            // rbMale
             // 
-            this.rbMail.AutoSize = true;
-            this.rbMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMail.Location = new System.Drawing.Point(143, 132);
-            this.rbMail.Name = "rbMail";
-            this.rbMail.Size = new System.Drawing.Size(49, 19);
-            this.rbMail.TabIndex = 14;
-            this.rbMail.TabStop = true;
-            this.rbMail.Tag = "0";
-            this.rbMail.Text = "Mail";
-            this.rbMail.UseVisualStyleBackColor = true;
+            this.rbMale.AutoSize = true;
+            this.rbMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbMale.Location = new System.Drawing.Point(143, 132);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(53, 19);
+            this.rbMale.TabIndex = 14;
+            this.rbMale.TabStop = true;
+            this.rbMale.Tag = "0";
+            this.rbMale.Text = "Male";
+            this.rbMale.UseVisualStyleBackColor = true;
             // 
-            // rbFemail
+            // rbFemale
             // 
-            this.rbFemail.AutoSize = true;
-            this.rbFemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFemail.Location = new System.Drawing.Point(224, 132);
-            this.rbFemail.Name = "rbFemail";
-            this.rbFemail.Size = new System.Drawing.Size(63, 19);
-            this.rbFemail.TabIndex = 15;
-            this.rbFemail.TabStop = true;
-            this.rbFemail.Tag = "1";
-            this.rbFemail.Text = "Femail";
-            this.rbFemail.UseVisualStyleBackColor = true;
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbFemale.Location = new System.Drawing.Point(224, 132);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(67, 19);
+            this.rbFemale.TabIndex = 15;
+            this.rbFemale.TabStop = true;
+            this.rbFemale.Tag = "1";
+            this.rbFemale.Text = "Female";
+            this.rbFemale.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
@@ -334,7 +337,7 @@
             // pbPersonPhoto
             // 
             this.pbPersonPhoto.InitialImage = global::DVLD.Properties.Resources.person_man__3_;
-            this.pbPersonPhoto.Location = new System.Drawing.Point(608, 93);
+            this.pbPersonPhoto.Location = new System.Drawing.Point(608, 133);
             this.pbPersonPhoto.Name = "pbPersonPhoto";
             this.pbPersonPhoto.Size = new System.Drawing.Size(147, 144);
             this.pbPersonPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -344,7 +347,7 @@
             // llSetImage
             // 
             this.llSetImage.AutoSize = true;
-            this.llSetImage.Location = new System.Drawing.Point(626, 262);
+            this.llSetImage.Location = new System.Drawing.Point(626, 302);
             this.llSetImage.Name = "llSetImage";
             this.llSetImage.Size = new System.Drawing.Size(83, 20);
             this.llSetImage.TabIndex = 31;
@@ -354,19 +357,12 @@
             // llRemoveImage
             // 
             this.llRemoveImage.AutoSize = true;
-            this.llRemoveImage.Location = new System.Drawing.Point(626, 293);
+            this.llRemoveImage.Location = new System.Drawing.Point(626, 333);
             this.llRemoveImage.Name = "llRemoveImage";
             this.llRemoveImage.Size = new System.Drawing.Size(117, 20);
             this.llRemoveImage.TabIndex = 32;
             this.llRemoveImage.TabStop = true;
             this.llRemoveImage.Text = "Remove Image";
-            // 
-            // txtDateOfBirth
-            // 
-            this.txtDateOfBirth.Location = new System.Drawing.Point(453, 88);
-            this.txtDateOfBirth.Name = "txtDateOfBirth";
-            this.txtDateOfBirth.Size = new System.Drawing.Size(127, 26);
-            this.txtDateOfBirth.TabIndex = 33;
             // 
             // txtPhone
             // 
@@ -375,13 +371,13 @@
             this.txtPhone.Size = new System.Drawing.Size(127, 26);
             this.txtPhone.TabIndex = 34;
             // 
-            // cbCountry
+            // cmbNationality
             // 
-            this.cbCountry.FormattingEnabled = true;
-            this.cbCountry.Location = new System.Drawing.Point(453, 172);
-            this.cbCountry.Name = "cbCountry";
-            this.cbCountry.Size = new System.Drawing.Size(121, 28);
-            this.cbCountry.TabIndex = 35;
+            this.cmbNationality.FormattingEnabled = true;
+            this.cmbNationality.Location = new System.Drawing.Point(453, 172);
+            this.cmbNationality.Name = "cmbNationality";
+            this.cmbNationality.Size = new System.Drawing.Size(121, 28);
+            this.cmbNationality.TabIndex = 35;
             // 
             // btnSave
             // 
@@ -392,6 +388,7 @@
             this.btnSave.TabIndex = 36;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -402,16 +399,58 @@
             this.btnClose.TabIndex = 37;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(339, 27);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 20);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "Second";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(505, 27);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 20);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Third";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(659, 27);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 20);
+            this.label12.TabIndex = 40;
+            this.label12.Text = "Last";
+            // 
+            // dtpDateOfBirth
+            // 
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(452, 88);
+            this.dtpDateOfBirth.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(188, 26);
+            this.dtpDateOfBirth.TabIndex = 41;
             // 
             // ctrlAddAndEditPersonInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dtpDateOfBirth);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.cbCountry);
+            this.Controls.Add(this.cmbNationality);
             this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtDateOfBirth);
             this.Controls.Add(this.llRemoveImage);
             this.Controls.Add(this.llSetImage);
             this.Controls.Add(this.pbPersonPhoto);
@@ -429,13 +468,13 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.rbFemail);
-            this.Controls.Add(this.rbMail);
+            this.Controls.Add(this.rbFemale);
+            this.Controls.Add(this.rbMale);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtThirdName);
             this.Controls.Add(this.txtSecondName);
             this.Controls.Add(this.txtNationalNo);
             this.Controls.Add(this.label3);
@@ -470,13 +509,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNationalNo;
         private System.Windows.Forms.TextBox txtSecondName;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtThirdName;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton rbMail;
-        private System.Windows.Forms.RadioButton rbFemail;
+        private System.Windows.Forms.RadioButton rbMale;
+        private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txtEmail;
@@ -494,10 +533,13 @@
         private System.Windows.Forms.PictureBox pbPersonPhoto;
         private System.Windows.Forms.LinkLabel llSetImage;
         private System.Windows.Forms.LinkLabel llRemoveImage;
-        private System.Windows.Forms.TextBox txtDateOfBirth;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.ComboBox cbCountry;
+        private System.Windows.Forms.ComboBox cmbNationality;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
     }
 }

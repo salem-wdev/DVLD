@@ -50,16 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ctrlAddAndEditPersonInfo.cs">
+    <Compile Include="People\Controls\ctrlAddAndEditPersonInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlAddAndEditPersonInfo.Designer.cs">
+    <Compile Include="People\Controls\ctrlAddAndEditPersonInfo.Designer.cs">
       <DependentUpon>ctrlAddAndEditPersonInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlShowPersonInfo.cs">
+    <Compile Include="People\Controls\ctrlShowPersonInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlShowPersonInfo.Designer.cs">
+    <Compile Include="People\Controls\ctrlShowPersonInfo.Designer.cs">
       <DependentUpon>ctrlShowPersonInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
@@ -67,6 +67,18 @@
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Forms\frmAddNewPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\Forms\frmAddNewPerson.Designer.cs">
+      <DependentUpon>frmAddNewPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Forms\frmShowAllPeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\Forms\frmShowAllPeople.Designer.cs">
+      <DependentUpon>frmShowAllPeople.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,14 +88,20 @@
     <Compile Include="test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ctrlAddAndEditPersonInfo.resx">
+    <EmbeddedResource Include="People\Controls\ctrlAddAndEditPersonInfo.resx">
       <DependentUpon>ctrlAddAndEditPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlShowPersonInfo.resx">
+    <EmbeddedResource Include="People\Controls\ctrlShowPersonInfo.resx">
       <DependentUpon>ctrlShowPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Forms\frmAddNewPerson.resx">
+      <DependentUpon>frmAddNewPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Forms\frmShowAllPeople.resx">
+      <DependentUpon>frmShowAllPeople.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

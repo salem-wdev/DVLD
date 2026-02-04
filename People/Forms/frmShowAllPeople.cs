@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD_Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,23 @@ namespace DVLD.People.Forms
             InitializeComponent();
         }
 
-        private void _FillDataGridView()
+        private void FillDataGridView()
         {
-            
+            dataGridView1.DataSource = clsPerson.GetAllPeople();
         }
+
 
         private void frmShowAllPeople_Load(object sender, EventArgs e)
         {
+            FillDataGridView();
+        }
 
+        private void btnAddNewPerson_Click(object sender, EventArgs e)
+        {
+            frmAddNewPerson frm = new frmAddNewPerson();
+            frm.ShowDialog();
+            frm.Dispose();
+            dataGridView1.Refresh();
         }
     }
 }
