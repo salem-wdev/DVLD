@@ -16,5 +16,10 @@ namespace DVLD
         {
             InitializeComponent();
         }
+
+        private void accountSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

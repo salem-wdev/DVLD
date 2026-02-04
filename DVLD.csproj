@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctrlAddAndEditPersonInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlAddAndEditPersonInfo.Designer.cs">
+      <DependentUpon>ctrlAddAndEditPersonInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrlShowPersonInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     <Compile Include="test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ctrlAddAndEditPersonInfo.resx">
+      <DependentUpon>ctrlAddAndEditPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ctrlShowPersonInfo.resx">
       <DependentUpon>ctrlShowPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +93,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="test.resx">
       <DependentUpon>test.cs</DependentUpon>
@@ -101,5 +111,48 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\public_document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_man %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_woman %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_man %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_man %282%29.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
