@@ -11,46 +11,59 @@ using System.Windows.Forms;
 
 namespace DVLD.People.Forms
 {
-    public partial class frmAddUpdatePerson : Form
+    public partial class frmShowPersonInfo : Form
     {
-        public frmAddUpdatePerson()
+
+        int _PersonID = -1;
+
+
+        // Never Use New With Controls!!!!!
+
+        public frmShowPersonInfo()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            lblPersonID.Text = "N/A";
+            // Never Use New With Controls!!!!!
 
         }
 
-        public frmAddUpdatePerson(clsPerson Person)
+        public frmShowPersonInfo(int PersonID)
         {
             InitializeComponent();
+            _PersonID = PersonID;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            lblPersonID.Text = Person.PersonID.ToString();
-
+            // Never Use New With Controls!!!!!
 
         }
 
-        public frmAddUpdatePerson(int PersonID)
+        public frmShowPersonInfo(clsPerson Person)
         {
             InitializeComponent();
+            _PersonID = Person.PersonID;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            lblPersonID.Text = PersonID.ToString();
-
+            // Never Use New With Controls!!!!!
 
         }
 
-        private void frmAddNewPerson_Load(object sender, EventArgs e)
+
+
+        private void frmShowPersonInfo_Load(object sender, EventArgs e)
         {
-            ctrlAddAndEditPersonInfo1.LoadData(int.Parse(lblPersonID.Text));
+            // Only try to reload if a person is set
+           if (!ctrlShowPersonInfo1.LoadData(_PersonID))
+           {
+                MessageBox.Show("Person not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
-        private void ctrlAddAndEditPersonInfo1_Load(object sender, EventArgs e)
+        private void ctrlShowPersonInfo1_Load(object sender, EventArgs e)
         {
 
         }

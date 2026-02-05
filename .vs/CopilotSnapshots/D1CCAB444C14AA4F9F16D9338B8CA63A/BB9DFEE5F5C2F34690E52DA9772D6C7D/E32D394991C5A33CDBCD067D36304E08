@@ -1,0 +1,91 @@
+﻿using DVLD.People.Forms;
+using DVLD_Business;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DVLD
+{
+    public partial class ctrlShowPersonInfo : UserControl
+    {
+        public ctrlShowPersonInfo()
+        {
+            InitializeComponent();
+        }
+
+        clsPerson _Person;
+
+        public ctrlShowPersonInfo(int PersonID)
+        {
+            InitializeComponent();
+
+            _Person = clsPerson.Find(PersonID);
+
+            
+        }
+
+        public void LoadData()
+        {
+            lblPersonID.Text = _Person.PersonID.ToString();
+            lblName.Text = _Person.FullName;
+            lblNationalNo.Text = _Person.NationalNo;
+            if (_Person.Gender == 0)
+            {
+                lblGender.Text = "Male";
+            }
+            else
+            {
+                lblGender.Text = "Female";
+            }
+            lblEmail.Text = _Person.Email;
+            lblPhone.Text = _Person.Phone;
+            lblAddress.Text = _Person.Address;
+            lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
+            lblCountry.Text = clsCountry.GetCountryName(_Person.NationalityCountryID);
+            pbPersonPhoto.ImageLocation = _Person.ImagePath;
+        }
+
+        public ctrlShowPersonInfo(clsPerson Person)
+        {
+            InitializeComponent();
+
+            _Person = Person;
+
+            lblPersonID.Text = _Person.PersonID.ToString();
+            lblName.Text = _Person.FullName;
+            lblNationalNo.Text = _Person.NationalNo;
+            if (_Person.Gender == 0)
+            {
+                lblGender.Text = "Male";
+            }
+            else
+            {
+                lblGender.Text = "Female";
+            }
+            lblEmail.Text = _Person.Email;
+            lblPhone.Text = _Person.Phone;
+            lblAddress.Text = _Person.Address;
+            lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
+            lblCountry.Text = clsCountry.GetCountryName(_Person.NationalityCountryID);
+            pbPersonPhoto.ImageLocation = _Person.ImagePath;
+        }
+
+        private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAddUpdatePerson frm = new frmAddUpdatePerson(_Person);
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void gbPersonInfo_Enter(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+    }
+}

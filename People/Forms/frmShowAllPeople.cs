@@ -38,7 +38,6 @@ namespace DVLD.People.Forms
             frm.ShowDialog();
             frm.Dispose();
             dataGridView1.Update();
-            dataGridView1.DataSource = clsPerson.GetAllPeople();
         }
 
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,7 +53,6 @@ namespace DVLD.People.Forms
             frm.ShowDialog();
             frm.Dispose();
             dataGridView1.Update();
-            dataGridView1.DataSource = clsPerson.GetAllPeople();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,6 +79,15 @@ namespace DVLD.People.Forms
             dataGridView1.Update();
             dataGridView1.DataSource = clsPerson.GetAllPeople();
 
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int PersonID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+            frmShowPersonInfo frm = new frmShowPersonInfo(PersonID);
+            frm.ShowDialog();
+            frm.Dispose();
         }
     }
 }

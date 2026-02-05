@@ -73,6 +73,74 @@ namespace DVLD
            _Person.Save();
         }
 
+        public bool LoadData(int PersonID)
+        {
+            _Person = clsPerson.Find(PersonID);
+
+            if (_Person != null)
+            {
+                this.txtFirstName.Text = _Person.FirstName;
+                this.txtSecondName.Text = _Person.SecondName;
+                this.txtThirdName.Text = _Person.ThirdName;
+                this.txtLastName.Text = _Person.LastName;
+                this.txtNationalNo.Text = _Person.NationalNo;
+                if (_Person.Gender == 0)
+                {
+                    this.rbMale.Checked = true;
+                }
+                else
+                {
+                    this.rbFemale.Checked = true;
+                }
+                this.txtEmail.Text = _Person.Email;
+                this.txtPhone.Text = _Person.Phone;
+                this.txtAddress.Text = _Person.Address;
+                this.dtpDateOfBirth.Value = _Person.DateOfBirth;
+                this.cmbNationality.SelectedValue = _Person.NationalityCountryID;
+                this.pbPersonPhoto.ImageLocation = _Person.ImagePath;
+                
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool LoadData(clsPerson Person)
+        {
+            _Person = Person;
+            if (_Person == null)
+            {
+                this.txtFirstName.Text = _Person.FirstName;
+                this.txtSecondName.Text = _Person.SecondName;
+                this.txtThirdName.Text = _Person.ThirdName;
+                this.txtLastName.Text = _Person.LastName;
+                this.txtNationalNo.Text = _Person.NationalNo;
+                if (_Person.Gender == 0)
+                {
+                    this.rbMale.Checked = true;
+                }
+                else
+                {
+                    this.rbFemale.Checked = true;
+                }
+                this.txtEmail.Text = _Person.Email;
+                this.txtPhone.Text = _Person.Phone;
+                this.txtAddress.Text = _Person.Address;
+                this.dtpDateOfBirth.Value = _Person.DateOfBirth;
+                this.cmbNationality.SelectedValue = _Person.NationalityCountryID;
+                this.pbPersonPhoto.ImageLocation = _Person.ImagePath;
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
         private void ctrlAddAndEditPersonInfo_Load(object sender, EventArgs e)
         {
             clsCountry country = new clsCountry();
