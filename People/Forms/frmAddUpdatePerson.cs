@@ -11,29 +11,49 @@ using System.Windows.Forms;
 
 namespace DVLD.People.Forms
 {
-    public partial class frmAddNewPerson : Form
+    public partial class frmAddUpdatePerson : Form
     {
-        public frmAddNewPerson()
+        public frmAddUpdatePerson()
         {
             InitializeComponent();
             ctrlAddAndEditPersonInfo AddAndEditPersonInfo = new ctrlAddAndEditPersonInfo();
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            lblPersonID.Text = "N/A";
 
         }
 
-        public frmAddNewPerson(clsPerson clsPerson)
+        public frmAddUpdatePerson(clsPerson Person)
         {
             InitializeComponent();
-            ctrlAddAndEditPersonInfo AddAndEditPersonInfo = new ctrlAddAndEditPersonInfo(clsPerson);
+            ctrlAddAndEditPersonInfo AddAndEditPersonInfo = new ctrlAddAndEditPersonInfo(Person);
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            lblPersonID.Text = Person.PersonID.ToString();
+
+
+        }
+
+        public frmAddUpdatePerson(int PersonID)
+        {
+            InitializeComponent();
+            ctrlAddAndEditPersonInfo AddAndEditPersonInfo = new ctrlAddAndEditPersonInfo(PersonID);
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            lblPersonID.Text = PersonID.ToString();
+
 
         }
 
         private void frmAddNewPerson_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctrlAddAndEditPersonInfo1_Load(object sender, EventArgs e)
         {
 
         }

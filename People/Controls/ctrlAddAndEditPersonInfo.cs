@@ -43,6 +43,13 @@ namespace DVLD
             _Person = Person;
         }
 
+        public ctrlAddAndEditPersonInfo(int PersonID)
+        {
+            InitializeComponent();
+            _Mode = enMode.EditExisting;
+            _Person = clsPerson.Find(PersonID);
+        }
+
         private void FillPersonWithData()
         {
             _Person.FirstName = txtFirstName.Text;
@@ -72,12 +79,12 @@ namespace DVLD
             cmbNationality.DataSource = clsCountry.GetAllCountries();
             cmbNationality.DisplayMember = "CountryName";
             cmbNationality.ValueMember = "CountryID";
+            cmbNationality.SelectedIndex = 190;   // Default to Yemen
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             SavePerson();
-            this.ParentForm.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -187,6 +194,34 @@ namespace DVLD
             {
                 errorProvider1.SetError(txtAddress, string.Empty);
             }
+        }
+
+        private void llSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            openFileDialog1.Title = "Select Person Photo";
+            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pbPersonPhoto.ImageLocation = openFileDialog1.FileName;
+                llRemoveImage.Visible = true;
+            }
+        }
+
+        private void rbMale_CheckedChanged(object sender, EventArgs e)
+        {
+            pbPersonPhoto.Image = Properties.Resources.man_avatar_icon_flat_vector1;
+        }
+
+        private void llRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pbPersonPhoto.ImageLocation = null;
+            pbPersonPhoto.Image = null;
+            llRemoveImage.Visible = false;
+        }
+
+        private void rbFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            pbPersonPhoto.Image = Properties.Resources.OIP1;
         }
     }
 }

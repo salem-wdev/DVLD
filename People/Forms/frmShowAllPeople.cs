@@ -34,10 +34,53 @@ namespace DVLD.People.Forms
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
-            frmAddNewPerson frm = new frmAddNewPerson();
+            frmAddUpdatePerson frm = new frmAddUpdatePerson();
             frm.ShowDialog();
             frm.Dispose();
             dataGridView1.Update();
+            dataGridView1.DataSource = clsPerson.GetAllPeople();
+        }
+
+        private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUpdatePerson frm = new frmAddUpdatePerson();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void editeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUpdatePerson frm = new frmAddUpdatePerson(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+            frm.ShowDialog();
+            frm.Dispose();
+            dataGridView1.Update();
+            dataGridView1.DataSource = clsPerson.GetAllPeople();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int PersonID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            if (MessageBox.Show("Are you sure you want to delete this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                clsPerson.Delete(PersonID);
+                dataGridView1.Update();
+                dataGridView1.DataSource = clsPerson.GetAllPeople();
+            }
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = clsPerson.GetAllPeople();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            frmAddUpdatePerson frm = new frmAddUpdatePerson();
+            frm.ShowDialog();
+            frm.Dispose();
+            dataGridView1.Update();
+            dataGridView1.DataSource = clsPerson.GetAllPeople();
+
         }
     }
 }

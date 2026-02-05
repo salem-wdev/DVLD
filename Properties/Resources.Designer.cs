@@ -113,6 +113,46 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap man_avatar_icon_flat_vector {
+            get {
+                object obj = ResourceManager.GetObject("man-avatar-icon-flat-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap man_avatar_icon_flat_vector1 {
+            get {
+                object obj = ResourceManager.GetObject("man-avatar-icon-flat-vector1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OIP {
+            get {
+                object obj = ResourceManager.GetObject("OIP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OIP1 {
+            get {
+                object obj = ResourceManager.GetObject("OIP1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap person_man {
             get {
                 object obj = ResourceManager.GetObject("person_man", resourceCulture);
@@ -146,6 +186,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap person_man__3_ {
             get {
                 object obj = ResourceManager.GetObject("person_man (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap person_man__4_ {
+            get {
+                object obj = ResourceManager.GetObject("person_man (4)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
