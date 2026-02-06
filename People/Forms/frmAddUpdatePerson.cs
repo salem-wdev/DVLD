@@ -47,12 +47,17 @@ namespace DVLD.People.Forms
 
         private void frmAddNewPerson_Load(object sender, EventArgs e)
         {
-            ctrlAddAndEditPersonInfo1.LoadData(int.Parse(lblPersonID.Text));
+
+        }
+
+        private void FillPersonIDLabel(object sender, int PersonID)
+        {
+            lblPersonID.Text = PersonID.ToString();
         }
 
         private void ctrlAddAndEditPersonInfo1_Load(object sender, EventArgs e)
         {
-
+            ctrlAddAndEditPersonInfo1.SendDataBack += FillPersonIDLabel;
         }
     }
 }

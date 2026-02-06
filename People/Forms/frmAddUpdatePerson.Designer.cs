@@ -28,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlAddAndEditPersonInfo1 = new DVLD.ctrlAddAndEditPersonInfo();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPersonID = new System.Windows.Forms.Label();
+            this.ctrlAddAndEditPersonInfo1 = new DVLD.ctrlAddAndEditPersonInfo();
             this.SuspendLayout();
-            // 
-            // ctrlAddAndEditPersonInfo1
-            // 
-            this.ctrlAddAndEditPersonInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlAddAndEditPersonInfo1.Location = new System.Drawing.Point(13, 69);
-            this.ctrlAddAndEditPersonInfo1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ctrlAddAndEditPersonInfo1.Name = "ctrlAddAndEditPersonInfo1";
-            this.ctrlAddAndEditPersonInfo1.Size = new System.Drawing.Size(836, 387);
-            this.ctrlAddAndEditPersonInfo1.TabIndex = 0;
-            this.ctrlAddAndEditPersonInfo1.Load += new System.EventHandler(this.ctrlAddAndEditPersonInfo1_Load);
             // 
             // label1
             // 
@@ -63,6 +53,16 @@
             this.lblPersonID.TabIndex = 2;
             this.lblPersonID.Text = "N/A";
             // 
+            // ctrlAddAndEditPersonInfo1
+            // 
+            this.ctrlAddAndEditPersonInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlAddAndEditPersonInfo1.Location = new System.Drawing.Point(13, 69);
+            this.ctrlAddAndEditPersonInfo1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctrlAddAndEditPersonInfo1.Name = "ctrlAddAndEditPersonInfo1";
+            this.ctrlAddAndEditPersonInfo1.Size = new System.Drawing.Size(836, 387);
+            this.ctrlAddAndEditPersonInfo1.TabIndex = 0;
+            this.ctrlAddAndEditPersonInfo1.Load += new System.EventHandler(this.ctrlAddAndEditPersonInfo1_Load);
+            // 
             // frmAddUpdatePerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -72,7 +72,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ctrlAddAndEditPersonInfo1);
             this.Name = "frmAddUpdatePerson";
-            this.Text = "AddNew\\ Update";
+            this.Text = "AddNew/Update";
             this.Load += new System.EventHandler(this.frmAddNewPerson_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

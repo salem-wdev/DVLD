@@ -195,5 +195,38 @@
   <ItemGroup>
     <None Include="Resources\person_man %284%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_man %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_woman %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_man %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_woman %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\project_center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_week.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world_north_america.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -378,92 +378,99 @@
             // 
             // pictureBox7
             // 
+            this.pictureBox7.Image = global::DVLD.Properties.Resources.world_north_america;
             this.pictureBox7.InitialImage = global::DVLD.Properties.Resources.person_woman__1_;
-            this.pictureBox7.Location = new System.Drawing.Point(364, 179);
+            this.pictureBox7.Location = new System.Drawing.Point(359, 177);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(20, 18);
+            this.pictureBox7.Size = new System.Drawing.Size(25, 25);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 29;
             this.pictureBox7.TabStop = false;
             // 
             // pictureBox8
             // 
+            this.pictureBox8.Image = global::DVLD.Properties.Resources.calendar_week;
             this.pictureBox8.InitialImage = global::DVLD.Properties.Resources.person_woman__1_;
-            this.pictureBox8.Location = new System.Drawing.Point(364, 93);
+            this.pictureBox8.Location = new System.Drawing.Point(359, 91);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(20, 18);
+            this.pictureBox8.Size = new System.Drawing.Size(25, 25);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 28;
             this.pictureBox8.TabStop = false;
             // 
             // pictureBox9
             // 
+            this.pictureBox9.Image = global::DVLD.Properties.Resources.phone;
             this.pictureBox9.InitialImage = global::DVLD.Properties.Resources.person_man__3_;
-            this.pictureBox9.Location = new System.Drawing.Point(364, 135);
+            this.pictureBox9.Location = new System.Drawing.Point(359, 133);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(20, 18);
+            this.pictureBox9.Size = new System.Drawing.Size(25, 25);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 27;
             this.pictureBox9.TabStop = false;
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Image = global::DVLD.Properties.Resources.project_center;
             this.pictureBox6.InitialImage = global::DVLD.Properties.Resources.person_woman__1_;
-            this.pictureBox6.Location = new System.Drawing.Point(117, 219);
+            this.pictureBox6.Location = new System.Drawing.Point(112, 217);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(20, 18);
+            this.pictureBox6.Size = new System.Drawing.Size(25, 25);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 23;
             this.pictureBox6.TabStop = false;
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Image = global::DVLD.Properties.Resources.address__1_;
             this.pictureBox5.InitialImage = global::DVLD.Properties.Resources.person_woman__1_;
-            this.pictureBox5.Location = new System.Drawing.Point(117, 177);
+            this.pictureBox5.Location = new System.Drawing.Point(112, 175);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(20, 18);
+            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 22;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Image = global::DVLD.Properties.Resources.person_man__6_;
             this.pictureBox4.InitialImage = global::DVLD.Properties.Resources.person_woman__1_;
-            this.pictureBox4.Location = new System.Drawing.Point(117, 51);
+            this.pictureBox4.Location = new System.Drawing.Point(112, 49);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 18);
+            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 21;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = global::DVLD.Properties.Resources.id;
             this.pictureBox3.InitialImage = global::DVLD.Properties.Resources.person_woman__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(117, 91);
+            this.pictureBox3.Location = new System.Drawing.Point(112, 89);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 18);
+            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 20;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::DVLD.Properties.Resources.person_man__3_;
-            this.pictureBox2.InitialImage = global::DVLD.Properties.Resources.person_man__3_;
-            this.pictureBox2.Location = new System.Drawing.Point(117, 133);
+            this.pictureBox2.Image = global::DVLD.Properties.Resources.person_man__5_;
+            this.pictureBox2.InitialImage = global::DVLD.Properties.Resources.person_man__5_;
+            this.pictureBox2.Location = new System.Drawing.Point(112, 131);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 18);
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.person_woman__1_;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.person_woman__3_;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(198, 133);
+            this.pictureBox1.Location = new System.Drawing.Point(193, 131);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 18);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
