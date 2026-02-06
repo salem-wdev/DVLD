@@ -13,21 +13,17 @@ namespace DVLD
 {
     public partial class ctrlAddAndEditPersonInfo : UserControl
     {
-        enum enMode
-        {
-            AddNew,
-            EditExisting
-        }
+        /// <Logic>
+        enum enMode { AddNew, EditExisting }
 
         private enMode _Mode;
 
         clsPerson _Person;
 
-        private void FillPerson()
-        {
-            _Person.FirstName = txtSecondName.Text;
-        }
+        public delegate void DataBackEventHandler(object sender,int PersonID);
 
+        // Define The Delegete
+        public event DataBackEventHandler SendDataBack;
         public ctrlAddAndEditPersonInfo()
         {
             InitializeComponent();
@@ -50,6 +46,13 @@ namespace DVLD
             _Person = clsPerson.Find(PersonID);
         }
 
+        private int SavePerson()
+        {
+            FillPersonWithData();
+           _Person.Save();
+            return _Person.PersonID;
+        }
+
         private void FillPersonWithData()
         {
             _Person.FirstName = txtFirstName.Text;
@@ -67,13 +70,7 @@ namespace DVLD
 
         }
 
-        private void SavePerson()
-        {
-            FillPersonWithData();
-           _Person.Save();
-        }
-
-        public bool LoadData(int PersonID)
+        public bool FillPersonWithData(int PersonID)
         {
             _Person = clsPerson.Find(PersonID);
 
@@ -107,10 +104,10 @@ namespace DVLD
             }
         }
 
-        public bool LoadData(clsPerson Person)
+        public bool FillPersonWithData(clsPerson Person)
         {
             _Person = Person;
-            if (_Person == null)
+            if (_Person != null)
             {
                 this.txtFirstName.Text = _Person.FirstName;
                 this.txtSecondName.Text = _Person.SecondName;
@@ -139,7 +136,7 @@ namespace DVLD
                 return false;
             }
         }
-
+        /// <Logic>
 
         private void ctrlAddAndEditPersonInfo_Load(object sender, EventArgs e)
         {
@@ -153,6 +150,7 @@ namespace DVLD
         private void btnSave_Click(object sender, EventArgs e)
         {
             SavePerson();
+            SendDataBack?.Invoke(this, _Person.PersonID);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

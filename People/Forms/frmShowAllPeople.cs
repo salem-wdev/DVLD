@@ -30,6 +30,7 @@ namespace DVLD.People.Forms
         private void frmShowAllPeople_Load(object sender, EventArgs e)
         {
             FillDataGridView();
+            lblRecords.Text = dataGridView1.RowCount.ToString();
         }
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
@@ -63,12 +64,14 @@ namespace DVLD.People.Forms
                 clsPerson.Delete(PersonID);
                 dataGridView1.Update();
                 dataGridView1.DataSource = clsPerson.GetAllPeople();
+                lblRecords.Text = dataGridView1.RowCount.ToString();
             }
         }
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = clsPerson.GetAllPeople();
+            lblRecords.Text = dataGridView1.RowCount.ToString();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -89,5 +92,6 @@ namespace DVLD.People.Forms
             frm.ShowDialog();
             frm.Dispose();
         }
+
     }
 }

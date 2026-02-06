@@ -61,13 +61,10 @@ namespace DVLD.People.Forms
         private void ctrlAddAndEditPersonInfo1_Load(object sender, EventArgs e)
         {
             ctrlAddAndEditPersonInfo1.SendDataBack += FillPersonIDLabel;
-            if (_Person != null)
+            if(!ctrlAddAndEditPersonInfo1.FillPersonWithData(_Person))
             {
-                ctrlAddAndEditPersonInfo1.FillPersonWithData(_Person);
+                MessageBox.Show("Unable to load person data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //{
-            //    MessageBox.Show("Unable to load person data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
         }
     }
 }
