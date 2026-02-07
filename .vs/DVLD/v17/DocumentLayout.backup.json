@@ -3,10 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\Hp\\source\\repos\\DVLD\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\people\\forms\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\forms\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\controls\\ctrladdandeditpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\controls\\ctrladdandeditpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\forms\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\forms\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\forms\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\forms\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -16,13 +25,25 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{45BFF457-AD05-4A4C-8155-00D5C523C0F1}|..\\DVLD_Business\\DVLD_Business.csproj|c:\\users\\hp\\source\\repos\\dvld_business\\clsperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\controls\\ctrladdandeditpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\controls\\ctrladdandeditpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\people\\forms\\frmshowpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\forms\\frmshowpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\people\\forms\\frmshowpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\forms\\frmshowpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+>>>>>>> 709473bd007495376bf7c6289d5c4fceca48a82d
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\forms\\frmshowallpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\forms\\frmshowallpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\forms\\frmshowallpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\people\\forms\\frmshowallpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\forms\\frmshowallpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -53,20 +74,57 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
+=======
+              "DocumentIndex": 3,
+              "Title": "ctrlAddAndEditPersonInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlAddAndEditPersonInfo.cs",
+              "RelativeDocumentMoniker": "People\\Controls\\ctrlAddAndEditPersonInfo.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlAddAndEditPersonInfo.cs",
+              "RelativeToolTip": "People\\Controls\\ctrlAddAndEditPersonInfo.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAgwJYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T09:32:23.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ctrlAddAndEditPersonInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlAddAndEditPersonInfo.cs",
+              "RelativeDocumentMoniker": "People\\Controls\\ctrlAddAndEditPersonInfo.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlAddAndEditPersonInfo.cs [Design]",
+              "RelativeToolTip": "People\\Controls\\ctrlAddAndEditPersonInfo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T09:32:20.21Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+>>>>>>> 709473bd007495376bf7c6289d5c4fceca48a82d
               "Title": "frmAddUpdatePerson.cs",
               "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Forms\\frmAddUpdatePerson.cs",
               "RelativeDocumentMoniker": "People\\Forms\\frmAddUpdatePerson.cs",
               "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Forms\\frmAddUpdatePerson.cs*",
               "RelativeToolTip": "People\\Forms\\frmAddUpdatePerson.cs*",
+<<<<<<< HEAD
               "ViewState": "AgIAADYAAAAAAAAAAAApwEEAAABGAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAACwAAAAAAAAAAAAUwD0AAAAAAAAAAAAAAA==",
+>>>>>>> 709473bd007495376bf7c6289d5c4fceca48a82d
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-07T07:51:53.908Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
+=======
+              "DocumentIndex": 0,
+>>>>>>> 709473bd007495376bf7c6289d5c4fceca48a82d
               "Title": "frmAddUpdatePerson.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Forms\\frmAddUpdatePerson.cs",
               "RelativeDocumentMoniker": "People\\Forms\\frmAddUpdatePerson.cs",
@@ -79,6 +137,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+<<<<<<< HEAD
+=======
+              "Title": "frmShowPersonInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Forms\\frmShowPersonInfo.cs",
+              "RelativeDocumentMoniker": "People\\Forms\\frmShowPersonInfo.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Forms\\frmShowPersonInfo.cs",
+              "RelativeToolTip": "People\\Forms\\frmShowPersonInfo.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAwwDoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T13:01:56.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmShowPersonInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Forms\\frmShowPersonInfo.cs",
+              "RelativeDocumentMoniker": "People\\Forms\\frmShowPersonInfo.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Forms\\frmShowPersonInfo.cs [Design]",
+              "RelativeToolTip": "People\\Forms\\frmShowPersonInfo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T13:00:43.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+>>>>>>> 709473bd007495376bf7c6289d5c4fceca48a82d
               "Title": "frmShowAllPeople.cs",
               "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Forms\\frmShowAllPeople.cs",
               "RelativeDocumentMoniker": "People\\Forms\\frmShowAllPeople.cs",
@@ -86,18 +170,27 @@
               "RelativeToolTip": "People\\Forms\\frmShowAllPeople.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAAAIwE4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-02-07T07:51:32.632Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+=======
+              "WhenOpened": "2026-02-05T07:17:15.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+>>>>>>> 709473bd007495376bf7c6289d5c4fceca48a82d
               "Title": "frmShowAllPeople.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Forms\\frmShowAllPeople.cs",
               "RelativeDocumentMoniker": "People\\Forms\\frmShowAllPeople.cs",
               "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Forms\\frmShowAllPeople.cs [Design]",
               "RelativeToolTip": "People\\Forms\\frmShowAllPeople.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-02-07T07:51:31.335Z",
               "EditorCaption": " [Design]"
             },
@@ -138,6 +231,9 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-07T07:45:01.362Z",
               "EditorCaption": ""
+=======
+              "WhenOpened": "2026-02-05T07:10:17.313Z"
+>>>>>>> 709473bd007495376bf7c6289d5c4fceca48a82d
             }
           ]
         }
