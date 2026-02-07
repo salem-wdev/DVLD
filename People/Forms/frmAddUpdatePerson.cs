@@ -51,10 +51,6 @@ namespace DVLD.People.Forms
 
         private void frmAddNewPerson_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-=======
-
->>>>>>> 709473bd007495376bf7c6289d5c4fceca48a82d
         }
 
         private void FillPersonIDLabel(object sender, int PersonID)
@@ -65,7 +61,6 @@ namespace DVLD.People.Forms
         private void ctrlAddAndEditPersonInfo1_Load(object sender, EventArgs e)
         {
             ctrlAddAndEditPersonInfo1.SendDataBack += FillPersonIDLabel;
-<<<<<<< HEAD
             if (_Person != null)
             {
                 ctrlAddAndEditPersonInfo1.FillPersonWithData(_Person);
@@ -73,8 +68,6 @@ namespace DVLD.People.Forms
             //{
             //    MessageBox.Show("Unable to load person data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
-=======
->>>>>>> 709473bd007495376bf7c6289d5c4fceca48a82d
         }
     }
 }

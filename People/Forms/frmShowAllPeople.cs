@@ -23,14 +23,14 @@ namespace DVLD.People.Forms
 
         private void FillDataGridView()
         {
-            dataGridView1.DataSource = clsPerson.GetAllPeople();
+            dgvShowAllPeople.DataSource = clsPerson.GetAllPeople();
         }
 
 
         private void frmShowAllPeople_Load(object sender, EventArgs e)
         {
             FillDataGridView();
-            lblRecords.Text = dataGridView1.RowCount.ToString();
+            lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
         }
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace DVLD.People.Forms
             frmAddUpdatePerson frm = new frmAddUpdatePerson();
             frm.ShowDialog();
             frm.Dispose();
-            dataGridView1.Update();
+            dgvShowAllPeople.Update();
         }
 
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,28 +50,28 @@ namespace DVLD.People.Forms
 
         private void editeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddUpdatePerson frm = new frmAddUpdatePerson(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+            frmAddUpdatePerson frm = new frmAddUpdatePerson(int.Parse(dgvShowAllPeople.CurrentRow.Cells[0].Value.ToString()));
             frm.ShowDialog();
             frm.Dispose();
-            dataGridView1.Update();
+            dgvShowAllPeople.Update();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int PersonID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            int PersonID = int.Parse(dgvShowAllPeople.CurrentRow.Cells[0].Value.ToString());
             if (MessageBox.Show("Are you sure you want to delete this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 clsPerson.Delete(PersonID);
-                dataGridView1.Update();
-                dataGridView1.DataSource = clsPerson.GetAllPeople();
-                lblRecords.Text = dataGridView1.RowCount.ToString();
+                dgvShowAllPeople.Update();
+                dgvShowAllPeople.DataSource = clsPerson.GetAllPeople();
+                lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
             }
         }
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = clsPerson.GetAllPeople();
-            lblRecords.Text = dataGridView1.RowCount.ToString();
+            dgvShowAllPeople.DataSource = clsPerson.GetAllPeople();
+            lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -79,19 +79,22 @@ namespace DVLD.People.Forms
             frmAddUpdatePerson frm = new frmAddUpdatePerson();
             frm.ShowDialog();
             frm.Dispose();
-            dataGridView1.Update();
-            dataGridView1.DataSource = clsPerson.GetAllPeople();
+            dgvShowAllPeople.Update();
+            dgvShowAllPeople.DataSource = clsPerson.GetAllPeople();
 
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int PersonID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            int PersonID = int.Parse(dgvShowAllPeople.CurrentRow.Cells[0].Value.ToString());
 
             frmShowPersonInfo frm = new frmShowPersonInfo(PersonID);
             frm.ShowDialog();
             frm.Dispose();
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
