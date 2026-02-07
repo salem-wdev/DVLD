@@ -20,17 +20,34 @@ namespace DVLD.People.Forms
             this.MaximizeBox = false;
             this.MinimizeBox = false;
         }
-
+        DataTable dt;
         private void FillDataGridView()
         {
-            dgvShowAllPeople.DataSource = clsPerson.GetAllPeople();
+            dt = clsPerson.GetAllPeople();
+            dgvShowAllPeople.DataSource = dt;
         }
 
+        private void fillcbSortedBy()
+        {
+            foreach (var item in dt.Columns)
+            {
+                cmbSortedBy.Items.Add(item);
+            }
+        }
+        private void ChangeSorting()
+        {
+            dt.DefaultView.Sort = cmbSortedBy.SelectedItem.ToString() + " ASC";
+            dgvShowAllPeople.DataSource = dt;
+        }
 
         private void frmShowAllPeople_Load(object sender, EventArgs e)
         {
             FillDataGridView();
             lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
+            fillcbSortedBy();
+            cmbSortedBy.DisplayMember = "ColumnName";
+
+            cmbSortedBy.SelectedIndex = 0;
         }
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
@@ -95,6 +112,7 @@ namespace DVLD.People.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ChangeSorting();
         }
     }
 }

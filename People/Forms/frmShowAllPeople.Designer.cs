@@ -45,7 +45,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbSortedBy = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowAllPeople)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -53,13 +53,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvShowAllPeople
             // 
             this.dgvShowAllPeople.AllowUserToAddRows = false;
             this.dgvShowAllPeople.AllowUserToDeleteRows = false;
             this.dgvShowAllPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShowAllPeople.Location = new System.Drawing.Point(12, 196);
-            this.dgvShowAllPeople.Name = "dataGridView1";
+            this.dgvShowAllPeople.Name = "dgvShowAllPeople";
             this.dgvShowAllPeople.ReadOnly = true;
             this.dgvShowAllPeople.Size = new System.Drawing.Size(1433, 514);
             this.dgvShowAllPeople.TabIndex = 0;
@@ -189,15 +189,16 @@
             this.lblRecords.TabIndex = 7;
             this.lblRecords.Text = "0";
             // 
-            // comboBox1
+            // cmbSortedBy
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(151, 142);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 31);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbSortedBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSortedBy.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSortedBy.FormattingEnabled = true;
+            this.cmbSortedBy.Location = new System.Drawing.Point(151, 149);
+            this.cmbSortedBy.Name = "cmbSortedBy";
+            this.cmbSortedBy.Size = new System.Drawing.Size(121, 24);
+            this.cmbSortedBy.TabIndex = 8;
+            this.cmbSortedBy.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -216,7 +217,7 @@
             this.ClientSize = new System.Drawing.Size(1457, 771);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbSortedBy);
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
@@ -253,7 +254,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblRecords;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbSortedBy;
         private System.Windows.Forms.Label label3;
     }
 }
