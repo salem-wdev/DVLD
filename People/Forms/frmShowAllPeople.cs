@@ -81,12 +81,22 @@ namespace DVLD.People.Forms
             int PersonID = int.Parse(dgvShowAllPeople.CurrentRow.Cells[0].Value.ToString());
             if (MessageBox.Show("Are you sure you want to delete this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                clsPerson.Delete(PersonID);
-                dgvShowAllPeople.Update();
+                if (clsPerson.Delete(PersonID))
+                {
+                    dgvShowAllPeople.Update();
 
-                DeleteRowFromDataGridView();
-
+                    DeleteRowFromDataGridView();
+                    MessageBox.Show($"Person with ID {PersonID} deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show($"Failed to delete person with ID {PersonID}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Deletion cancelled.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
