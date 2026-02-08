@@ -37,7 +37,10 @@ namespace DVLD.People.Forms
         private void ChangeSorting()
         {
             dt.DefaultView.Sort = cmbSortedBy.SelectedItem.ToString() + " ASC";
-            dgvShowAllPeople.DataSource = dt;
+        }
+        private void DeleteRowFromDataGridView()
+        {
+            dt.Rows.RemoveAt(dgvShowAllPeople.CurrentRow.Index);
         }
 
         private void frmShowAllPeople_Load(object sender, EventArgs e)
@@ -81,7 +84,8 @@ namespace DVLD.People.Forms
                 clsPerson.Delete(PersonID);
                 dgvShowAllPeople.Update();
 
-                FillDataGridView();
+                DeleteRowFromDataGridView();
+
                 lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
             }
         }
