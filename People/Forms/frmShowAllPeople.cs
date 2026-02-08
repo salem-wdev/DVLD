@@ -80,7 +80,8 @@ namespace DVLD.People.Forms
             {
                 clsPerson.Delete(PersonID);
                 dgvShowAllPeople.Update();
-                dgvShowAllPeople.DataSource = clsPerson.GetAllPeople();
+
+                FillDataGridView();
                 lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
             }
         }
@@ -113,6 +114,20 @@ namespace DVLD.People.Forms
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeSorting();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnAddNewPerson_Click_1(object sender, EventArgs e)
+        {
+            frmAddUpdatePerson frm = new frmAddUpdatePerson();
+            frm.ShowDialog();
+            frm.Dispose();
+            dgvShowAllPeople.Update();
+
         }
     }
 }

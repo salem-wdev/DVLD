@@ -40,16 +40,16 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phoneCallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
             this.cmbSortedBy = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnAddNewPerson = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowAllPeople)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,18 +136,6 @@
             this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.phoneCallToolStripMenuItem.Text = "Phone Call";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.person_man__4_;
-            this.pictureBox1.Location = new System.Drawing.Point(1366, 140);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(79, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -158,16 +146,6 @@
             this.label1.Size = new System.Drawing.Size(289, 34);
             this.label1.TabIndex = 4;
             this.label1.Text = "People Managemente";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::DVLD.Properties.Resources.group__2_;
-            this.pictureBox2.Location = new System.Drawing.Point(655, 33);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(137, 104);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -210,26 +188,58 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Sorted By:";
             // 
+            // btnAddNewPerson
+            // 
+            this.btnAddNewPerson.Location = new System.Drawing.Point(1358, 142);
+            this.btnAddNewPerson.Name = "btnAddNewPerson";
+            this.btnAddNewPerson.Size = new System.Drawing.Size(87, 41);
+            this.btnAddNewPerson.TabIndex = 11;
+            this.btnAddNewPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click_1);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = global::DVLD.Properties.Resources.close;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(1325, 724);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(120, 41);
+            this.btnClose.TabIndex = 10;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::DVLD.Properties.Resources.group__2_;
+            this.pictureBox2.Location = new System.Drawing.Point(655, 33);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(137, 104);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmShowAllPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1457, 771);
+            this.ClientSize = new System.Drawing.Size(1457, 786);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.btnAddNewPerson);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbSortedBy);
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvShowAllPeople);
             this.Name = "frmShowAllPeople";
             this.Text = "frmShowAllPeople";
             this.Load += new System.EventHandler(this.frmShowAllPeople_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowAllPeople)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -249,12 +259,13 @@
         private System.Windows.Forms.ToolStripMenuItem sendEmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phoneCallToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblRecords;
         private System.Windows.Forms.ComboBox cmbSortedBy;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnAddNewPerson;
     }
 }
