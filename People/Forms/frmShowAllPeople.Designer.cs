@@ -45,12 +45,18 @@
             this.lblRecords = new System.Windows.Forms.Label();
             this.cmbSortedBy = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbSearchBy = new System.Windows.Forms.ComboBox();
+            this.txtSearchBy = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnAddNewPerson = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowAllPeople)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvShowAllPeople
@@ -172,7 +178,7 @@
             this.cmbSortedBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSortedBy.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSortedBy.FormattingEnabled = true;
-            this.cmbSortedBy.Location = new System.Drawing.Point(151, 149);
+            this.cmbSortedBy.Location = new System.Drawing.Point(1196, 159);
             this.cmbSortedBy.Name = "cmbSortedBy";
             this.cmbSortedBy.Size = new System.Drawing.Size(121, 24);
             this.cmbSortedBy.TabIndex = 8;
@@ -182,17 +188,58 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(43, 150);
+            this.label3.Location = new System.Drawing.Point(1088, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 23);
             this.label3.TabIndex = 9;
             this.label3.Text = "Sorted By:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(43, 131);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 23);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Search By:";
+            // 
+            // cmbSearchBy
+            // 
+            this.cmbSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSearchBy.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSearchBy.FormattingEnabled = true;
+            this.cmbSearchBy.Location = new System.Drawing.Point(47, 159);
+            this.cmbSearchBy.Name = "cmbSearchBy";
+            this.cmbSearchBy.Size = new System.Drawing.Size(121, 24);
+            this.cmbSearchBy.TabIndex = 12;
+            // 
+            // txtSearchBy
+            // 
+            this.txtSearchBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchBy.Location = new System.Drawing.Point(174, 155);
+            this.txtSearchBy.Name = "txtSearchBy";
+            this.txtSearchBy.Size = new System.Drawing.Size(228, 26);
+            this.txtSearchBy.TabIndex = 14;
+            this.txtSearchBy.TextChanged += new System.EventHandler(this.txtSearchBy_TextChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = global::DVLD.Properties.Resources.search__1_;
+            this.btnSearch.Location = new System.Drawing.Point(422, 142);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(86, 41);
+            this.btnSearch.TabIndex = 15;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // btnAddNewPerson
             // 
-            this.btnAddNewPerson.Location = new System.Drawing.Point(1358, 142);
+            this.btnAddNewPerson.Image = global::DVLD.Properties.Resources.person_man__10_;
+            this.btnAddNewPerson.Location = new System.Drawing.Point(1349, 131);
             this.btnAddNewPerson.Name = "btnAddNewPerson";
-            this.btnAddNewPerson.Size = new System.Drawing.Size(87, 41);
+            this.btnAddNewPerson.Size = new System.Drawing.Size(96, 52);
             this.btnAddNewPerson.TabIndex = 11;
             this.btnAddNewPerson.UseVisualStyleBackColor = true;
             this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click_1);
@@ -220,12 +267,20 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmShowAllPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1457, 786);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearchBy);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbSearchBy);
             this.Controls.Add(this.btnAddNewPerson);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label3);
@@ -241,6 +296,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowAllPeople)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +323,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnAddNewPerson;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbSearchBy;
+        private System.Windows.Forms.TextBox txtSearchBy;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

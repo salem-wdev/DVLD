@@ -27,16 +27,58 @@ namespace DVLD.People.Forms
             dgvShowAllPeople.DataSource = dt;
         }
 
-        private void fillcbSortedBy()
+        private void fillcmbSortedBy()
         {
             foreach (var item in dt.Columns)
             {
                 cmbSortedBy.Items.Add(item);
             }
         }
+        private void fillcmbSearchBy()
+        {
+            cmbSearchBy.Items.Add("PersonID");
+            cmbSearchBy.Items.Add("NationalNo");
+        }
         private void ChangeSorting()
         {
             dt.DefaultView.Sort = cmbSortedBy.SelectedItem.ToString() + " ASC";
+        }
+        private bool IsValidSearchInput()
+        {
+            if (string.IsNullOrEmpty(txtSearchBy.Text))
+            {
+                errorProvider1.SetError(txtSearchBy, "Please enter a value to search.");
+                return false;
+            }
+            else
+            {
+                errorProvider1.SetError(txtSearchBy, string.Empty); // Clear previous errors
+                return true;
+            }
+        }
+        private void Search()
+        {
+            if(IsValidSearchInput())
+            {
+                if (cmbSearchBy.SelectedItem.ToString() == "PersonID")
+                {
+                    if (!int.TryParse(txtSearchBy.Text, out _))
+                    {
+                        errorProvider1.SetError(txtSearchBy, "Please enter a valid integer for PersonID.");
+                        return;
+                    }
+                    else
+                    {
+                        dt.DefaultView.RowFilter = $"{cmbSearchBy.SelectedItem} = {Convert.ToInt32(txtSearchBy.Text)}";
+                    }
+                }
+                else
+                {
+
+                    dt.DefaultView.RowFilter = $"{cmbSearchBy.SelectedItem} LIKE '%{txtSearchBy.Text}%'";
+                    
+                }
+            }
         }
         private void DeleteRowFromDataGridView()
         {
@@ -47,10 +89,15 @@ namespace DVLD.People.Forms
         {
             FillDataGridView();
             lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
-            fillcbSortedBy();
+            fillcmbSearchBy();
             cmbSortedBy.DisplayMember = "ColumnName";
 
-            cmbSortedBy.SelectedIndex = 0;
+            //cmbSortedBy.SelectedIndex = 0;
+
+            fillcmbSortedBy();
+            cmbSearchBy.DisplayMember = "ColumnName";
+            cmbSearchBy.SelectedIndex = 0;
+
         }
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
@@ -142,6 +189,26 @@ namespace DVLD.People.Forms
             frm.Dispose();
             dgvShowAllPeople.Update();
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+            
+                Search();
+            
+        }
+
+        private void txtSearchBy_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearchBy.Text))
+            {
+                dt.DefaultView.RowFilter = string.Empty; // Clear the filter when the search box is empty
+            }
+            //else
+            //{
+            //    Search();
+            //}
         }
     }
 }
