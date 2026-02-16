@@ -82,7 +82,12 @@ namespace DVLD.People.Forms
         }
         private void DeleteRowFromDataGridView()
         {
-            dt.Rows.RemoveAt(dgvShowAllPeople.CurrentRow.Index);
+            if (dgvShowAllPeople.CurrentRow != null)
+            {
+                DataRowView drv = (DataRowView)dgvShowAllPeople.CurrentRow.DataBoundItem;
+                drv.Delete();        // Delete the row from the DataTable
+                dt.AcceptChanges();  // Confirm changes in DataTable
+            }
         }
 
         private void frmShowAllPeople_Load(object sender, EventArgs e)
@@ -90,11 +95,12 @@ namespace DVLD.People.Forms
             FillDataGridView();
             lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
             fillcmbSearchBy();
+            fillcmbSortedBy();
+
             cmbSortedBy.DisplayMember = "ColumnName";
 
-            //cmbSortedBy.SelectedIndex = 0;
+            cmbSortedBy.SelectedIndex = 0;
 
-            fillcmbSortedBy();
             cmbSearchBy.DisplayMember = "ColumnName";
             cmbSearchBy.SelectedIndex = 0;
 
@@ -130,8 +136,6 @@ namespace DVLD.People.Forms
             {
                 if (clsPerson.Delete(PersonID))
                 {
-                    dgvShowAllPeople.Update();
-
                     DeleteRowFromDataGridView();
                     MessageBox.Show($"Person with ID {PersonID} deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
