@@ -111,7 +111,7 @@ namespace DVLD.People.Forms
             frmAddUpdatePerson frm = new frmAddUpdatePerson();
             frm.ShowDialog();
             frm.Dispose();
-            dgvShowAllPeople.Update();
+            
         }
 
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
@@ -126,7 +126,7 @@ namespace DVLD.People.Forms
             frmAddUpdatePerson frm = new frmAddUpdatePerson(int.Parse(dgvShowAllPeople.CurrentRow.Cells[0].Value.ToString()));
             frm.ShowDialog();
             frm.Dispose();
-            dgvShowAllPeople.Update();
+            
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -153,19 +153,11 @@ namespace DVLD.People.Forms
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dgvShowAllPeople.DataSource = clsPerson.GetAllPeople();
+            FillDataGridView();
             lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
+            ChangeSorting();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            frmAddUpdatePerson frm = new frmAddUpdatePerson();
-            frm.ShowDialog();
-            frm.Dispose();
-            dgvShowAllPeople.Update();
-            dgvShowAllPeople.DataSource = clsPerson.GetAllPeople();
-
-        }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -191,7 +183,7 @@ namespace DVLD.People.Forms
             frmAddUpdatePerson frm = new frmAddUpdatePerson();
             frm.ShowDialog();
             frm.Dispose();
-            dgvShowAllPeople.Update();
+            
 
         }
 
