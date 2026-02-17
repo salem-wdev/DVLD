@@ -220,6 +220,7 @@ namespace DVLD.People.Forms
             int PersonID = int.Parse(dgvShowAllPeople.CurrentRow.Cells[0].Value.ToString());
 
             frmShowPersonInfo frm = new frmShowPersonInfo(PersonID);
+            frm.SendPersonInfo += UpdatePersonInDataGridView;
             frm.ShowDialog();
             frm.Dispose();
         }

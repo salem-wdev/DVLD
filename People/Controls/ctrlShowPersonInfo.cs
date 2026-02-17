@@ -14,6 +14,10 @@ namespace DVLD
 {
     public partial class ctrlShowPersonInfo : UserControl
     {
+        public delegate void BackPersonInfoEventHandler(object sender, clsPerson person);
+
+        public event BackPersonInfoEventHandler BackPersonInfo;
+
         public ctrlShowPersonInfo()
         {
             InitializeComponent();
@@ -92,10 +96,17 @@ namespace DVLD
             this.pbPersonPhoto.ImageLocation = _Person.ImagePath;
         }
 
+        private void BackData(object sender, clsPerson person)
+        {
+            _Person = person;
+            LoadData(_Person);
+            BackPersonInfo?.Invoke(this, _Person);
+        }
 
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson(_Person);
+            frm.PersonDataReceivedToForm += BackData;
             frm.ShowDialog();
             frm.Dispose();
         }

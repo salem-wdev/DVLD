@@ -16,7 +16,9 @@ namespace DVLD.People.Forms
 
         int _PersonID = -1;
 
+        public delegate void SendPersonInfoEventHandler(object sender, clsPerson person);
 
+        public SendPersonInfoEventHandler SendPersonInfo;
         // Never Use New With Controls!!!!!
 
         public frmShowPersonInfo()
@@ -51,6 +53,10 @@ namespace DVLD.People.Forms
 
         }
 
+        private void _SendDataBack(object sender, clsPerson person)
+        {
+            SendPersonInfo?.Invoke(this, person);
+        }
 
 
         private void frmShowPersonInfo_Load(object sender, EventArgs e)
@@ -59,7 +65,8 @@ namespace DVLD.People.Forms
            if (!ctrlShowPersonInfo1.LoadData(_PersonID))
            {
                 MessageBox.Show("Person not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           }
+           ctrlShowPersonInfo1.BackPersonInfo += _SendDataBack;
 
         }
 
