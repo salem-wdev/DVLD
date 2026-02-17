@@ -106,6 +106,60 @@ namespace DVLD.People.Forms
 
         }
 
+
+        private void AddNewPersonToDataGridView(object sender, clsPerson person)
+        {
+                DataRow newRow = dt.NewRow();
+                newRow["PersonID"] = person.PersonID;
+                newRow["FirstName"] = person.FirstName;
+                newRow["SecondName"] = person.SecondName;
+                newRow["ThirdName"] = person.ThirdName;
+                newRow["LastName"] = person.LastName;
+                newRow["NationalNo"] = person.NationalNo;
+                newRow["DateOfBirth"] = person.DateOfBirth;
+                newRow["Gendor"] = person.Gender;
+                newRow["Address"] = person.Address;
+                newRow["Phone"] = person.Phone;
+                newRow["Email"] = person.Email;
+                newRow["NationalityCountryID"] = person.NationalityCountryID;
+                newRow["ImagePath"] = person.ImagePath;
+
+            dt.Rows.Add(newRow);
+
+            RefreshDataGridView();
+
+
+        }
+        private void RefreshDataGridView()
+        {
+            dgvShowAllPeople.DataSource = null;
+            dgvShowAllPeople.DataSource = dt;
+            lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
+        }
+        private void UpdatePersonInDataGridView(object sender, clsPerson person)
+        {
+            DataRow[] rows = dt.Select($"PersonID = {person.PersonID}");
+            if (rows.Length > 0)
+            {
+                DataRow drv = rows[0];
+                drv["FirstName"] = person.FirstName;
+                drv["SecondName"] = person.SecondName;
+                drv["ThirdName"] = person.ThirdName;
+                drv["LastName"] = person.LastName;
+                drv["NationalNo"] = person.NationalNo;
+                drv["DateOfBirth"] = person.DateOfBirth;
+                drv["Gendor"] = person.Gender;
+                drv["Address"] = person.Address;
+                drv["Phone"] = person.Phone;
+                drv["Email"] = person.Email;
+                drv["NationalityCountryID"] = person.NationalityCountryID;
+                drv["ImagePath"] = person.ImagePath;
+
+                // Refresh the DataGridView to reflect the updated data
+                RefreshDataGridView();
+            }
+        }
+
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson();
@@ -117,6 +171,7 @@ namespace DVLD.People.Forms
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson();
+            frm.PersonDataReceivedToForm += AddNewPersonToDataGridView;
             frm.ShowDialog();
             frm.Dispose();
         }
@@ -124,6 +179,7 @@ namespace DVLD.People.Forms
         private void editeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson(int.Parse(dgvShowAllPeople.CurrentRow.Cells[0].Value.ToString()));
+            frm.PersonDataReceivedToForm += UpdatePersonInDataGridView;
             frm.ShowDialog();
             frm.Dispose();
             
@@ -136,8 +192,8 @@ namespace DVLD.People.Forms
             {
                 if (clsPerson.Delete(PersonID))
                 {
-                    DeleteRowFromDataGridView();
                     MessageBox.Show($"Person with ID {PersonID} deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DeleteRowFromDataGridView();
                 }
                 else
                 {
@@ -181,9 +237,10 @@ namespace DVLD.People.Forms
         private void btnAddNewPerson_Click_1(object sender, EventArgs e)
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson();
+            frm.PersonDataReceivedToForm += AddNewPersonToDataGridView;
             frm.ShowDialog();
             frm.Dispose();
-            
+
 
         }
 

@@ -8,12 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DVLD.ctrlAddAndEditPersonInfo;
 
 namespace DVLD.People.Forms
 {
     public partial class frmAddUpdatePerson : Form
     {
         clsPerson _Person;
+
+        public delegate void PersonDataReceivedEventHandlerInForm(object sender, clsPerson Person);
+
+        public event PersonDataReceivedEventHandlerInForm PersonDataReceivedToForm;
+
 
         public frmAddUpdatePerson()
         {
@@ -53,18 +59,26 @@ namespace DVLD.People.Forms
         {
         }
 
-        private void FillPersonIDLabel(object sender, int PersonID)
+        private void FillPersonIDLabel()
         {
-            lblPersonID.Text = PersonID.ToString();
+            lblPersonID.Text = _Person.PersonID.ToString();
+        }
+
+        private void ReceivePersonDataFromControl(object sender, clsPerson Person)
+        {
+            _Person = Person;
+            FillPersonIDLabel();
+            PersonDataReceivedToForm?.Invoke(this, _Person);
         }
 
         private void ctrlAddAndEditPersonInfo1_Load(object sender, EventArgs e)
         {
-            ctrlAddAndEditPersonInfo1.SendDataBack += FillPersonIDLabel;
+            ctrlAddAndEditPersonInfo1.PersonDataReceived += ReceivePersonDataFromControl;
             if (_Person != null)
             {
                 ctrlAddAndEditPersonInfo1.FillPersonWithData(_Person);
             }
+
             //{
             //    MessageBox.Show("Unable to load person data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}

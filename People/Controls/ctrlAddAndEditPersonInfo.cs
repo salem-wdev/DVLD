@@ -21,9 +21,11 @@ namespace DVLD
         clsPerson _Person;
 
         public delegate void DataBackEventHandler(object sender,int PersonID);
+        public delegate void PersonDataReceivedEventHandler(object sender, clsPerson Person);
 
         // Define The Delegete
         public event DataBackEventHandler SendDataBack;
+        public event PersonDataReceivedEventHandler PersonDataReceived;
         public ctrlAddAndEditPersonInfo()
         {
             InitializeComponent();
@@ -150,7 +152,7 @@ namespace DVLD
         private void btnSave_Click(object sender, EventArgs e)
         {
             SavePerson();
-            SendDataBack?.Invoke(this, _Person.PersonID);
+            PersonDataReceived?.Invoke(this, _Person);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
