@@ -222,6 +222,7 @@
             this.txtSearchBy.Size = new System.Drawing.Size(228, 26);
             this.txtSearchBy.TabIndex = 14;
             this.txtSearchBy.TextChanged += new System.EventHandler(this.txtSearchBy_TextChanged);
+            this.txtSearchBy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchBy_KeyDown);
             // 
             // btnSearch
             // 

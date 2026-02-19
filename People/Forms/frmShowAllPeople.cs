@@ -247,10 +247,7 @@ namespace DVLD.People.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
-            
-                Search();
-            
+            Search();
         }
 
         private void txtSearchBy_TextChanged(object sender, EventArgs e)
@@ -263,6 +260,15 @@ namespace DVLD.People.Forms
             //{
             //    Search();
             //}
+        }
+
+        private void txtSearchBy_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Search();
+                e.Handled = true; // Prevent the default behavior of the Enter key
+            }
         }
     }
 }
