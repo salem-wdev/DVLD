@@ -68,22 +68,22 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="People\Forms\frmAddUpdatePerson.cs">
+    <Compile Include="People\Controls\frmAddUpdatePerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="People\Forms\frmAddUpdatePerson.Designer.cs">
+    <Compile Include="People\Controls\frmAddUpdatePerson.Designer.cs">
       <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="People\Forms\frmShowAllPeople.cs">
+    <Compile Include="People\Controls\frmShowAllPeople.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="People\Forms\frmShowAllPeople.Designer.cs">
+    <Compile Include="People\Controls\frmShowAllPeople.Designer.cs">
       <DependentUpon>frmShowAllPeople.cs</DependentUpon>
     </Compile>
-    <Compile Include="People\Forms\frmShowPersonInfo.cs">
+    <Compile Include="People\Controls\frmShowPersonInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="People\Forms\frmShowPersonInfo.Designer.cs">
+    <Compile Include="People\Controls\frmShowPersonInfo.Designer.cs">
       <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -103,13 +103,13 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="People\Forms\frmAddUpdatePerson.resx">
+    <EmbeddedResource Include="People\Controls\frmAddUpdatePerson.resx">
       <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="People\Forms\frmShowAllPeople.resx">
+    <EmbeddedResource Include="People\Controls\frmShowAllPeople.resx">
       <DependentUpon>frmShowAllPeople.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="People\Forms\frmShowPersonInfo.resx">
+    <EmbeddedResource Include="People\Controls\frmShowPersonInfo.resx">
       <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

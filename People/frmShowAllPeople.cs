@@ -106,7 +106,6 @@ namespace DVLD.People.Forms
 
         }
 
-
         private void AddNewPersonToDataGridView(object sender, clsPerson person)
         {
                 DataRow newRow = dt.NewRow();
@@ -270,5 +269,6 @@ namespace DVLD.People.Forms
                 e.Handled = true; // Prevent the default behavior of the Enter key
             }
         }
+
     }
 }
