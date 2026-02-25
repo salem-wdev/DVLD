@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DVLD
 {
-    public partial class Main : Form
+    public partial class frmMain : Form
     {
-        public Main()
+        public frmMain()
         {
             InitializeComponent();
         }
