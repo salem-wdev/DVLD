@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlShowPersonInfo1 = new DVLD.ctrlShowPersonInfo();
+            this.ctrlShowPersonInfo1 = new DVLD.ctrlPersonCard();
             this.SuspendLayout();
             // 
             // ctrlShowPersonInfo1
@@ -54,6 +54,6 @@
 
         #endregion
 
-        private ctrlShowPersonInfo ctrlShowPersonInfo1;
+        private ctrlPersonCard ctrlShowPersonInfo1;
     }
 }

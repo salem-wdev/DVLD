@@ -65,15 +65,14 @@
             // 
             // applecationsToolStripMenuItem
             // 
-            this.applecationsToolStripMenuItem.Image = global::DVLD.Properties.Resources.public_document;
             this.applecationsToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.applecationsToolStripMenuItem.Name = "applecationsToolStripMenuItem";
-            this.applecationsToolStripMenuItem.Size = new System.Drawing.Size(228, 76);
+            this.applecationsToolStripMenuItem.Size = new System.Drawing.Size(156, 76);
             this.applecationsToolStripMenuItem.Text = "Applications";
             // 
             // peopleToolStripMenuItem
             // 
-            this.peopleToolStripMenuItem.Image = global::DVLD.Properties.Resources.group;
+            this.peopleToolStripMenuItem.Image = global::DVLD.Properties.Resources.People_512;
             this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
             this.peopleToolStripMenuItem.Size = new System.Drawing.Size(170, 76);
             this.peopleToolStripMenuItem.Text = "People";
@@ -81,23 +80,20 @@
             // 
             // driversToolStripMenuItem
             // 
-            this.driversToolStripMenuItem.Image = global::DVLD.Properties.Resources.driver;
             this.driversToolStripMenuItem.Name = "driversToolStripMenuItem";
-            this.driversToolStripMenuItem.Size = new System.Drawing.Size(172, 76);
+            this.driversToolStripMenuItem.Size = new System.Drawing.Size(100, 76);
             this.driversToolStripMenuItem.Text = "Drivers";
             // 
             // usersToolStripMenuItem
             // 
-            this.usersToolStripMenuItem.Image = global::DVLD.Properties.Resources.user;
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(155, 76);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(83, 76);
             this.usersToolStripMenuItem.Text = "Users";
             // 
             // accountSettingsToolStripMenuItem
             // 
-            this.accountSettingsToolStripMenuItem.Image = global::DVLD.Properties.Resources.account;
             this.accountSettingsToolStripMenuItem.Name = "accountSettingsToolStripMenuItem";
-            this.accountSettingsToolStripMenuItem.Size = new System.Drawing.Size(278, 76);
+            this.accountSettingsToolStripMenuItem.Size = new System.Drawing.Size(206, 76);
             this.accountSettingsToolStripMenuItem.Text = "Account Settings";
             this.accountSettingsToolStripMenuItem.Click += new System.EventHandler(this.accountSettingsToolStripMenuItem_Click);
             // 
@@ -111,11 +107,11 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.R;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.DVLD_Logo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 80);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1236, 612);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
