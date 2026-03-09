@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dgvShowAllPeople = new System.Windows.Forms.DataGridView();
+            this.dgvPeople = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,22 +53,24 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShowAllPeople)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvShowAllPeople
+            // dgvPeople
             // 
-            this.dgvShowAllPeople.AllowUserToAddRows = false;
-            this.dgvShowAllPeople.AllowUserToDeleteRows = false;
-            this.dgvShowAllPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShowAllPeople.Location = new System.Drawing.Point(12, 196);
-            this.dgvShowAllPeople.Name = "dgvShowAllPeople";
-            this.dgvShowAllPeople.ReadOnly = true;
-            this.dgvShowAllPeople.Size = new System.Drawing.Size(1433, 514);
-            this.dgvShowAllPeople.TabIndex = 0;
+            this.dgvPeople.AllowUserToAddRows = false;
+            this.dgvPeople.AllowUserToDeleteRows = false;
+            this.dgvPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPeople.Location = new System.Drawing.Point(12, 196);
+            this.dgvPeople.MultiSelect = false;
+            this.dgvPeople.Name = "dgvPeople";
+            this.dgvPeople.ReadOnly = true;
+            this.dgvPeople.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPeople.Size = new System.Drawing.Size(1433, 514);
+            this.dgvPeople.TabIndex = 0;
             // 
             // contextMenuStrip1
             // 
@@ -227,7 +229,6 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Image = global::DVLD.Properties.Resources.search__1_;
             this.btnSearch.Location = new System.Drawing.Point(422, 142);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(86, 41);
@@ -237,7 +238,7 @@
             // 
             // btnAddNewPerson
             // 
-            this.btnAddNewPerson.Image = global::DVLD.Properties.Resources.person_man__10_;
+            this.btnAddNewPerson.Image = global::DVLD.Properties.Resources.Add_Person_40;
             this.btnAddNewPerson.Location = new System.Drawing.Point(1349, 131);
             this.btnAddNewPerson.Name = "btnAddNewPerson";
             this.btnAddNewPerson.Size = new System.Drawing.Size(96, 52);
@@ -247,8 +248,8 @@
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::DVLD.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(1325, 724);
             this.btnClose.Name = "btnClose";
@@ -260,7 +261,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::DVLD.Properties.Resources.group__2_;
+            this.pictureBox2.Image = global::DVLD.Properties.Resources.People_400;
             this.pictureBox2.Location = new System.Drawing.Point(655, 33);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(137, 104);
@@ -274,8 +275,10 @@
             // 
             // frmShowAllPeople
             // 
+            this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1457, 786);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.btnSearch);
@@ -290,11 +293,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvShowAllPeople);
+            this.Controls.Add(this.dgvPeople);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmShowAllPeople";
             this.Text = "frmShowAllPeople";
             this.Load += new System.EventHandler(this.frmShowAllPeople_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShowAllPeople)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -305,7 +309,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvShowAllPeople;
+        private System.Windows.Forms.DataGridView dgvPeople;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

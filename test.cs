@@ -20,8 +20,7 @@ namespace DVLD
 
         private void FillData()
         {
-            dataGridView1.DataSource = (DataTable)clsPerson.GetAllPeople();
-            dataGridView1.Update();
+            
         }
 
         private void test_Load(object sender, EventArgs e)

@@ -16,32 +16,54 @@ namespace DVLD.People.Forms
         public frmShowAllPeople()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+
         }
-        DataTable dt;
-        private void FillDataGridView()
+        private static DataTable _dtAllPeople = clsPerson.GetAllPeople();
+
+        //only select the columns that you want to show in the grid
+        private DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
+                                                         "FirstName", "SecondName", "ThirdName", "LastName",
+                                                         "GendorCaption", "DateOfBirth", "CountryName",
+                                                         "Phone", "Email");
+
+        private static DataTable _dtCountries = clsCountry.GetAllCountries();
+
+        private void _RefreshPeopleList()
         {
-            dt = clsPerson.GetAllPeople();
-            dgvShowAllPeople.DataSource = dt;
+            _dtAllPeople = clsPerson.GetAllPeople();
+            _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
+                                                       "FirstName", "SecondName", "ThirdName", "LastName",
+                                                       "GendorCaption", "DateOfBirth", "CountryName",
+                                                       "Phone", "Email");
+
+            dgvPeople.DataSource = _dtPeople;
+            lblRecords.Text = dgvPeople.Rows.Count.ToString();
+            fillcmbSortedBy();
+            ChangeSorting();
         }
 
         private void fillcmbSortedBy()
         {
-            foreach (var item in dt.Columns)
+            foreach (var item in _dtPeople.Columns)
             {
                 cmbSortedBy.Items.Add(item);
             }
+            cmbSortedBy.DisplayMember = "ColumnName";
+
+            cmbSortedBy.SelectedIndex = 0;
         }
         private void fillcmbSearchBy()
         {
             cmbSearchBy.Items.Add("PersonID");
             cmbSearchBy.Items.Add("NationalNo");
+
+            cmbSearchBy.DisplayMember = "ColumnName";
+            cmbSearchBy.SelectedIndex = 0;
+
         }
         private void ChangeSorting()
         {
-            dt.DefaultView.Sort = cmbSortedBy.SelectedItem.ToString() + " ASC";
+            _dtPeople.DefaultView.Sort = cmbSortedBy.SelectedItem.ToString() + " ASC";
         }
         private bool IsValidSearchInput()
         {
@@ -69,94 +91,25 @@ namespace DVLD.People.Forms
                     }
                     else
                     {
-                        dt.DefaultView.RowFilter = $"{cmbSearchBy.SelectedItem} = {Convert.ToInt32(txtSearchBy.Text)}";
+                        _dtCountries.DefaultView.RowFilter = $"{cmbSearchBy.SelectedItem} = {Convert.ToInt32(txtSearchBy.Text)}";
                     }
                 }
                 else
                 {
 
-                    dt.DefaultView.RowFilter = $"{cmbSearchBy.SelectedItem} LIKE '%{txtSearchBy.Text}%'";
+                    _dtCountries.DefaultView.RowFilter = $"{cmbSearchBy.SelectedItem} LIKE '%{txtSearchBy.Text}%'";
                     
                 }
-            }
-        }
-        private void DeleteRowFromDataGridView()
-        {
-            if (dgvShowAllPeople.CurrentRow != null)
-            {
-                DataRowView drv = (DataRowView)dgvShowAllPeople.CurrentRow.DataBoundItem;
-                drv.Delete();        // Delete the row from the DataTable
-                dt.AcceptChanges();  // Confirm changes in DataTable
             }
         }
 
         private void frmShowAllPeople_Load(object sender, EventArgs e)
         {
-            FillDataGridView();
-            lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
+            _RefreshPeopleList();
             fillcmbSearchBy();
-            fillcmbSortedBy();
-
-            cmbSortedBy.DisplayMember = "ColumnName";
-
-            cmbSortedBy.SelectedIndex = 0;
-
-            cmbSearchBy.DisplayMember = "ColumnName";
-            cmbSearchBy.SelectedIndex = 0;
-
-        }
-
-        private void AddNewPersonToDataGridView(object sender, clsPerson person)
-        {
-                DataRow newRow = dt.NewRow();
-                newRow["PersonID"] = person.PersonID;
-                newRow["FirstName"] = person.FirstName;
-                newRow["SecondName"] = person.SecondName;
-                newRow["ThirdName"] = person.ThirdName;
-                newRow["LastName"] = person.LastName;
-                newRow["NationalNo"] = person.NationalNo;
-                newRow["DateOfBirth"] = person.DateOfBirth;
-                newRow["Gendor"] = person.Gender;
-                newRow["Address"] = person.Address;
-                newRow["Phone"] = person.Phone;
-                newRow["Email"] = person.Email;
-                newRow["NationalityCountryID"] = person.NationalityCountryID;
-                newRow["ImagePath"] = person.ImagePath;
-
-            dt.Rows.Add(newRow);
-
-            RefreshDataGridView();
 
 
-        }
-        private void RefreshDataGridView()
-        {
-            dgvShowAllPeople.DataSource = null;
-            dgvShowAllPeople.DataSource = dt;
-            lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
-        }
-        private void UpdatePersonInDataGridView(object sender, clsPerson person)
-        {
-            DataRow[] rows = dt.Select($"PersonID = {person.PersonID}");
-            if (rows.Length > 0)
-            {
-                DataRow drv = rows[0];
-                drv["FirstName"] = person.FirstName;
-                drv["SecondName"] = person.SecondName;
-                drv["ThirdName"] = person.ThirdName;
-                drv["LastName"] = person.LastName;
-                drv["NationalNo"] = person.NationalNo;
-                drv["DateOfBirth"] = person.DateOfBirth;
-                drv["Gendor"] = person.Gender;
-                drv["Address"] = person.Address;
-                drv["Phone"] = person.Phone;
-                drv["Email"] = person.Email;
-                drv["NationalityCountryID"] = person.NationalityCountryID;
-                drv["ImagePath"] = person.ImagePath;
 
-                // Refresh the DataGridView to reflect the updated data
-                RefreshDataGridView();
-            }
         }
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
@@ -170,35 +123,35 @@ namespace DVLD.People.Forms
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson();
-            frm.PersonDataReceivedToForm += AddNewPersonToDataGridView;
             frm.ShowDialog();
-            frm.Dispose();
+            frm.Close();
+            _RefreshPeopleList();
         }
 
         private void editeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddUpdatePerson frm = new frmAddUpdatePerson(int.Parse(dgvShowAllPeople.CurrentRow.Cells[0].Value.ToString()));
-            frm.PersonDataReceivedToForm += UpdatePersonInDataGridView;
+            frmAddUpdatePerson frm = new frmAddUpdatePerson(int.Parse(dgvPeople.CurrentRow.Cells[0].Value.ToString()));
             frm.ShowDialog();
-            frm.Dispose();
+            frm.Close();
+            _RefreshPeopleList();
             
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int PersonID = int.Parse(dgvShowAllPeople.CurrentRow.Cells[0].Value.ToString());
+            int PersonID = int.Parse(dgvPeople.CurrentRow.Cells[0].Value.ToString());
             if (MessageBox.Show("Are you sure you want to delete this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 if (clsPerson.Delete(PersonID))
                 {
                     MessageBox.Show($"Person with ID {PersonID} deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DeleteRowFromDataGridView();
+                    _RefreshPeopleList();
                 }
                 else
                 {
                     MessageBox.Show($"Failed to delete person with ID {PersonID}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
+                lblRecords.Text = dgvPeople.RowCount.ToString();
             }
             else
             {
@@ -208,18 +161,17 @@ namespace DVLD.People.Forms
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FillDataGridView();
-            lblRecords.Text = dgvShowAllPeople.RowCount.ToString();
+            _RefreshPeopleList();
+            lblRecords.Text = dgvPeople.RowCount.ToString();
             ChangeSorting();
         }
 
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int PersonID = int.Parse(dgvShowAllPeople.CurrentRow.Cells[0].Value.ToString());
+            int PersonID = int.Parse(dgvPeople.CurrentRow.Cells[0].Value.ToString());
 
             frmShowPersonInfo frm = new frmShowPersonInfo(PersonID);
-            frm.SendPersonInfo += UpdatePersonInDataGridView;
             frm.ShowDialog();
             frm.Dispose();
         }
@@ -231,15 +183,15 @@ namespace DVLD.People.Forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void btnAddNewPerson_Click_1(object sender, EventArgs e)
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson();
-            frm.PersonDataReceivedToForm += AddNewPersonToDataGridView;
             frm.ShowDialog();
-            frm.Dispose();
+            frm.Close();
+            _RefreshPeopleList();
 
 
         }
@@ -253,7 +205,7 @@ namespace DVLD.People.Forms
         {
             if (string.IsNullOrEmpty(txtSearchBy.Text))
             {
-                dt.DefaultView.RowFilter = string.Empty; // Clear the filter when the search box is empty
+                _dtCountries.DefaultView.RowFilter = string.Empty; // Clear the filter when the search box is empty
             }
             //else
             //{
