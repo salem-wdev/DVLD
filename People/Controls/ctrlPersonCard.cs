@@ -69,6 +69,7 @@ namespace DVLD
             }
             else
             {
+                MessageBox.Show("Could not load this person.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
