@@ -261,7 +261,6 @@ namespace DVLD.People.Forms
         }
 
         private bool _HandlePersonImage()
-
         {
 
             //this procedure will handle the person image,

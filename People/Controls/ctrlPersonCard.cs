@@ -1,10 +1,12 @@
 ﻿using DVLD.People.Forms;
+using DVLD.Properties;
 using DVLD_Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,36 +25,46 @@ namespace DVLD
             InitializeComponent();
         }
 
-        clsPerson _Person;
+        private int _PersonID = -1;
+
+        private clsPerson _Person;
+
+        public int PersonID
+        {
+            get
+            {
+               return _PersonID;
+            }
+        }
+
+        public clsPerson SelectedPerson
+        {
+            get
+            {
+                return _Person;
+            }
+        }
 
         public bool Save()
         {
-            return _Person.Save();
+            bool IsSaved = _Person.Save();
+            _PersonID = _Person.PersonID;
+            return IsSaved;
         }
 
         public bool LoadData(int PersonID)
         {
             _Person = clsPerson.Find(PersonID);
+            return LoadData(_Person);
+        }
 
+        public bool LoadData(clsPerson Person)
+        {
+            _Person = Person;
             if (_Person != null)
             {
-                this.lblPersonID.Text = _Person.PersonID.ToString();
-                this.lblName.Text = _Person.FullName;
-                this.lblNationalNo.Text = _Person.NationalNo;
-                if (_Person.Gender == 0)
-                {
-                    this.lblGender.Text = "Male";
-                }
-                else
-                {
-                    this.lblGender.Text = "Female";
-                }
-                this.lblEmail.Text = _Person.Email;
-                this.lblPhone.Text = _Person.Phone;
-                this.lblAddress.Text = _Person.Address;
-                this.lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
-                this.lblCountry.Text = clsCountry.Find(_Person.NationalityCountryID).CountryName;
-                this.pbPersonPhoto.ImageLocation = _Person.ImagePath;
+                _PersonID = Person.PersonID;
+                _FillPersonInfo();
                 return true;
             }
             else
@@ -61,31 +73,63 @@ namespace DVLD
             }
         }
 
-        public void LoadData(clsPerson Person)
+        private void _LoadPersonImage()
         {
-            _Person = Person;
-
-            this.lblPersonID.Text = _Person.PersonID.ToString();
-            this.lblName.Text = _Person.FullName;
-            this.lblNationalNo.Text = _Person.NationalNo;
             if (_Person.Gender == 0)
-            {
-                this.lblGender.Text = "Male";
-            }
+                pbPersonPhoto.Image = Resources.Male_512;
             else
-            {
-                this.lblGender.Text = "Female";
-            }
-            this.lblEmail.Text = _Person.Email;
-            this.lblPhone.Text = _Person.Phone;
-            this.lblAddress.Text = _Person.Address;
-            this.lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
-            this.lblCountry.Text = clsCountry.Find(_Person.NationalityCountryID).CountryName;
-            this.pbPersonPhoto.ImageLocation = _Person.ImagePath;
+                pbPersonPhoto.Image = Resources.Female_512;
+
+            string ImagePath = _Person.ImagePath;
+            if (ImagePath != "")
+                if (File.Exists(ImagePath))
+                    pbPersonPhoto.ImageLocation = ImagePath;
+                else
+                    MessageBox.Show("Could not find this image: = " + ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
+
+        private void _FillPersonInfo()
+        {
+            llEditPersonInfo.Enabled = true;
+            _PersonID = _Person.PersonID;
+            lblPersonID.Text = _Person.PersonID.ToString();
+            lblNationalNo.Text = _Person.NationalNo;
+            lblFullName.Text = _Person.FullName;
+            lblGender.Text = _Person.Gender == 0 ? "Male" : "Female";
+            lblEmail.Text = _Person.Email;
+            lblPhone.Text = _Person.Phone;
+            lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
+            lblCountry.Text = clsCountry.Find(_Person.NationalityCountryID).CountryName;
+            lblAddress.Text = _Person.Address;
+            _LoadPersonImage();
+
+
+
+
+        }
+
+        public void ResetPersonInfo()
+        {
+            _PersonID = -1;
+            lblPersonID.Text = "[????]";
+            lblNationalNo.Text = "[????]";
+            lblFullName.Text = "[????]";
+            pbGender.Image = Resources.Man_32;
+            lblGender.Text = "[????]";
+            lblEmail.Text = "[????]";
+            lblPhone.Text = "[????]";
+            lblDateOfBirth.Text = "[????]";
+            lblCountry.Text = "[????]";
+            lblAddress.Text = "[????]";
+            pbPersonPhoto.Image = Resources.Male_512;
+
+        }
+
 
         private void BackData(object sender, clsPerson person)
         {
+            _PersonID = person.PersonID;
             _Person = person;
             LoadData(_Person);
             BackPersonInfo?.Invoke(this, _Person);
