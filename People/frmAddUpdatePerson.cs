@@ -1,10 +1,12 @@
-﻿using DVLD.Properties;
+﻿using DVLD.Global_Classes;
+using DVLD.Properties;
 using DVLD_Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +28,10 @@ namespace DVLD.People.Forms
 
         public delegate void PersonDataReceivedEventHandlerInForm(object sender, clsPerson Person);
 
+        public delegate void PersonIDReceivedEventHandlerInForm(object sender, int PersonID);
+
+        public event PersonIDReceivedEventHandlerInForm SendPersonIDBack;
+
         public event PersonDataReceivedEventHandlerInForm SendDataBack;
 
 
@@ -33,6 +39,7 @@ namespace DVLD.People.Forms
         {
             InitializeComponent();
             
+            _Mode = enMode.AddNew;
 
         }
 
@@ -257,6 +264,54 @@ namespace DVLD.People.Forms
             return LoadData(_Person);
         }
 
+        private bool _HandlePersonImage()
+        {
+
+            //this procedure will handle the person image,
+            //it will take care of deleting the old image from the folder
+            //in case the image changed. and it will rename the new image with guid and 
+            // place it in the images folder.
+
+
+            //_Person.ImagePath contains the old Image, we check if it changed then we copy the new image
+            if (_Person.ImagePath != pbPersonPhoto.ImageLocation)
+            {
+                if (_Person.ImagePath != "")
+                {
+                    //first we delete the old image from the folder in case there is any.
+
+                    try
+                    {
+                        File.Delete(_Person.ImagePath);
+                    }
+                    catch (IOException)
+                    {
+                        // We could not delete the file.
+                        //log it later   
+                    }
+                }
+
+                if (pbPersonPhoto.ImageLocation != null)
+                {
+                    //then we copy the new image to the image folder after we rename it
+                    string SourceImageFile = pbPersonPhoto.ImageLocation.ToString();
+
+                    if (clsUtil.CopyImageToProjectImagesFolder(ref SourceImageFile))
+                    {
+                        pbPersonPhoto.ImageLocation = SourceImageFile;
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Copying Image File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+
+            }
+            return true;
+        }
+
         private void ReceivePersonDataFromControl(object sender, clsPerson Person)
         {
             _Person = Person;
@@ -302,196 +357,14 @@ namespace DVLD.People.Forms
             if (_Person != null && _Person.PersonID != -1)
             {
                 SendDataBack?.Invoke(this, _Person);
+                SendPersonIDBack?.Invoke(this, _Person.PersonID);
             }
 
             base.OnFormClosed(e);
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (!this.ValidateChildren())
-            {
-                MessageBox.Show("Please correct the errors before saving.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            _FillPersonWithData();
-
-            if (_SavePerson())
-            {
-                MessageBox.Show("Saved Successfully", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                lblPersonID.Text = _Person.PersonID.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Faild to save", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            errorProvider1.Clear();
-            this.Close();
-        }
-
-        private void txt_Validating(object sender, CancelEventArgs e)
-        {
-            // First: set AutoValidate property of your Form to EnableAllowFocusChange in designer 
-            TextBox Temp = ((TextBox)sender);
-            if (string.IsNullOrEmpty(Temp.Text.Trim()))
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(Temp, $"{Temp.Tag} is required!");
-            }
-            else
-            {
-                //e.Cancel = false;
-                errorProvider1.SetError(Temp, null);
-            }
-
-        }
-
-        //private void txtFirstName_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (string.IsNullOrWhiteSpace(txtFirstName.Text))
-        //    {
-        //        errorProvider1.SetError(txtFirstName, "First Name is required.");
-        //    }
-        //    else
-        //    {
-        //        errorProvider1.SetError(txtFirstName, string.Empty);
-        //    }
-        //}
-
-        //private void txtSecondName_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (string.IsNullOrWhiteSpace(txtSecondName.Text))
-        //    {
-        //        errorProvider1.SetError(txtSecondName, "Second Name is required.");
-        //    }
-        //    else
-        //    {
-        //        errorProvider1.SetError(txtSecondName, string.Empty);
-        //    }
-        //}
-
-        ////private void txtThirdName_Validating(object sender, CancelEventArgs e)
-        ////{
-        ////    if (string.IsNullOrWhiteSpace(txtThirdName.Text))
-        ////    {
-        ////        errorProvider1.SetError(txtThirdName, "Third Name is required.");
-        ////    }
-        ////    else
-        ////    {
-        ////        errorProvider1.SetError(txtThirdName, string.Empty);
-        ////    }
-        ////}
-
-        //private void txtLastName_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (string.IsNullOrWhiteSpace(txtLastName.Text))
-        //    {
-        //        errorProvider1.SetError(txtLastName, "Last Name is required.");
-        //    }
-        //    else
-        //    {
-        //        errorProvider1.SetError(txtLastName, string.Empty);
-        //    }
-        //}
-
-        //private void txtNationalNo_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (string.IsNullOrWhiteSpace(txtNationalNo.Text))
-        //    {
-        //        errorProvider1.SetError(txtNationalNo, "National No is required.");
-        //    }
-        //    else
-        //    {
-        //        errorProvider1.SetError(txtNationalNo, string.Empty);
-        //    }
-        //}
-
-        //private void txtEmail_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if(!string.IsNullOrWhiteSpace(txtEmail.Text))
-        //    {
-        //        if (!txtEmail.Text.Contains("@"))
-        //        {
-        //            errorProvider1.SetError(txtEmail, "Invalid email format.");
-        //        }
-        //        else
-        //        {
-        //            errorProvider1.SetError(txtEmail, string.Empty);
-        //        }
-        //    }
-        //}
-
-        //private void txtPhone_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (string.IsNullOrWhiteSpace(txtPhone.Text))
-        //    {
-        //        errorProvider1.SetError(txtPhone, "Phone is required.");
-        //    }
-        //    else
-        //    {
-        //        errorProvider1.SetError(txtPhone, string.Empty);
-        //    }
-        //}
-
-        //private void txtAddress_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (string.IsNullOrWhiteSpace(txtAddress.Text))
-        //    {
-        //        errorProvider1.SetError(txtAddress, "Address is required.");
-        //    }
-        //    else
-        //    {
-        //        errorProvider1.SetError(txtAddress, string.Empty);
-        //    }
-        //}
-
-        private void llSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            openFileDialog1.FilterIndex = 1;
-            openFileDialog1.RestoreDirectory = true;
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                // Process the selected file
-                string selectedFilePath = openFileDialog1.FileName;
-                pbPersonPhoto.Load(selectedFilePath);
-                llRemoveImage.Visible = true;
-                // ...
-            }
-        }
-
-        private void rbMaleFemale_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbMale.Checked)
-            {
-                pbPersonPhoto.Image = Properties.Resources.Male_512;
-                _GenderType = enGenderType.Male;
-            }
-            else if (rbFemale.Checked)
-            {
-                pbPersonPhoto.Image = Properties.Resources.Female_512;
-                _GenderType = enGenderType.Female;
-            }
-        }
-
-        private void llRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            pbPersonPhoto.ImageLocation = null;
-            pbPersonPhoto.Image = null;
-
-            pbPersonPhoto.Image = (rbMale.Checked)
-                ? Properties.Resources.Male_512
-                : Properties.Resources.Female_512;
-            llSetImage.Focus();
-            llRemoveImage.Visible = false;
-
-        }
+        /// </Validating>
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
@@ -532,5 +405,99 @@ namespace DVLD.People.Forms
                 errorProvider1.SetError(txtNationalNo, string.Empty);
             }
         }
+      
+        private void txt_Validating(object sender, CancelEventArgs e)
+        {
+            // First: set AutoValidate property of your Form to EnableAllowFocusChange in designer 
+            TextBox Temp = ((TextBox)sender);
+            if (string.IsNullOrEmpty(Temp.Text.Trim()))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(Temp, $"{Temp.Tag} is required!");
+            }
+            else
+            {
+                //e.Cancel = false;
+                errorProvider1.SetError(Temp, null);
+            }
+
+        }
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        /// </Validating>
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!this.ValidateChildren())
+            {
+                MessageBox.Show("Please correct the errors before saving.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            _FillPersonWithData();
+
+            if (_HandlePersonImage())
+            {
+                if (_SavePerson())
+                {
+                    MessageBox.Show("Saved Successfully", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    lblPersonID.Text = _Person.PersonID.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to save", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            this.Close();
+        }
+
+        private void llSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            openFileDialog1.FilterIndex = 1;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Process the selected file
+
+                pbPersonPhoto.ImageLocation = openFileDialog1.FileName;
+                llRemoveImage.Visible = true;
+                // ...
+            }
+        }
+
+        private void rbMaleFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbMale.Checked)
+            {
+                pbPersonPhoto.Image = Properties.Resources.Male_512;
+                _GenderType = enGenderType.Male;
+            }
+            else if (rbFemale.Checked)
+            {
+                pbPersonPhoto.Image = Properties.Resources.Female_512;
+                _GenderType = enGenderType.Female;
+            }
+        }
+
+        private void llRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pbPersonPhoto.ImageLocation = null;
+            
+
+            pbPersonPhoto.Image = (rbMale.Checked)
+                ? Properties.Resources.Male_512
+                : Properties.Resources.Female_512;
+            llSetImage.Focus();
+            llRemoveImage.Visible = false;
+
+        }
+
     }
 }
