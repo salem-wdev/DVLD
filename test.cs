@@ -28,5 +28,30 @@ namespace DVLD
             FillData();
             //MessageBox.Show(dataGridView1.Rows.Count.ToString());
         }
+
+        private void ctrlPersonCardWithFilter1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Button clicked!");
+        }
+
+        private void test_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                // to unenable validation for all controls on the form 
+                foreach (Control ctrl in this.Controls)
+                {
+                    ctrl.CausesValidation = false;
+                }
+
+                // allow the form to close without being blocked by validation
+                e.Cancel = false;
+            }
+        }
     }
 }

@@ -28,6 +28,10 @@ namespace DVLD.People.Forms
 
         public delegate void PersonDataReceivedEventHandlerInForm(object sender, clsPerson Person);
 
+        public delegate void PersonIDReceivedEventHandlerInForm(object sender, int PersonID);
+
+        public event PersonIDReceivedEventHandlerInForm SendPersonIDBack;
+
         public event PersonDataReceivedEventHandlerInForm SendDataBack;
 
 
@@ -353,6 +357,7 @@ namespace DVLD.People.Forms
             if (_Person != null && _Person.PersonID != -1)
             {
                 SendDataBack?.Invoke(this, _Person);
+                SendPersonIDBack?.Invoke(this, _Person.PersonID);
             }
 
             base.OnFormClosed(e);

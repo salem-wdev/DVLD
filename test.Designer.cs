@@ -33,19 +33,25 @@
             // 
             // ctrlPersonCardWithFilter1
             // 
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(12, 61);
+            this.ctrlPersonCardWithFilter1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.ctrlPersonCardWithFilter1.FilterEnabled = true;
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(0, 12);
             this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(826, 377);
+            this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(855, 398);
             this.ctrlPersonCardWithFilter1.TabIndex = 1;
+            this.ctrlPersonCardWithFilter1.Load += new System.EventHandler(this.ctrlPersonCardWithFilter1_Load);
             // 
             // test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(855, 450);
             this.Controls.Add(this.ctrlPersonCardWithFilter1);
             this.Name = "test";
             this.Text = "test";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.test_FormClosing);
             this.Load += new System.EventHandler(this.test_Load);
             this.ResumeLayout(false);
 

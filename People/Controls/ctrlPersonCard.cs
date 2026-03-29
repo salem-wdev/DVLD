@@ -47,6 +47,11 @@ namespace DVLD
 
         public bool Save()
         {
+            if (_Person == null)
+            {
+                return false;
+            }
+
             bool IsSaved = _Person.Save();
             _PersonID = _Person.PersonID;
             return IsSaved;
@@ -55,6 +60,12 @@ namespace DVLD
         public bool LoadData(int PersonID)
         {
             _Person = clsPerson.Find(PersonID);
+            return LoadData(_Person);
+        }
+
+        public bool LoadData(string NationalNo)
+        {
+            _Person = clsPerson.Find(NationalNo);
             return LoadData(_Person);
         }
 
@@ -128,10 +139,8 @@ namespace DVLD
 
         }
 
-
         private void BackData(object sender, clsPerson person)
         {
-            _PersonID = person.PersonID;
             _Person = person;
             LoadData(_Person);
             BackPersonInfo?.Invoke(this, _Person);
@@ -139,21 +148,20 @@ namespace DVLD
 
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (_Person == null)
-            {
-                MessageBox.Show("No person data to edit.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             frmAddUpdatePerson frm = new frmAddUpdatePerson(_Person);
             frm.SendDataBack += BackData;
             frm.ShowDialog();
-            frm.Dispose();
+            frm.Close();
+        }
+
+        private void ctrlPersonCard_Load(object sender, EventArgs e)
+        {
+            llEditPersonInfo.Enabled = false;
         }
 
         private void gbPersonInfo_Enter(object sender, EventArgs e)
         {
-           
+
         }
     }
 }
