@@ -105,6 +105,8 @@ namespace DVLD
         private void _FillPersonInfo()
         {
             llEditPersonInfo.Enabled = true;
+            llEditPersonInfo.TabIndex = 0;
+            this.TabIndex = 0;
             _PersonID = _Person.PersonID;
             lblPersonID.Text = _Person.PersonID.ToString();
             lblNationalNo.Text = _Person.NationalNo;

@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Hp\\source\\repos\\DVLD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\controls\\ctrlpersoncardwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\controls\\ctrlpersoncardwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\frmfindperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\frmfindperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\controls\\ctrlpersoncardwithfilter.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\controls\\ctrlpersoncardwithfilter.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\frmfindperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\frmfindperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\controls\\ctrlpersoncardwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\controls\\ctrlpersoncardwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\test.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:test.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,79 +46,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ctrlPersonCardWithFilter.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlPersonCardWithFilter.Designer.cs",
-              "RelativeDocumentMoniker": "People\\Controls\\ctrlPersonCardWithFilter.Designer.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlPersonCardWithFilter.Designer.cs",
-              "RelativeToolTip": "People\\Controls\\ctrlPersonCardWithFilter.Designer.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAjwGkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-29T09:50:37.307Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ctrlPersonCardWithFilter.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "RelativeDocumentMoniker": "People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlPersonCardWithFilter.cs [Design]",
-              "RelativeToolTip": "People\\Controls\\ctrlPersonCardWithFilter.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-29T08:46:28.888Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "test.cs",
               "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs",
               "RelativeDocumentMoniker": "test.cs",
               "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs",
               "RelativeToolTip": "test.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAIA2wBsAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAiwBoAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-27T11:37:30.017Z",
+              "WhenOpened": "2026-03-29T10:32:15.394Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "test.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs",
               "RelativeDocumentMoniker": "test.cs",
               "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs [Design]",
               "RelativeToolTip": "test.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-27T11:35:01.568Z",
+              "WhenOpened": "2026-03-29T10:32:14.208Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ctrlPersonCardWithFilter.cs",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "RelativeDocumentMoniker": "People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "RelativeToolTip": "People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "ViewState": "AgIAAKMAAAAAAAAAAAAowMkAAAAAAAAAAAAAAA==",
+              "Title": "frmFindPerson.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\frmFindPerson.cs",
+              "RelativeDocumentMoniker": "People\\frmFindPerson.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\frmFindPerson.cs",
+              "RelativeToolTip": "People\\frmFindPerson.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAwwCQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-27T11:12:09.34Z",
+              "WhenOpened": "2026-03-29T10:12:43.649Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "test.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.Designer.cs",
-              "RelativeDocumentMoniker": "test.Designer.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.Designer.cs",
-              "RelativeToolTip": "test.Designer.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAAwEIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "frmFindPerson.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\frmFindPerson.cs",
+              "RelativeDocumentMoniker": "People\\frmFindPerson.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\frmFindPerson.cs [Design]",
+              "RelativeToolTip": "People\\frmFindPerson.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-27T11:06:23.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-29T10:09:15.795Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

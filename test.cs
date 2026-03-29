@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DVLD.People;
 using DVLD_Business;
 
 namespace DVLD
@@ -52,6 +53,13 @@ namespace DVLD
                 // allow the form to close without being blocked by validation
                 e.Cancel = false;
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmFindPerson frm = new frmFindPerson();
+            frm.ShowDialog();
+            frm.Close();
         }
     }
 }
