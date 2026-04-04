@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Hp\\source\\repos\\DVLD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\frmfindperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\frmfindperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\frmfindperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\frmfindperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,52 +38,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "test.cs",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs",
-              "RelativeDocumentMoniker": "test.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs",
-              "RelativeToolTip": "test.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAiwBoAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-29T10:32:15.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "test.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs",
-              "RelativeDocumentMoniker": "test.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\test.cs [Design]",
-              "RelativeToolTip": "test.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-29T10:32:14.208Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmFindPerson.cs",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\frmFindPerson.cs",
-              "RelativeDocumentMoniker": "People\\frmFindPerson.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\frmFindPerson.cs",
-              "RelativeToolTip": "People\\frmFindPerson.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAwwCQAAAAJAAAAAAAAAA==",
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\frmMain.cs*",
+              "RelativeToolTip": "frmMain.cs*",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAtwDkAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-29T10:12:43.649Z",
+              "WhenOpened": "2026-04-04T07:56:45.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmFindPerson.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\frmFindPerson.cs",
-              "RelativeDocumentMoniker": "People\\frmFindPerson.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\frmFindPerson.cs [Design]",
-              "RelativeToolTip": "People\\frmFindPerson.cs [Design]",
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\frmMain.cs [Design]*",
+              "RelativeToolTip": "frmMain.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-29T10:09:15.795Z",
+              "WhenOpened": "2026-04-04T07:46:54.532Z",
               "EditorCaption": " [Design]"
             }
           ]

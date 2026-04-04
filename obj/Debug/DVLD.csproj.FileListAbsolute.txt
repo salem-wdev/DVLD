@@ -1,7 +1,6 @@
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.csproj.AssemblyReference.cache
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.frmMain.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.People.Forms.frmAddUpdatePerson.resources
-C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.People.Forms.frmShowAllPeople.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.People.Forms.frmShowPersonInfo.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.test.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.csproj.GenerateResource.cache
@@ -19,5 +18,6 @@ C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.exe
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.pdb
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.ctrlPersonCard.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.People.Controls.ctrlPersonCardWithFilter.resources
-C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.exe.config
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.People.frmFindPerson.resources
+C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.exe.config
+C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.People.Forms.frmListPeople.resources
