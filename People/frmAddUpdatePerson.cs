@@ -476,12 +476,18 @@ namespace DVLD.People.Forms
         {
             if (rbMale.Checked)
             {
-                pbPersonPhoto.Image = Properties.Resources.Male_512;
+                if(string.IsNullOrWhiteSpace(pbPersonPhoto.ImageLocation))
+                {
+                    pbPersonPhoto.Image = Properties.Resources.Male_512;
+                }
                 _GenderType = enGenderType.Male;
             }
             else if (rbFemale.Checked)
             {
-                pbPersonPhoto.Image = Properties.Resources.Female_512;
+                if (string.IsNullOrWhiteSpace(pbPersonPhoto.ImageLocation))
+                {
+                    pbPersonPhoto.Image = Properties.Resources.Female_512;
+                }
                 _GenderType = enGenderType.Female;
             }
         }

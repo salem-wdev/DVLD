@@ -16,13 +16,10 @@ namespace DVLD
 {
     public partial class ctrlPersonCard : UserControl
     {
-        public delegate void BackPersonInfoEventHandler(object sender, clsPerson person);
-
-        public event BackPersonInfoEventHandler BackPersonInfo;
-
         public ctrlPersonCard()
         {
             InitializeComponent();
+            llEditPersonInfo.Enabled = false;
         }
 
         private int _PersonID = -1;
@@ -43,18 +40,6 @@ namespace DVLD
             {
                 return _Person;
             }
-        }
-
-        public bool Save()
-        {
-            if (_Person == null)
-            {
-                return false;
-            }
-
-            bool IsSaved = _Person.Save();
-            _PersonID = _Person.PersonID;
-            return IsSaved;
         }
 
         public bool LoadData(int PersonID)
@@ -105,8 +90,6 @@ namespace DVLD
         private void _FillPersonInfo()
         {
             llEditPersonInfo.Enabled = true;
-            llEditPersonInfo.TabIndex = 0;
-            this.TabIndex = 0;
             _PersonID = _Person.PersonID;
             lblPersonID.Text = _Person.PersonID.ToString();
             lblNationalNo.Text = _Person.NationalNo;
@@ -138,27 +121,25 @@ namespace DVLD
             lblCountry.Text = "[????]";
             lblAddress.Text = "[????]";
             pbPersonPhoto.Image = Resources.Male_512;
+            _Person = null;
 
         }
 
-        private void BackData(object sender, clsPerson person)
+        private void BackData(object sender, int personID)
         {
-            _Person = person;
-            LoadData(_Person);
-            BackPersonInfo?.Invoke(this, _Person);
+            LoadData(personID);
         }
 
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson(_Person);
-            frm.SendDataBack += BackData;
+            frm.SendPersonIDBack += BackData;
             frm.ShowDialog();
             frm.Close();
         }
 
         private void ctrlPersonCard_Load(object sender, EventArgs e)
         {
-            llEditPersonInfo.Enabled = false;
         }
 
         private void gbPersonInfo_Enter(object sender, EventArgs e)

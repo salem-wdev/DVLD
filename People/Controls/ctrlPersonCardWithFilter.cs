@@ -160,7 +160,6 @@ namespace DVLD.People.Controls
             frm.ShowDialog();
         }
 
-
         private void txtFilterValue_Validating(object sender, CancelEventArgs e)
         {
 
