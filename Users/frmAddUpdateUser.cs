@@ -176,6 +176,12 @@ namespace DVLD.Users
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (_IsPersonUser())
+            {
+                MessageBox.Show("Person already is a User", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (txtPassword.Text != txtConfirmPassword.Text)
             {
                 MessageBox.Show("Password and Confirm Password must match.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -190,5 +190,21 @@ namespace DVLD.Users
             frm.ShowDialog();
             _RefreshUsersList();
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure you want to delete this user?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                if(clsUser.Delete((int)dgvUsers.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("User deleted successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete user!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            _RefreshUsersList();
+        }
     }
 }
