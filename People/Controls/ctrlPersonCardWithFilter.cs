@@ -73,15 +73,6 @@ namespace DVLD.People.Controls
             InitializeComponent();
         }
 
-        private void _FillcbFilterBy()
-        {
-            cbFilterBy.Items.Clear();
-            cbFilterBy.Items.Add("Person ID");
-            cbFilterBy.Items.Add("National No.");
-
-            cbFilterBy.SelectedIndex = 0;
-        }
-
         private bool _IsValidInput()
         {
             if (string.IsNullOrWhiteSpace(txtFilterValue.Text))
@@ -132,7 +123,7 @@ namespace DVLD.People.Controls
 
         private void DataBackEvent(object sender, int personID)
         {
-            cbFilterBy.SelectedItem = "ID";
+            cbFilterBy.SelectedIndex = 0;
             txtFilterValue.Text = personID.ToString();
             _FindNow();
         }
@@ -149,7 +140,6 @@ namespace DVLD.People.Controls
 
         private void ctrlPersonCardWithFilter_Load(object sender, EventArgs e)
         {
-            _FillcbFilterBy();
             txtFilterValue.Focus();
         }
 

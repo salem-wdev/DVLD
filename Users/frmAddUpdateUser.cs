@@ -38,7 +38,7 @@ namespace DVLD.Users
             txtUserName.Text = _User.UserName;
             chkIsActive.Checked = _User.IsActive;
             tcInfo.SelectedIndex = 1;
-            tpPesronInfo.Enabled = false;
+            tpPesronInfo.Enabled = true;
 
         }
 
@@ -47,6 +47,7 @@ namespace DVLD.Users
             _User.UserName = txtUserName.Text;
             _User.Password = txtConfirmPassword.Text;
             _User.IsActive = chkIsActive.Checked;
+            _User.PersonID = ctrlPersonCardWithFilter1.PersonID;
         }
 
         private void _Save()

@@ -23,3 +23,4 @@ C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.People.Forms.frmListPeople.resource
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.frmLogin.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.Users.frmUsersList.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.Users.frmAddUpdateUser.resources
+C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.exe.config
