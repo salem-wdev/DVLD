@@ -19,5 +19,7 @@ C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.pdb
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.ctrlPersonCard.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.People.Controls.ctrlPersonCardWithFilter.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.People.frmFindPerson.resources
-C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.exe.config
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.People.Forms.frmListPeople.resources
+C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.frmLogin.resources
+C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.Users.frmUsersList.resources
+C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.Users.frmAddUpdateUser.resources

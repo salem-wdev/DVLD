@@ -48,11 +48,9 @@
             this.btnAddNewPerson = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
             this.cmsPeople.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPeople
@@ -86,7 +84,7 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.cmsPeople.Name = "contextMenuStrip1";
-            this.cmsPeople.Size = new System.Drawing.Size(222, 266);
+            this.cmsPeople.Size = new System.Drawing.Size(222, 244);
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -226,7 +224,7 @@
             this.txtFilterBy.TabIndex = 1;
             this.txtFilterBy.Visible = false;
             this.txtFilterBy.TextChanged += new System.EventHandler(this.txtSearchBy_TextChanged);
-            this.txtFilterBy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchBy_KeyDown);
+            this.txtFilterBy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterBy_KeyPress);
             // 
             // btnAddNewPerson
             // 
@@ -244,11 +242,12 @@
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(1987, 1114);
+            this.btnClose.Location = new System.Drawing.Point(1369, 671);
             this.btnClose.Margin = new System.Windows.Forms.Padding(5);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(180, 63);
+            this.btnClose.Size = new System.Drawing.Size(132, 40);
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -264,10 +263,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // frmListPeople
             // 
@@ -296,7 +291,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
             this.cmsPeople.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,6 +317,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.TextBox txtFilterBy;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -36,12 +36,12 @@
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainImageList = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.currentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.sighnOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainImageList = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -113,24 +113,6 @@
             this.accountSettingsToolStripMenuItem.Text = "Account Settings";
             this.accountSettingsToolStripMenuItem.Click += new System.EventHandler(this.accountSettingsToolStripMenuItem_Click);
             // 
-            // mainImageList
-            // 
-            this.mainImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("mainImageList.ImageStream")));
-            this.mainImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.mainImageList.Images.SetKeyName(0, "public_document.png");
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.DVLD_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 80);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1236, 612);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // currentUserToolStripMenuItem
             // 
             this.currentUserToolStripMenuItem.Image = global::DVLD.Properties.Resources.PersonDetails_32;
@@ -153,7 +135,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(301, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(317, 6);
             // 
             // sighnOutToolStripMenuItem
             // 
@@ -164,6 +146,24 @@
             this.sighnOutToolStripMenuItem.Size = new System.Drawing.Size(320, 38);
             this.sighnOutToolStripMenuItem.Text = "Sign &Out";
             this.sighnOutToolStripMenuItem.Click += new System.EventHandler(this.sighnOutToolStripMenuItem_Click);
+            // 
+            // mainImageList
+            // 
+            this.mainImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("mainImageList.ImageStream")));
+            this.mainImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.mainImageList.Images.SetKeyName(0, "public_document.png");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.DVLD_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 80);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1236, 612);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // frmMain
             // 
@@ -178,6 +178,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

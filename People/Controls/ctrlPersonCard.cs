@@ -121,6 +121,7 @@ namespace DVLD
             lblCountry.Text = "[????]";
             lblAddress.Text = "[????]";
             pbPersonPhoto.Image = Resources.Male_512;
+            _Person = null;
 
         }
 

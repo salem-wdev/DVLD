@@ -18,6 +18,10 @@ namespace DVLD.People.Forms
             InitializeComponent();
 
         }
+
+        /////////////////////////////////////////////////////////////////////
+        // Data
+
         private static DataTable _dtAllPeople = clsPerson.GetAllPeople();
 
         //only select the columns that you want to show in the grid
@@ -27,6 +31,13 @@ namespace DVLD.People.Forms
                                                          "Phone", "Email");
 
         private static DataTable _dtCountries = clsCountry.GetAllCountries();
+
+        // Data
+        /////////////////////////////////////////////////////////////////////
+
+
+        /////////////////////////////////////////////////////////////////////
+        // Logic
 
         private void _RefreshdgvPeople()
         {
@@ -41,8 +52,8 @@ namespace DVLD.People.Forms
                                                        "FirstName", "SecondName", "ThirdName", "LastName",
                                                        "GendorCaption", "DateOfBirth", "CountryName",
                                                        "Phone", "Email");
-            _RefreshdgvPeople();
             _RefreshDefaultVeiw();
+            _RefreshdgvPeople();
         }
 
         private void _RefreshDefaultVeiw()
@@ -53,57 +64,60 @@ namespace DVLD.People.Forms
         private void _FillcbFilterBy()
         {
             cbFilterBy.Items.Add("None");
+            cbFilterBy.Items.Add("Person ID");
+            cbFilterBy.Items.Add("National No.");
+            cbFilterBy.Items.Add("First Name");
+            cbFilterBy.Items.Add("Second Name");
+            cbFilterBy.Items.Add("Third Name");
+            cbFilterBy.Items.Add("Last Name");
+            cbFilterBy.Items.Add("Gendor");
+            cbFilterBy.Items.Add("Date Of Birth");
+            cbFilterBy.Items.Add("Nationality");
+            cbFilterBy.Items.Add("Phone");
+            cbFilterBy.Items.Add("Email");
 
-            foreach (var item in _dtPeople.Columns)
-            {
-                cbFilterBy.Items.Add(item);
-            }
 
             cbFilterBy.DisplayMember = "ColumnName";
             cbFilterBy.SelectedIndex = 0;
 
         }
-        private bool _IsValidFilteringInput()
+
+        private void _Filtering(string SelectedColumn)
         {
-            if (string.IsNullOrEmpty(txtFilterBy.Text))
+            string Column = SelectedColumn;
+
+            if(!string.IsNullOrWhiteSpace(txtFilterBy.Text))
             {
-                errorProvider1.SetError(txtFilterBy, "Please enter a value to search.");
-                return false;
+                if (cbFilterBy.SelectedItem.ToString() == "Person ID")
+                {
+
+                    _dtPeople.DefaultView.RowFilter = $"PersonID = {Convert.ToInt32(txtFilterBy.Text)}";
+                    lblRecords.Text = dgvPeople.Rows.Count.ToString();
+                    return;
+                }
+
+                if (cbFilterBy.SelectedItem.ToString() == "National No.")
+                {
+                    _dtPeople.DefaultView.RowFilter = $"NationalNo LIKE '{txtFilterBy.Text}%'";
+                    lblRecords.Text = dgvPeople.Rows.Count.ToString();
+                    return;
+                }
+                string input = txtFilterBy.Text.Trim();
+
+                _dtPeople.DefaultView.RowFilter = string.Format($"Convert({SelectedColumn}, 'System.String') LIKE '%{input}%'");
+                lblRecords.Text = dgvPeople.Rows.Count.ToString();
             }
             else
             {
-                errorProvider1.SetError(txtFilterBy, string.Empty); // Clear previous errors
-                return true;
+                _dtPeople.DefaultView.RowFilter = string.Empty; // Clear the filter when the search box is empty
+                _RefreshDefaultVeiw();
+                _RefreshdgvPeople();
             }
         }
-        private void _Filtering()
-        {
-            if(_IsValidFilteringInput())
-            {
-                if (cbFilterBy.SelectedItem.ToString() == "PersonID")
-                {
-                    if (!int.TryParse(txtFilterBy.Text, out _))
-                    {
-                        errorProvider1.SetError(txtFilterBy, "Please enter a valid integer for PersonID.");
-                        return;
-                    }
-                    else
-                    {
-                        _dtPeople.DefaultView.RowFilter = $"{cbFilterBy.SelectedItem} = {Convert.ToInt32(txtFilterBy.Text)}";
-                    }
-                    return;
-                }
-                else if (cbFilterBy.SelectedItem.ToString() == "DateOfBirth")
-                {
-                    string input = txtFilterBy.Text.Trim();
 
-                    _dtPeople.DefaultView.RowFilter = string.Format("Convert([DateOfBirth], 'System.String') LIKE '%{0}%'", input);
-                    return;
-                }
+        // Logic
+        /////////////////////////////////////////////////////////////////////
 
-                _dtPeople.DefaultView.RowFilter = $"{cbFilterBy.SelectedItem} LIKE '%{txtFilterBy.Text}%'";
-            }
-        }
 
         private void frmShowAllPeople_Load(object sender, EventArgs e)
         {
@@ -154,6 +168,17 @@ namespace DVLD.People.Forms
 
         }
 
+        /////////////////////////////////////////////////////////////////////
+        // ToolStripMenuItem
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int PersonID = int.Parse(dgvPeople.CurrentRow.Cells[0].Value.ToString());
+
+            frmShowPersonInfo frm = new frmShowPersonInfo(PersonID);
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson();
@@ -193,14 +218,21 @@ namespace DVLD.People.Forms
             }
         }
 
-        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int PersonID = int.Parse(dgvPeople.CurrentRow.Cells[0].Value.ToString());
-
-            frmShowPersonInfo frm = new frmShowPersonInfo(PersonID);
-            frm.ShowDialog();
-            frm.Dispose();
+            MessageBox.Show("This feature is not implemented yet.", "Not Implemented", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not implemented yet.", "Not Implemented", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // ToolStripMenuItem
+        /////////////////////////////////////////////////////////////////////
+
+        /////////////////////////////////////////////////////////////////////
+        // Buttons
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -217,30 +249,56 @@ namespace DVLD.People.Forms
 
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            _Filtering();
-        }
+        // Buttons
+        /////////////////////////////////////////////////////////////////////
+
+        /////////////////////////////////////////////////////////////////////
+        // Miscellaneous
 
         private void txtSearchBy_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtFilterBy.Text))
-            {
-                _dtPeople.DefaultView.RowFilter = string.Empty; // Clear the filter when the search box is empty
-            }
-            else
-            {
-                _Filtering();
-            }
-        }
+            string SelectedColumn = cbFilterBy.Text.Trim();
 
-        private void txtSearchBy_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
+            switch(SelectedColumn)
             {
-                _Filtering();
-                e.Handled = true; // Prevent the default behavior of the Enter key
+                case "Person ID":
+                    SelectedColumn = "PersonID";
+                    break;
+                case "National No.":
+                    SelectedColumn = "NationalNo";
+                    break;
+                case "First Name":
+                    SelectedColumn = "FirstName";
+                    break;
+                case "Second Name":
+                    SelectedColumn = "SecondName";
+                    break;
+                case "Third Name":
+                    SelectedColumn = "ThirdName";
+                    break;
+                case "Last Name":
+                    SelectedColumn = "LastName";
+                    break;
+                case "Gendor":
+                    SelectedColumn = "GendorCaption";
+                    break;
+                case "Date Of Birth":
+                    SelectedColumn = "DateOfBirth";
+                    break;
+                case "Nationality":
+                    SelectedColumn = "CountruName";
+                    break;
+                case "Phone":
+                    SelectedColumn = "Phone";
+                    break;
+                case "Email":
+                    SelectedColumn = "Email";
+                    break;
             }
+
+
+            _Filtering(SelectedColumn);
+            
         }
 
         private void dgvPeople_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -260,22 +318,15 @@ namespace DVLD.People.Forms
             }
         }
 
-        private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This feature is not implemented yet.", "Not Implemented", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This feature is not implemented yet.", "Not Implemented", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbFilterBy.SelectedItem.ToString() == "None" || cbFilterBy.SelectedItem == null)
+            txtFilterBy.Visible = cbFilterBy.SelectedItem.ToString() != "None";
+
+
+            if (!txtFilterBy.Visible)
             {
                 txtFilterBy.Text = string.Empty;
-                txtFilterBy.Visible = false;
 
                 _RefreshDefaultVeiw();
 
@@ -286,5 +337,30 @@ namespace DVLD.People.Forms
             txtFilterBy.Visible = true;
 
         }
+
+        private void txtFilterBy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //this will allow only digits if person id is selected
+            if (cbFilterBy.Text == "Person ID")
+            {
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+                return;
+            }
+
+            if (cbFilterBy.Text == "Date Of Birth")
+            {
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '/';
+                return;
+            }
+
+            //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+
+
+        }
+
+        // Miscellaneous
+        /////////////////////////////////////////////////////////////////////
+
+
     }
 }
