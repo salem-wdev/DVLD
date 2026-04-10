@@ -482,3 +482,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+ .vs/DVLD/v17/.suo
+obj/Debug/DVLD.csproj.AssemblyReference.cache
