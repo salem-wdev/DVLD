@@ -145,6 +145,7 @@ namespace DVLD.Users
             if (_Mode == enMode.AddNew && _IsPersonUser())
             {
                 MessageBox.Show("Person already is a User", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnNext.Enabled = false;
                 return;
             }
 
@@ -188,6 +189,7 @@ namespace DVLD.Users
             if (txtPassword.Text != txtConfirmPassword.Text)
             {
                 MessageBox.Show("Password and Confirm Password must match.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnSave.Enabled = false;
                 return;
             }
 
@@ -195,6 +197,7 @@ namespace DVLD.Users
             if (_Mode == enMode.AddNew && _IsPersonUser())
             {
                 MessageBox.Show("Person already is a User", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = false;
                 return;
             }
 
