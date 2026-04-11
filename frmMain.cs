@@ -36,12 +36,14 @@ namespace DVLD
 
         private void currentUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This feature is not implemented yet.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            frmShowUserInfo frm = new frmShowUserInfo(clsGlobal.CurrentUser.UserID);
+            frm.ShowDialog();
         }
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This feature is not implemented yet.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frmChangePassword frm = new frmChangePassword(clsGlobal.CurrentUser.UserID);
+            frm.ShowDialog();
         }
 
         private void sighnOutToolStripMenuItem_Click(object sender, EventArgs e)
