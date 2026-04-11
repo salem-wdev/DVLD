@@ -109,11 +109,23 @@
     <Compile Include="test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\Controls\ctrlUserCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\Controls\ctrlUserCard.Designer.cs">
+      <DependentUpon>ctrlUserCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\frmAddUpdateUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Users\frmAddUpdateUser.Designer.cs">
       <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmShowUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmShowUserInfo.Designer.cs">
+      <DependentUpon>frmShowUserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\frmUsersList.cs">
       <SubType>Form</SubType>
@@ -158,8 +170,14 @@
     <EmbeddedResource Include="test.resx">
       <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Users\Controls\ctrlUserCard.resx">
+      <DependentUpon>ctrlUserCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\frmAddUpdateUser.resx">
       <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmShowUserInfo.resx">
+      <DependentUpon>frmShowUserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\frmUsersList.resx">
       <DependentUpon>frmUsersList.cs</DependentUpon>
@@ -177,9 +195,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Users\Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\account_settings 64.png" />
   </ItemGroup>

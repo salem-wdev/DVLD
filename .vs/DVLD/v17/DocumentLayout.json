@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Hp\\source\\repos\\DVLD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\controls\\ctrlpersoncardwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\controls\\ctrlpersoncardwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmuserslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmuserslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmaddupdateuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmaddupdateuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmaddupdateuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmaddupdateuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\users\\frmuserslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmuserslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmuserslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\people\\controls\\ctrlpersoncardwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:people\\controls\\ctrlpersoncardwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmshowuserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmshowuserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmuserslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmuserslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmshowuserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmshowuserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,78 +54,78 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ctrlPersonCardWithFilter.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "RelativeDocumentMoniker": "People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlPersonCardWithFilter.cs [Design]*",
-              "RelativeToolTip": "People\\Controls\\ctrlPersonCardWithFilter.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T06:32:44.947Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ctrlPersonCardWithFilter.cs",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "RelativeDocumentMoniker": "People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\People\\Controls\\ctrlPersonCardWithFilter.cs*",
-              "RelativeToolTip": "People\\Controls\\ctrlPersonCardWithFilter.cs*",
-              "ViewState": "AgIAAHYAAAAAAAAAAAA7wI4AAAApAAAAAAAAAA==",
+              "Title": "frmUsersList.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs",
+              "RelativeDocumentMoniker": "Users\\frmUsersList.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs*",
+              "RelativeToolTip": "Users\\frmUsersList.cs*",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAYwLEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T06:16:03.852Z",
+              "WhenOpened": "2026-04-11T07:30:13.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmAddUpdateUser.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmAddUpdateUser.cs",
-              "RelativeDocumentMoniker": "Users\\frmAddUpdateUser.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmAddUpdateUser.cs [Design]",
-              "RelativeToolTip": "Users\\frmAddUpdateUser.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "frmUsersList.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs",
+              "RelativeDocumentMoniker": "Users\\frmUsersList.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs [Design]*",
+              "RelativeToolTip": "Users\\frmUsersList.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T06:18:49.567Z",
+              "WhenOpened": "2026-04-11T07:30:07.262Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmShowUserInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmShowUserInfo.cs",
+              "RelativeDocumentMoniker": "Users\\frmShowUserInfo.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmShowUserInfo.cs",
+              "RelativeToolTip": "Users\\frmShowUserInfo.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAYwBEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T07:29:39.607Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "frmUsersList.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs",
-              "RelativeDocumentMoniker": "Users\\frmUsersList.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs [Design]",
-              "RelativeToolTip": "Users\\frmUsersList.cs [Design]",
+              "Title": "frmShowUserInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmShowUserInfo.cs",
+              "RelativeDocumentMoniker": "Users\\frmShowUserInfo.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmShowUserInfo.cs [Design]",
+              "RelativeToolTip": "Users\\frmShowUserInfo.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T10:35:09.904Z",
+              "WhenOpened": "2026-04-11T07:28:18.638Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmAddUpdateUser.cs",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmAddUpdateUser.cs",
-              "RelativeDocumentMoniker": "Users\\frmAddUpdateUser.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmAddUpdateUser.cs",
-              "RelativeToolTip": "Users\\frmAddUpdateUser.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAgwJkAAAA+AAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "ctrlUserCard.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\Controls\\ctrlUserCard.cs",
+              "RelativeDocumentMoniker": "Users\\Controls\\ctrlUserCard.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\Controls\\ctrlUserCard.cs",
+              "RelativeToolTip": "Users\\Controls\\ctrlUserCard.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA2wB0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T06:04:32.123Z",
+              "WhenOpened": "2026-04-11T07:24:57.983Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "frmUsersList.cs",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs",
-              "RelativeDocumentMoniker": "Users\\frmUsersList.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs",
-              "RelativeToolTip": "Users\\frmUsersList.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAwwOAAAABcAAAAAAAAAA==",
+              "Title": "ctrlUserCard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\Controls\\ctrlUserCard.cs",
+              "RelativeDocumentMoniker": "Users\\Controls\\ctrlUserCard.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\Controls\\ctrlUserCard.cs [Design]",
+              "RelativeToolTip": "Users\\Controls\\ctrlUserCard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T10:20:30.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-11T07:18:25.772Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
