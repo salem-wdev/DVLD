@@ -174,7 +174,8 @@ namespace DVLD.Users
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This feature not emplented yet", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frmShowUserInfo frm = new frmShowUserInfo((int)dgvUsers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
         }
 
         private void AddNewUsertoolStripMenuItem_Click(object sender, EventArgs e)
@@ -209,7 +210,8 @@ namespace DVLD.Users
 
         private void ChangePasswordtoolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This feature is not emplemnted yet", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frmChangePassword frm = new frmChangePassword((int)dgvUsers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
         }
 
         private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
