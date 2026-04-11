@@ -1,4 +1,6 @@
-﻿using DVLD.People.Controls;
+﻿using DVLD.Global_Classes;
+using DVLD.People.Controls;
+using DVLD_Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,13 +65,19 @@ namespace DVLD.Users
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (clsUser.FindByUsernameAndPassword(clsGlobal.CurrentUser.UserName, txtCurrentPassword.Text) == null)
+            {
+                MessageBox.Show("Current password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!_IsPasswordReadyToSave())
             {
                 MessageBox.Show("Please fill in all fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if(txtCurrentPassword.Text != ctrlUserCard1.User.Password)
+            if(txtNewPassword.Text != txtConfirmPassword.Text)
             {
                 MessageBox.Show("Password is not matching.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
