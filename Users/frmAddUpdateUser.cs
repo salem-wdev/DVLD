@@ -127,6 +127,10 @@ namespace DVLD.Users
                 btnSave.Enabled = false;
                 return;
             }
+            else
+            {
+                btnNext.Enabled = true;
+            }
 
             btnNext.Enabled = ctrlPersonCardWithFilter1.PersonID > 0;
 
@@ -156,6 +160,7 @@ namespace DVLD.Users
                 btnNext.Enabled = false;
                 return;
             }
+
 
             tcInfo.SelectedIndex = tcInfo.SelectedIndex + 1;
         }
