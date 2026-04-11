@@ -26,3 +26,4 @@ C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.Users.frmAddUpdateUser.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.exe.config
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.Users.Controls.ctrlUserCard.resources
 C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.Users.frmShowUserInfo.resources
+C:\Users\Hp\source\repos\DVLD\obj\Debug\DVLD.Users.frmChangePassword.resources

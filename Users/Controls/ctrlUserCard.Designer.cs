@@ -61,6 +61,7 @@
             this.gbUserInfo.TabIndex = 1;
             this.gbUserInfo.TabStop = false;
             this.gbUserInfo.Text = "Login Information";
+            this.gbUserInfo.Enter += new System.EventHandler(this.gbUserInfo_Enter);
             // 
             // lblIsActive
             // 

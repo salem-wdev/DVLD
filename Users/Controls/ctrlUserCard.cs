@@ -18,7 +18,7 @@ namespace DVLD.Users.Controls
             InitializeComponent();
         }
 
-        clsUser User;
+        public clsUser User;
 
         public void LoadUserInfo(int UserID)
         {
@@ -32,6 +32,11 @@ namespace DVLD.Users.Controls
         }
 
         private void ctrlUserCard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbUserInfo_Enter(object sender, EventArgs e)
         {
 
         }

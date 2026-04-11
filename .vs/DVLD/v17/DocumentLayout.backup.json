@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Hp\\source\\repos\\DVLD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmshowuserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmshowuserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmshowuserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmshowuserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,52 +46,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmShowUserInfo.cs",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmShowUserInfo.cs",
-              "RelativeDocumentMoniker": "Users\\frmShowUserInfo.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmShowUserInfo.cs*",
-              "RelativeToolTip": "Users\\frmShowUserInfo.cs*",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAYwBEAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ctrlUserCard.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\Controls\\ctrlUserCard.cs",
+              "RelativeDocumentMoniker": "Users\\Controls\\ctrlUserCard.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\Controls\\ctrlUserCard.cs*",
+              "RelativeToolTip": "Users\\Controls\\ctrlUserCard.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAmwBMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T07:29:39.607Z",
+              "WhenOpened": "2026-04-11T07:36:31.67Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmShowUserInfo.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmShowUserInfo.cs",
-              "RelativeDocumentMoniker": "Users\\frmShowUserInfo.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmShowUserInfo.cs [Design]*",
-              "RelativeToolTip": "Users\\frmShowUserInfo.cs [Design]*",
+              "DocumentIndex": 0,
+              "Title": "ctrlUserCard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\Controls\\ctrlUserCard.cs",
+              "RelativeDocumentMoniker": "Users\\Controls\\ctrlUserCard.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\Controls\\ctrlUserCard.cs [Design]*",
+              "RelativeToolTip": "Users\\Controls\\ctrlUserCard.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T07:28:18.638Z",
+              "WhenOpened": "2026-04-11T07:36:28.693Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ctrlUserCard.cs",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\Controls\\ctrlUserCard.cs",
-              "RelativeDocumentMoniker": "Users\\Controls\\ctrlUserCard.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\Controls\\ctrlUserCard.cs",
-              "RelativeToolTip": "Users\\Controls\\ctrlUserCard.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA2wB0AAAAgAAAAAAAAAA==",
+              "Title": "frmChangePassword.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmChangePassword.cs",
+              "RelativeDocumentMoniker": "Users\\frmChangePassword.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmChangePassword.cs*",
+              "RelativeToolTip": "Users\\frmChangePassword.cs*",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAYwBEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T07:24:57.983Z",
+              "WhenOpened": "2026-04-11T07:35:36.616Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ctrlUserCard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\Controls\\ctrlUserCard.cs",
-              "RelativeDocumentMoniker": "Users\\Controls\\ctrlUserCard.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\Controls\\ctrlUserCard.cs [Design]",
-              "RelativeToolTip": "Users\\Controls\\ctrlUserCard.cs [Design]",
+              "Title": "frmChangePassword.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmChangePassword.cs",
+              "RelativeDocumentMoniker": "Users\\frmChangePassword.cs",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmChangePassword.cs [Design]*",
+              "RelativeToolTip": "Users\\frmChangePassword.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T07:18:25.772Z",
+              "WhenOpened": "2026-04-11T07:34:55.627Z",
               "EditorCaption": " [Design]"
             }
           ]
