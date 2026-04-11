@@ -95,7 +95,7 @@ namespace DVLD.People.Controls
 
         private void _FindNow()
         {
-            switch (cbFilterBy.Text)
+            switch (cbFilterBy.SelectedItem.ToString())
             {
                 case "Person ID":
                     ctrlPersonCard1.LoadData(int.Parse(txtFilterValue.Text.ToString()));
