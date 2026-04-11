@@ -140,6 +140,7 @@ namespace DVLD.People.Controls
 
         private void ctrlPersonCardWithFilter_Load(object sender, EventArgs e)
         {
+            cbFilterBy.SelectedIndex = 0;
             txtFilterValue.Focus();
         }
 
