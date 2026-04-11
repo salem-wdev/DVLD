@@ -38,7 +38,7 @@ namespace DVLD.Users
                 return false;
             }
 
-            if (txtNewPassword.Text == string.Empty)
+            if (txtConfirmPassword.Text == string.Empty)
             {
                 return false;
             }
@@ -65,13 +65,13 @@ namespace DVLD.Users
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (clsUser.FindByUsernameAndPassword(clsGlobal.CurrentUser.UserName, txtCurrentPassword.Text) == null)
+            if (ctrlUserCard1.User.Password != txtCurrentPassword.Text)
             {
                 MessageBox.Show("Current password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!_IsPasswordReadyToSave())
+            if (!this.ValidateChildren())
             {
                 MessageBox.Show("Please fill in all fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -97,11 +97,40 @@ namespace DVLD.Users
 
         private void txtCurrentPassword_Validated(object sender, EventArgs e)
         {
+            
+        }
+
+        private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
+        {
             TextBox text = sender as TextBox;
 
-            if(text.Text == string.Empty)
+            if (ctrlUserCard1.User.Password != txtCurrentPassword.Text)
+            {
+                errorProvider1.SetError(text, $"{text.Tag} is incorrect.");
+                return;
+            }
+
+            if (text.Text == string.Empty)
             {
                 errorProvider1.SetError(text, $"{text.Tag} is required.");
+            }
+            else
+            {
+                errorProvider1.SetError(text, string.Empty);
+            }
+        }
+
+        private void txtPassword_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox text = sender as TextBox;
+
+            if (text.Text == string.Empty)
+            {
+                errorProvider1.SetError(text, $"{text.Tag} is required.");
+            }
+            else
+            {
+                errorProvider1.SetError(text, string.Empty);
             }
         }
     }

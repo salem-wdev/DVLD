@@ -78,6 +78,7 @@
             this.txtCurrentPassword.TabIndex = 138;
             this.txtCurrentPassword.Tag = "Current Password";
             this.txtCurrentPassword.TextChanged += new System.EventHandler(this.Password_TextChanged);
+            this.txtCurrentPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtCurrentPassword_Validating);
             this.txtCurrentPassword.Validated += new System.EventHandler(this.txtCurrentPassword_Validated);
             // 
             // pictureBox2
@@ -133,6 +134,7 @@
             this.txtConfirmPassword.TabIndex = 140;
             this.txtConfirmPassword.Tag = "Confirm Password";
             this.txtConfirmPassword.TextChanged += new System.EventHandler(this.Password_TextChanged);
+            this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // label3
             // 
@@ -168,6 +170,7 @@
             this.txtNewPassword.TabIndex = 139;
             this.txtNewPassword.Tag = "New Password";
             this.txtNewPassword.TextChanged += new System.EventHandler(this.Password_TextChanged);
+            this.txtNewPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // pictureBox1
             // 
