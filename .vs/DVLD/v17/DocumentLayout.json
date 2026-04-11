@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Hp\\source\\repos\\DVLD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\users\\frmuserslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmaddupdateuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmaddupdateuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmuserslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmuserslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|C:\\Users\\Hp\\source\\repos\\DVLD\\users\\frmuserslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmuserslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmaddupdateuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmaddupdateuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmaddupdateuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmaddupdateuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,50 +42,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "frmAddUpdateUser.cs",
               "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmAddUpdateUser.cs",
               "RelativeDocumentMoniker": "Users\\frmAddUpdateUser.cs",
               "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmAddUpdateUser.cs",
               "RelativeToolTip": "Users\\frmAddUpdateUser.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAmwLYAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAAAFIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T12:03:18.338Z",
+              "WhenOpened": "2026-04-11T06:04:32.123Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmAddUpdateUser.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmAddUpdateUser.cs",
-              "RelativeDocumentMoniker": "Users\\frmAddUpdateUser.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmAddUpdateUser.cs [Design]",
-              "RelativeToolTip": "Users\\frmAddUpdateUser.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T11:56:31.725Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "frmUsersList.cs",
               "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs",
               "RelativeDocumentMoniker": "Users\\frmUsersList.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs*",
-              "RelativeToolTip": "Users\\frmUsersList.cs*",
-              "ViewState": "AgIAALoAAAAAAAAAAAA0wM4AAAAgAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs",
+              "RelativeToolTip": "Users\\frmUsersList.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAwwOAAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T10:20:30.905Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "frmUsersList.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs",
               "RelativeDocumentMoniker": "Users\\frmUsersList.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs [Design]*",
-              "RelativeToolTip": "Users\\frmUsersList.cs [Design]*",
+              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmUsersList.cs [Design]",
+              "RelativeToolTip": "Users\\frmUsersList.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-09T10:35:09.904Z",
               "EditorCaption": " [Design]"

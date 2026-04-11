@@ -67,6 +67,7 @@
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsers.Size = new System.Drawing.Size(864, 353);
             this.dgvUsers.TabIndex = 3;
+            this.dgvUsers.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsers_CellMouseDown);
             // 
             // cmsUsers
             // 
@@ -81,7 +82,7 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.cmsUsers.Name = "contextMenuStrip1";
-            this.cmsUsers.Size = new System.Drawing.Size(197, 304);
+            this.cmsUsers.Size = new System.Drawing.Size(185, 282);
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -131,6 +132,7 @@
             this.ChangePasswordtoolStripMenuItem.Name = "ChangePasswordtoolStripMenuItem";
             this.ChangePasswordtoolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.ChangePasswordtoolStripMenuItem.Text = "Change &Password";
+            this.ChangePasswordtoolStripMenuItem.Click += new System.EventHandler(this.ChangePasswordtoolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -144,6 +146,7 @@
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
             this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.sendEmailToolStripMenuItem.Text = "Send E&mail";
+            this.sendEmailToolStripMenuItem.Click += new System.EventHandler(this.sendEmailToolStripMenuItem_Click);
             // 
             // phoneCallToolStripMenuItem
             // 
@@ -152,6 +155,7 @@
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
             this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.phoneCallToolStripMenuItem.Text = "Phone &Call";
+            this.phoneCallToolStripMenuItem.Click += new System.EventHandler(this.phoneCallToolStripMenuItem_Click);
             // 
             // label1
             // 

@@ -32,11 +32,12 @@ namespace DVLD.Users
             InitializeComponent();
             _Mode = enMode.Update;
             if ((_User = clsUser.Find(UserID)) != null)
-            {
+            { 
                 ctrlPersonCardWithFilter1.LoadPersonInfo(_User.PersonID);
-            }      
-            txtUserName.Text = _User.UserName;
-            chkIsActive.Checked = _User.IsActive;
+                txtUserName.Text = _User.UserName;
+                chkIsActive.Checked = _User.IsActive;
+            }
+
             tcInfo.SelectedIndex = 1;
             tpPesronInfo.Enabled = true;
 
@@ -45,7 +46,7 @@ namespace DVLD.Users
         private void _FillUserWithData()
         {
             _User.UserName = txtUserName.Text;
-            _User.Password = txtConfirmPassword.Text;
+            _User.Password = txtPassword.Text;
             _User.IsActive = chkIsActive.Checked;
             _User.PersonID = ctrlPersonCardWithFilter1.PersonID;
         }
@@ -140,7 +141,8 @@ namespace DVLD.Users
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (_IsPersonUser())
+            // check is person is a user if mode is add new
+            if (_Mode == enMode.AddNew && _IsPersonUser())
             {
                 MessageBox.Show("Person already is a User", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -176,19 +178,21 @@ namespace DVLD.Users
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (_IsPersonUser())
-            {
-                MessageBox.Show("Person already is a User", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            //if (_IsPersonUser())
+            //{
+            //    MessageBox.Show("Person already is a User", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
 
+            // check if password and confirm password match
             if (txtPassword.Text != txtConfirmPassword.Text)
             {
                 MessageBox.Show("Password and Confirm Password must match.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (_Mode == enMode.AddNew &&_IsPersonUser())
+            // check is person is a user if mode is add new
+            if (_Mode == enMode.AddNew && _IsPersonUser())
             {
                 MessageBox.Show("Person already is a User", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
