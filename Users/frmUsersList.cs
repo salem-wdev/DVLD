@@ -174,7 +174,7 @@ namespace DVLD.Users
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This feature not emplented yet", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("This feature not emplented yet", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void AddNewUsertoolStripMenuItem_Click(object sender, EventArgs e)
@@ -205,6 +205,38 @@ namespace DVLD.Users
                 }
             }
             _RefreshUsersList();
+        }
+
+        private void ChangePasswordtoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not emplemnted yet", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not emplemnted yet", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not emplemnted yet", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dgvUsers_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && e.RowIndex >= 0)
+            {
+                dgvUsers.ClearSelection();
+                dgvUsers.Rows[e.RowIndex].Selected = true;
+                dgvUsers.CurrentCell = dgvUsers.Rows[e.RowIndex].Cells[0];
+            }
+
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+            {
+                dgvUsers.ClearSelection();
+                dgvUsers.Rows[e.RowIndex].Selected = true;
+                dgvUsers.CurrentCell = dgvUsers.Rows[e.RowIndex].Cells[0];
+            }
         }
     }
 }
