@@ -120,6 +120,14 @@ namespace DVLD.Users
         private void CtrlPersonCardWithFilter1_OnPersonSelected(int PersonID)
         {
 
+            if (_Mode == enMode.AddNew && _IsPersonUser())
+            {
+                MessageBox.Show("Person already is a User", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnNext.Enabled = false;
+                btnSave.Enabled = false;
+                return;
+            }
+
             btnNext.Enabled = ctrlPersonCardWithFilter1.PersonID > 0;
 
             if (!_IsPersonUser())
