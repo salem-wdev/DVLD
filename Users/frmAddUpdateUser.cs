@@ -40,6 +40,7 @@ namespace DVLD.Users
 
             tcInfo.SelectedIndex = 1;
             tpPesronInfo.Enabled = true;
+            btnNext.Enabled = true;
 
         }
 
@@ -108,7 +109,6 @@ namespace DVLD.Users
         private void frmAddUpdateUser_Load(object sender, EventArgs e)
         {
             ctrlPersonCardWithFilter1.OnPersonSelected += CtrlPersonCardWithFilter1_OnPersonSelected;
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
