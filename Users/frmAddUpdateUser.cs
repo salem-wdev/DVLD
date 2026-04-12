@@ -44,6 +44,13 @@ namespace DVLD.Users
 
         }
 
+        private void _ResetValuse()
+        {
+            txtConfirmPassword.Text = string.Empty;
+            txtPassword.Text = string.Empty;
+            txtUserName.Text = string.Empty;
+        }
+
         private void _FillUserWithData()
         {
             _User.UserName = txtUserName.Text;
@@ -61,6 +68,7 @@ namespace DVLD.Users
             {
                 _Mode = enMode.Update;
                 MessageBox.Show("Saved sauccessfuly", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ResetValuse();
             }
             else
             {
