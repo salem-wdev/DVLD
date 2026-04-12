@@ -88,6 +88,7 @@ namespace DVLD.Users
             if (ctrlUserCard1.User.Save())
             {
                 MessageBox.Show("Password changed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else
             {
