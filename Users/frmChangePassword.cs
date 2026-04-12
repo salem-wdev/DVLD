@@ -95,16 +95,11 @@ namespace DVLD.Users
             }
         }
 
-        private void txtCurrentPassword_Validated(object sender, EventArgs e)
-        {
-            
-        }
-
         private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
         {
             TextBox text = sender as TextBox;
 
-            if (ctrlUserCard1.User.Password != txtCurrentPassword.Text)
+            if (clsGlobal.CurrentUser.Password != txtCurrentPassword.Text)
             {
                 errorProvider1.SetError(text, $"{text.Tag} is incorrect.");
                 return;

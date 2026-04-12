@@ -79,7 +79,6 @@
             this.txtCurrentPassword.Tag = "Current Password";
             this.txtCurrentPassword.TextChanged += new System.EventHandler(this.Password_TextChanged);
             this.txtCurrentPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtCurrentPassword_Validating);
-            this.txtCurrentPassword.Validated += new System.EventHandler(this.txtCurrentPassword_Validated);
             // 
             // pictureBox2
             // 
