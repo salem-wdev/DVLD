@@ -40,11 +40,12 @@ namespace DVLD.Users
 
             tcInfo.SelectedIndex = 1;
             tpPesronInfo.Enabled = true;
-            btnNext.Enabled = true;
+            ctrlPersonCardWithFilter1.gbFilters.Enabled = false;
+            btnNext.Enabled = false;
 
         }
 
-        private void _ResetValuse()
+        private void _ResetValues()
         {
             txtConfirmPassword.Text = string.Empty;
             txtPassword.Text = string.Empty;
@@ -68,7 +69,7 @@ namespace DVLD.Users
             {
                 _Mode = enMode.Update;
                 MessageBox.Show("Saved sauccessfuly", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _ResetValuse();
+                _ResetValues();
             }
             else
             {
