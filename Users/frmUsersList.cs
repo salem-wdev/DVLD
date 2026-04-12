@@ -1,4 +1,5 @@
-﻿using DVLD_Business;
+﻿using DVLD.Global_Classes;
+using DVLD_Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -187,6 +188,12 @@ namespace DVLD.Users
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if ((int)dgvUsers.CurrentRow.Cells[0].Value == clsGlobal.CurrentUser.UserID)
+            {
+                MessageBox.Show("You can't edit your own account from here, please go to account settings or change password to edit your account", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             frmAddUpdateUser frm = new frmAddUpdateUser((int)dgvUsers.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
             _RefreshUsersList();
