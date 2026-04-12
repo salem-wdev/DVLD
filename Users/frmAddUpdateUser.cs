@@ -57,7 +57,11 @@ namespace DVLD.Users
             _User.UserName = txtUserName.Text;
             _User.Password = txtPassword.Text;
             _User.IsActive = chkIsActive.Checked;
-            _User.PersonID = ctrlPersonCardWithFilter1.PersonID;
+            if (_User.Mode == clsUser.enMode.AddNew)
+            {
+                _User.PersonID = ctrlPersonCardWithFilter1.PersonID;
+            }
+            
         }
 
         private void _Save()
