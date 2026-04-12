@@ -42,6 +42,7 @@ namespace DVLD.Users
             tpPesronInfo.Enabled = true;
             ctrlPersonCardWithFilter1.gbFilters.Enabled = false;
             btnNext.Enabled = false;
+            txtUserName.Enabled = false;
 
         }
 
@@ -49,7 +50,6 @@ namespace DVLD.Users
         {
             txtConfirmPassword.Text = string.Empty;
             txtPassword.Text = string.Empty;
-            txtUserName.Text = string.Empty;
         }
 
         private void _FillUserWithData()
@@ -228,6 +228,8 @@ namespace DVLD.Users
             }
 
             _Save();
+
+            txtPassword.Focus();
 
         }
     }
