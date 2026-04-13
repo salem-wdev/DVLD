@@ -40,8 +40,16 @@ namespace DVLD.Users
 
             tcInfo.SelectedIndex = 1;
             tpPesronInfo.Enabled = true;
-            btnNext.Enabled = true;
+            ctrlPersonCardWithFilter1.gbFilters.Enabled = false;
+            btnNext.Enabled = false;
+            txtUserName.Enabled = false;
 
+        }
+
+        private void _ResetValues()
+        {
+            txtConfirmPassword.Text = string.Empty;
+            txtPassword.Text = string.Empty;
         }
 
         private void _FillUserWithData()
@@ -49,7 +57,11 @@ namespace DVLD.Users
             _User.UserName = txtUserName.Text;
             _User.Password = txtPassword.Text;
             _User.IsActive = chkIsActive.Checked;
-            _User.PersonID = ctrlPersonCardWithFilter1.PersonID;
+            if (_User.Mode == clsUser.enMode.AddNew)
+            {
+                _User.PersonID = ctrlPersonCardWithFilter1.PersonID;
+            }
+            
         }
 
         private void _Save()
@@ -61,6 +73,7 @@ namespace DVLD.Users
             {
                 _Mode = enMode.Update;
                 MessageBox.Show("Saved sauccessfuly", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ResetValues();
             }
             else
             {
@@ -215,6 +228,8 @@ namespace DVLD.Users
             }
 
             _Save();
+
+            txtPassword.Focus();
 
         }
     }

@@ -147,7 +147,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox gbFilters;
         private System.Windows.Forms.Button btnAddNewPerson;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.ComboBox cbFilterBy;
@@ -155,5 +154,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         public ctrlPersonCard ctrlPersonCard1;
+        public System.Windows.Forms.GroupBox gbFilters;
     }
 }
