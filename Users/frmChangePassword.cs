@@ -85,7 +85,7 @@ namespace DVLD.Users
 
             ctrlUserCard1.User.Password = txtNewPassword.Text;
 
-            if (ctrlUserCard1.User.Save())
+            if (clsUser.ChangePassword(ctrlUserCard1.User.UserID, txtNewPassword.Text))
             {
                 MessageBox.Show("Password changed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
