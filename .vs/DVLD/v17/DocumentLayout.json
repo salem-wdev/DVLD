@@ -7,14 +7,10 @@
       "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|c:\\users\\hp\\source\\repos\\dvld\\users\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AD98DD2C-B2C0-4C99-BD7F-DF12C687EF62}|DVLD.csproj|solutionrelative:users\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{695DCEDE-5C5D-4237-99D7-51D252D6D8A8}|..\\DVLD_DataAccess\\DVLD_DataAccess.csproj|c:\\users\\hp\\source\\repos\\dvld_dataaccess\\clsuserdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45BFF457-AD05-4A4C-8155-00D5C523C0F1}|..\\DVLD_Business\\DVLD_Business.csproj|c:\\users\\hp\\source\\repos\\dvld_business\\clsuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{695DCEDE-5C5D-4237-99D7-51D252D6D8A8}|..\\DVLD_DataAccess\\DVLD_DataAccess.csproj|c:\\users\\hp\\source\\repos\\dvld_dataaccess\\clsuserdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,22 +46,10 @@
               "RelativeDocumentMoniker": "Users\\frmChangePassword.cs",
               "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmChangePassword.cs*",
               "RelativeToolTip": "Users\\frmChangePassword.cs*",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAqwFcAAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAQwFIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T07:53:02.775Z",
+              "WhenOpened": "2026-04-13T08:02:58.445Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmChangePassword.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmChangePassword.cs",
-              "RelativeDocumentMoniker": "Users\\frmChangePassword.cs",
-              "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD\\Users\\frmChangePassword.cs [Design]*",
-              "RelativeToolTip": "Users\\frmChangePassword.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T07:53:00.719Z",
-              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -75,20 +59,20 @@
               "RelativeDocumentMoniker": "..\\DVLD_Business\\clsUser.cs",
               "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD_Business\\clsUser.cs",
               "RelativeToolTip": "..\\DVLD_Business\\clsUser.cs",
-              "ViewState": "AgIAALwAAAAAAAAAAAA1wPYAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAALwAAAAAAAAAAAA1wPQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-13T07:45:35.451Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "clsUserData.cs",
               "DocumentMoniker": "C:\\Users\\Hp\\source\\repos\\DVLD_DataAccess\\clsUserData.cs",
               "RelativeDocumentMoniker": "..\\DVLD_DataAccess\\clsUserData.cs",
               "ToolTip": "C:\\Users\\Hp\\source\\repos\\DVLD_DataAccess\\clsUserData.cs",
               "RelativeToolTip": "..\\DVLD_DataAccess\\clsUserData.cs",
-              "ViewState": "AgIAAKUBAAAAAAAAAAAYwMcBAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAKUBAAAAAAAAAAAYwMcBAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-13T07:41:31.329Z",
               "EditorCaption": ""

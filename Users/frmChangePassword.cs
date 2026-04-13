@@ -80,6 +80,7 @@ namespace DVLD.Users
             if(txtNewPassword.Text != txtConfirmPassword.Text)
             {
                 MessageBox.Show("Password is not matching.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtConfirmPassword.Focus();
                 return;
             }
 
