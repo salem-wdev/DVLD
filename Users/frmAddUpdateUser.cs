@@ -43,6 +43,7 @@ namespace DVLD.Users
             ctrlPersonCardWithFilter1.gbFilters.Enabled = false;
             btnNext.Enabled = false;
             txtUserName.Enabled = false;
+            lblAddUpdateUser.Text = "Update User";
 
         }
 
@@ -71,6 +72,7 @@ namespace DVLD.Users
                 _Mode = enMode.Update;
                 MessageBox.Show("Saved sauccessfuly", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _ResetValues();
+                lblAddUpdateUser.Text = "Update User";
             }
             else
             {

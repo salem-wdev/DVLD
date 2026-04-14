@@ -32,6 +32,7 @@
             this.tcInfo = new System.Windows.Forms.TabControl();
             this.tpPesronInfo = new System.Windows.Forms.TabPage();
             this.btnNext = new System.Windows.Forms.Button();
+            this.ctrlPersonCardWithFilter1 = new DVLD.People.Controls.ctrlPersonCardWithFilter();
             this.tpLoginInfo = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblUserID = new System.Windows.Forms.Label();
@@ -47,10 +48,9 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAddUpdateUser = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ctrlPersonCardWithFilter1 = new DVLD.People.Controls.ctrlPersonCardWithFilter();
             this.tcInfo.SuspendLayout();
             this.tpPesronInfo.SuspendLayout();
             this.tpLoginInfo.SuspendLayout();
@@ -97,6 +97,16 @@
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // ctrlPersonCardWithFilter1
+            // 
+            this.ctrlPersonCardWithFilter1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.ctrlPersonCardWithFilter1.FilterEnabled = true;
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(6, 20);
+            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
+            this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(826, 379);
+            this.ctrlPersonCardWithFilter1.TabIndex = 0;
             // 
             // tpLoginInfo
             // 
@@ -281,16 +291,16 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label1
+            // lblAddUpdateUser
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(323, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 31);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Add New User";
+            this.lblAddUpdateUser.AutoSize = true;
+            this.lblAddUpdateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddUpdateUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAddUpdateUser.Location = new System.Drawing.Point(323, 42);
+            this.lblAddUpdateUser.Name = "lblAddUpdateUser";
+            this.lblAddUpdateUser.Size = new System.Drawing.Size(201, 31);
+            this.lblAddUpdateUser.TabIndex = 1;
+            this.lblAddUpdateUser.Text = "Add New User";
             // 
             // btnSave
             // 
@@ -311,16 +321,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // ctrlPersonCardWithFilter1
-            // 
-            this.ctrlPersonCardWithFilter1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ctrlPersonCardWithFilter1.FilterEnabled = true;
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(6, 20);
-            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(826, 379);
-            this.ctrlPersonCardWithFilter1.TabIndex = 0;
-            // 
             // frmAddUpdateUser
             // 
             this.AcceptButton = this.btnSave;
@@ -331,7 +331,7 @@
             this.ClientSize = new System.Drawing.Size(870, 625);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAddUpdateUser);
             this.Controls.Add(this.tcInfo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -358,7 +358,7 @@
         private System.Windows.Forms.TabPage tpPesronInfo;
         private People.Controls.ctrlPersonCardWithFilter ctrlPersonCardWithFilter1;
         private System.Windows.Forms.TabPage tpLoginInfo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAddUpdateUser;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnSave;
