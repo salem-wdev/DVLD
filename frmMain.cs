@@ -1,6 +1,7 @@
 ﻿using DVLD.Global_Classes;
 using DVLD.People.Forms;
 using DVLD.Users;
+using DVLD_Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,12 +39,14 @@ namespace DVLD
         {
             frmShowUserInfo frm = new frmShowUserInfo(clsGlobal.CurrentUser.UserID);
             frm.ShowDialog();
+            clsGlobal.CurrentUser.PersonInfo = clsPerson.Find(clsGlobal.CurrentUser.PersonInfo.PersonID);
         }
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmChangePassword frm = new frmChangePassword(clsGlobal.CurrentUser.UserID);
             frm.ShowDialog();
+            clsGlobal.CurrentUser = clsUser.Find(clsGlobal.CurrentUser.UserID);
         }
 
         private void sighnOutToolStripMenuItem_Click(object sender, EventArgs e)
