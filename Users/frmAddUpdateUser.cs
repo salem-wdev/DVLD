@@ -147,7 +147,6 @@ namespace DVLD.Users
                 btnNext.Enabled = true;
             }
 
-            btnNext.Enabled = ctrlPersonCardWithFilter1.PersonID > 0;
 
             if (!_IsPersonUser())
             {
