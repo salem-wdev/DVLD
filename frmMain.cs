@@ -49,7 +49,7 @@ namespace DVLD
             clsGlobal.CurrentUser = clsUser.Find(clsGlobal.CurrentUser.UserID);
         }
 
-        private void sighnOutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             clsGlobal.CurrentUser = null;
             LoginForm.Show();

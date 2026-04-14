@@ -39,7 +39,7 @@
             this.currentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.sighnOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainImageList = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainMenuStrip.SuspendLayout();
@@ -106,7 +106,7 @@
             this.currentUserToolStripMenuItem,
             this.changePasswordToolStripMenuItem,
             this.toolStripSeparator1,
-            this.sighnOutToolStripMenuItem});
+            this.signOutToolStripMenuItem});
             this.accountSettingsToolStripMenuItem.Image = global::DVLD.Properties.Resources.account_settings_64;
             this.accountSettingsToolStripMenuItem.Name = "accountSettingsToolStripMenuItem";
             this.accountSettingsToolStripMenuItem.Size = new System.Drawing.Size(278, 76);
@@ -137,15 +137,15 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(317, 6);
             // 
-            // sighnOutToolStripMenuItem
+            // signOutToolStripMenuItem
             // 
-            this.sighnOutToolStripMenuItem.Image = global::DVLD.Properties.Resources.sign_out_32__2;
-            this.sighnOutToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.sighnOutToolStripMenuItem.Name = "sighnOutToolStripMenuItem";
-            this.sighnOutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.sighnOutToolStripMenuItem.Size = new System.Drawing.Size(320, 38);
-            this.sighnOutToolStripMenuItem.Text = "Sign &Out";
-            this.sighnOutToolStripMenuItem.Click += new System.EventHandler(this.sighnOutToolStripMenuItem_Click);
+            this.signOutToolStripMenuItem.Image = global::DVLD.Properties.Resources.sign_out_32__2;
+            this.signOutToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
+            this.signOutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(320, 38);
+            this.signOutToolStripMenuItem.Text = "Sign &Out";
+            this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
             // mainImageList
             // 
@@ -201,7 +201,7 @@
         private System.Windows.Forms.ToolStripMenuItem currentUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem sighnOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
     }
 }
 
