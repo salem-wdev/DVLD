@@ -32,10 +32,15 @@ namespace DVLD.Users
             InitializeComponent();
             _Mode = enMode.Update;
             if ((_User = clsUser.Find(UserID)) != null)
-            { 
+            {
                 ctrlPersonCardWithFilter1.LoadPersonInfo(_User.PersonID);
                 txtUserName.Text = _User.UserName;
                 chkIsActive.Checked = _User.IsActive;
+            }
+            else
+            {
+                MessageBox.Show("User not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
             }
 
             tcInfo.SelectedIndex = 1;
