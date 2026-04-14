@@ -57,11 +57,8 @@ namespace DVLD.Users
             _User.UserName = txtUserName.Text;
             _User.Password = txtPassword.Text;
             _User.IsActive = chkIsActive.Checked;
-            if (_User.Mode == clsUser.enMode.AddNew)
-            {
-                _User.PersonID = ctrlPersonCardWithFilter1.PersonID;
-            }
-            
+
+            _User.PersonInfo = clsPerson.Find(ctrlPersonCardWithFilter1.PersonID);
         }
 
         private void _Save()
@@ -161,7 +158,7 @@ namespace DVLD.Users
                 btnSave.Enabled = false;
             }
 
-            _User.Person = clsPerson.Find(PersonID);
+            _User.PersonInfo = clsPerson.Find(PersonID);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
