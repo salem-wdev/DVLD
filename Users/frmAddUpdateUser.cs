@@ -89,13 +89,10 @@ namespace DVLD.Users
 
         private bool _IsPersonUser()
         {
-            int PersonID = ctrlPersonCardWithFilter1.PersonID;
-            if (clsUser.IsUserExistsForPersonID(PersonID))
-            {
-                return true;
-            }
 
-            return false;
+            return (_Mode == enMode.AddNew && ctrlPersonCardWithFilter1.PersonID > 0)
+                                                  ? clsUser.IsUserExistsForPersonID(ctrlPersonCardWithFilter1.PersonID)
+                                                  : false;
         }
 
         private bool _IsbtnSaveReadyToEnable()
@@ -136,6 +133,7 @@ namespace DVLD.Users
 
         private void CtrlPersonCardWithFilter1_OnPersonSelected(int PersonID)
         {
+            
 
             if (_Mode == enMode.AddNew && _IsPersonUser())
             {
