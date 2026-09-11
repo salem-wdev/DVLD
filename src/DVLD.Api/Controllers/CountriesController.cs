@@ -10,7 +10,7 @@ public class CountriesController : ControllerBase
 {
     private readonly ICountryService _countryService;
 
-    // حقن التبعية عبر المشيد
+
     public CountriesController(ICountryService countryService)
     {
         _countryService = countryService;
