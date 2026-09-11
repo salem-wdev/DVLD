@@ -19,7 +19,7 @@ public class CountryRepository : ICountryRepository
     public async Task<Country?> GetByIDAsync(int countryID)
     {
         using var connection = new SqlConnection(_connectionString);
-        using var command = new SqlCommand("SP_GetCountryByID", connection)
+        using var command = new SqlCommand("Country_GetByID", connection)
         {
             CommandType = CommandType.StoredProcedure
         };
@@ -45,7 +45,7 @@ public class CountryRepository : ICountryRepository
     public async Task<Country?> GetByNameAsync(string countryName)
     {
         using var connection = new SqlConnection(_connectionString);
-        using var command = new SqlCommand("SP_GetCountryByName", connection)
+        using var command = new SqlCommand("Country_GetByName", connection)
         {
             CommandType = CommandType.StoredProcedure
         };
@@ -72,7 +72,7 @@ public class CountryRepository : ICountryRepository
         var countries = new List<Country>();
 
         using var connection = new SqlConnection(_connectionString);
-        using var command = new SqlCommand("SP_GetAllCountries", connection)
+        using var command = new SqlCommand("Country_GetAll", connection)
         {
             CommandType = CommandType.StoredProcedure
         };
