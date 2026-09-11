@@ -4,7 +4,7 @@ using System.Linq;
 using DVLD.Core.Enums;
 namespace DVLD.Core.DTOs.People
 {
-     record PersonRequestDTO(
+     public record PersonRequestDTO(
 
         int? PersonID,
 
