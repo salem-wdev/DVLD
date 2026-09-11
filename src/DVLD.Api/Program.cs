@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<ICountryService, CountryService>();
+builder.Services.AddScoped<IPersonService, PersonService>();
 
 var app = builder.Build();
 
