@@ -1,31 +1,27 @@
-﻿using DVLD.Core.Entities;
-using DVLD.Core.Enums;
-using System.Data;
+﻿using DVLD.Core.DTOs.People;
 
 namespace DVLD.Core.Interfaces
 {
     public interface IPersonService
     {
-        Task<bool> AddNewAsync();
+        Task<PersonResponseDTO?> AddNewAsync(AddPersonRequestDTO person);
 
-        Task<bool> UpdateAsync();
+        Task<PersonResponseDTO?> UpdateAsync(PersonRequestDTO person);
 
-        Task<bool> DeleteAsync(int? PersonID);
+        Task<bool> DeleteAsync(int personID);
 
-        Task<Person> FindAsync(int? PersonID);
+        Task<PersonResponseDTO?> FindAsync(int personID);
 
-        Task<Person> FindAsync(string NationalNo);
+        Task<PersonResponseDTO?> FindAsync(string nationalNo);
 
-        Task<bool> IsExistsAsync(int? PersonID);
+        Task<bool> IsExistsAsync(int personID);
 
-        Task<bool> IsExistsAsync(string NationalNo);
+        Task<bool> IsExistsAsync(string nationalNo);
 
-        Task<bool> IsNationalNoUsedAsync(int? PersonID, string NationalNo);
+        Task<bool> IsNationalNoUsedAsync(int personID, string nationalNo);
 
-        Task<IEnumerable<Person>> GetAllAsync();
+        Task<IEnumerable<PersonResponseDTO>> GetAllAsync();
 
         Task<bool> HasPeopleAsync();
-
-        Task<Person> CreateNewPersonAsync(Person person);
     }
 }
