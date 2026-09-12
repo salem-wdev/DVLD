@@ -98,7 +98,7 @@ namespace DVLD.Core.Entities
             return Result.Success();
         }
        
-        public static Result<Person?> Create(string nationalNo, string firstName, string secondName,
+        public static Result<Person> Create(string nationalNo, string firstName, string secondName,
             string? thirdName, string lastName, DateTime dateOfBirth, GenderType gender, string address, string phone,
             string? email, int nationalityCountryID, string? imagePath)
         {
@@ -107,10 +107,10 @@ namespace DVLD.Core.Entities
                 , address, phone, nationalityCountryID, email);
             if (validationResult.IsFailure)
             {
-                return Result<Person?>.Failure("Invalid person information.");
+                return Result<Person>.Failure("Invalid person information.");
             }
 
-            return Result<Person?>.Success(new Person(nationalNo, firstName, secondName, thirdName, lastName, dateOfBirth
+            return Result<Person>.Success(new Person(nationalNo, firstName, secondName, thirdName, lastName, dateOfBirth
                 , gender, address, phone, email, nationalityCountryID, imagePath));
         }
 
