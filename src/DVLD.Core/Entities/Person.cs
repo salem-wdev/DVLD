@@ -29,7 +29,7 @@ namespace DVLD.Core.Entities
 
         protected Person(string nationalNo, string firstName, string secondName,
             string? thirdName, string lastName, DateTime dateOfBirth, GenderType gender, string address, string phone,
-            string? email, int nationalityCountryID, string? imagePath, Country? country)
+            string? email, int nationalityCountryID, string? imagePath)
         {
             NationalNo = nationalNo;
             FirstName = firstName;
@@ -43,7 +43,6 @@ namespace DVLD.Core.Entities
             Email = email;
             NationalityCountryID = nationalityCountryID;
             ImagePath = imagePath;
-            Country = country;
         }
 
         protected Person(int PersonID, string nationalNo, string firstName, string secondName,
@@ -101,7 +100,7 @@ namespace DVLD.Core.Entities
        
         public static Result<Person?> Create(string nationalNo, string firstName, string secondName,
             string? thirdName, string lastName, DateTime dateOfBirth, GenderType gender, string address, string phone,
-            string? email, int nationalityCountryID, string? imagePath, Country? country)
+            string? email, int nationalityCountryID, string? imagePath)
         {
 
             var validationResult = _IsValidInfo(nationalNo, firstName, secondName, lastName, dateOfBirth
@@ -112,7 +111,7 @@ namespace DVLD.Core.Entities
             }
 
             return Result<Person?>.Success(new Person(nationalNo, firstName, secondName, thirdName, lastName, dateOfBirth
-                , gender, address, phone, email, nationalityCountryID, imagePath, country));
+                , gender, address, phone, email, nationalityCountryID, imagePath));
         }
 
     }
