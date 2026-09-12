@@ -31,7 +31,6 @@ namespace DVLD.Core.Entities
             string? thirdName, string lastName, DateTime dateOfBirth, GenderType gender, string address, string phone,
             string? email, int nationalityCountryID, string? imagePath, Country? country)
         {
-            PersonID = personID;
             NationalNo = nationalNo;
             FirstName = firstName;
             SecondName = secondName;
@@ -47,7 +46,27 @@ namespace DVLD.Core.Entities
             Country = country;
         }
 
-        private static Result<bool> _IsValidInfo(string NationalNo, string FirstName, string SecondName,
+        protected Person(int PersonID, string nationalNo, string firstName, string secondName,
+            string? thirdName, string lastName, DateTime dateOfBirth, GenderType gender, string address, string phone,
+            string? email, int nationalityCountryID, string? imagePath, Country? country)
+        {
+            NationalNo = nationalNo;
+            FirstName = firstName;
+            SecondName = secondName;
+            ThirdName = thirdName;
+            LastName = lastName;
+            DateOfBirth = dateOfBirth;
+            Gender = gender;
+            Address = address;
+            Phone = phone;
+            Email = email;
+            NationalityCountryID = nationalityCountryID;
+            ImagePath = imagePath;
+            Country = country;
+        }
+
+
+        private static Result _IsValidInfo(string NationalNo, string FirstName, string SecondName,
              string LastName, DateTime DateOfBirth, string Address,
             string Phone, int NationalityCountryID, string? Email)
         {
@@ -70,17 +89,14 @@ namespace DVLD.Core.Entities
 
             if (NationalityCountryID < 1)
             {
-                return Result<bool>.Failure("Invalid nationality country ID.");
+                return Result.Failure("Invalid nationality country ID.");
             }
 
             if (!string.IsNullOrWhiteSpace(Email) && !Email.Contains("@"))
             {
-                return Result<bool>.Failure("Invalid email format.");
+                return Result.Failure("Invalid email format.");
             }
-
-
-
-            return Result<bool>.Success(true);
+            return Result.Success();
         }
        
         public static Result<Person?> Create(string nationalNo, string firstName, string secondName,
