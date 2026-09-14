@@ -6,72 +6,35 @@ namespace DVLD.Core.Entities
 {
     public class Person
     {
-        public int? PersonID { get;}
+        public int? PersonID { get; private set; }
 
-        public string NationalNo { get; }
-        public string FirstName { get;}
-        public string SecondName { get;}
-        public string? ThirdName { get;}
-        public string LastName { get;}
+        public string NationalNo { get; private set; }
+        public string FirstName { get; private set; }
+        public string SecondName { get; private set; }
+        public string? ThirdName { get; private set; }
+        public string LastName { get; private set; }
 
         public string FullName =>
                 string.Join(" ", new[] { FirstName, SecondName, ThirdName, LastName }
                     .Where(name => !string.IsNullOrWhiteSpace(name)));
 
-        public DateTime DateOfBirth { get;}
-        public GenderType Gender { get;}
-        public string Address { get;}
-        public string Phone { get;}
-        public string? Email { get;}
-        public int NationalityCountryID { get;}
-        public string? ImagePath { get;}
-        public Country? Country { get; }
+        public DateTime DateOfBirth { get; private set; }
+        public GenderType Gender { get; private set; }
+        public string Address { get; private set; }
+        public string Phone { get; private set; }
+        public string? Email { get; private set; }
+        public int NationalityCountryID { get; private set; }
+        public string? ImagePath { get; private set; }
+        public Country? Country { get; internal set; }
 
-        protected Person(string nationalNo, string firstName, string secondName,
-            string? thirdName, string lastName, DateTime dateOfBirth, GenderType gender, string address, string phone,
-            string? email, int nationalityCountryID, string? imagePath)
-        {
-            NationalNo = nationalNo;
-            FirstName = firstName;
-            SecondName = secondName;
-            ThirdName = thirdName;
-            LastName = lastName;
-            DateOfBirth = dateOfBirth;
-            Gender = gender;
-            Address = address;
-            Phone = phone;
-            Email = email;
-            NationalityCountryID = nationalityCountryID;
-            ImagePath = imagePath;
-        }
+        protected Person() { }
 
-        protected Person(int PersonID, string nationalNo, string firstName, string secondName,
-            string? thirdName, string lastName, DateTime dateOfBirth, GenderType gender, string address, string phone,
-            string? email, int nationalityCountryID, string? imagePath, Country? country)
-        {
-            NationalNo = nationalNo;
-            FirstName = firstName;
-            SecondName = secondName;
-            ThirdName = thirdName;
-            LastName = lastName;
-            DateOfBirth = dateOfBirth;
-            Gender = gender;
-            Address = address;
-            Phone = phone;
-            Email = email;
-            NationalityCountryID = nationalityCountryID;
-            ImagePath = imagePath;
-            Country = country;
-        }
-
-
-        private static Result _IsValidInfo(string NationalNo, string FirstName, string SecondName,
+        private static Result _IsValidInfo(string? NationalNo, string FirstName, string SecondName,
              string LastName, DateTime DateOfBirth, string Address,
             string Phone, int NationalityCountryID, string? Email)
         {
             var fields = new (string Name, string Value)[]
             {
-                (nameof(NationalNo), NationalNo),
                 (nameof(FirstName), FirstName),
                 (nameof(SecondName), SecondName),
                 (nameof(LastName), LastName),
@@ -83,7 +46,16 @@ namespace DVLD.Core.Entities
 
             if (emptyField.Name != null)
             {
-                return Result<bool>.Failure($"The field '{emptyField.Name}' is required and cannot be empty.");
+                return Result.Failure($"The field '{emptyField.Name}' is required and cannot be empty.");
+            }
+
+            if (NationalNo != null)
+            {
+                if (string.IsNullOrWhiteSpace(NationalNo))
+                    return Result.Failure("The field 'NationalNo' is required and cannot be empty.");
+
+                if (NationalNo.Length != 14 || !NationalNo.All(char.IsDigit))
+                    return Result.Failure("Invalid national number. It must be a 14-digit number.");
             }
 
             if (NationalityCountryID < 1)
@@ -107,12 +79,91 @@ namespace DVLD.Core.Entities
                 , address, phone, nationalityCountryID, email);
             if (validationResult.IsFailure)
             {
-                return Result<Person>.Failure("Invalid person information.");
+                return Result<Person>.Failure(validationResult.Error);
             }
 
-            return Result<Person>.Success(new Person(nationalNo, firstName, secondName, thirdName, lastName, dateOfBirth
-                , gender, address, phone, email, nationalityCountryID, imagePath));
+            return Result<Person>.Success(new Person{
+                PersonID= null,
+                NationalNo= nationalNo, 
+                FirstName= firstName,
+                SecondName = secondName,
+                ThirdName = thirdName,
+                LastName = lastName,
+                DateOfBirth = dateOfBirth,
+                Gender = gender,
+                Address = address,
+                Phone = phone,
+                Email = email,
+                NationalityCountryID = nationalityCountryID,
+                ImagePath = imagePath
+            });
         }
 
+        public static Result<Person> Load(int personID, string nationalNo, string firstName, string secondName,
+    string? thirdName, string lastName, DateTime dateOfBirth, GenderType gender, string address, string phone,
+    string? email, int nationalityCountryID, string? imagePath)
+        {
+            if (personID <= 0)
+                return Result<Person>.Failure("Invalid Person ID.");
+
+            var validationResult = _IsValidInfo(nationalNo, firstName, secondName, lastName, dateOfBirth
+                , address, phone, nationalityCountryID, email);
+            if (validationResult.IsFailure)
+            {
+                return Result<Person>.Failure(validationResult.Error);
+            }
+
+            return Result<Person>.Success(new Person
+            {
+                PersonID = personID,
+                NationalNo = nationalNo,
+                FirstName = firstName,
+                SecondName = secondName,
+                ThirdName = thirdName,
+                LastName = lastName,
+                DateOfBirth = dateOfBirth,
+                Gender = gender,
+                Address = address,
+                Phone = phone,
+                Email = email,
+                NationalityCountryID = nationalityCountryID,
+                ImagePath = imagePath
+            });
+        }
+
+        public Result UpdateDetails(
+            string firstName,
+            string secondName,
+            string thirdName,
+            string lastName,
+            DateTime dateOfBirth,
+            GenderType gender,
+            string address,
+            string phone,
+            string? email,
+            int nationalityCountryID,
+            string? imagePath)
+        {
+            var validationResult = _IsValidInfo(null, firstName, secondName, lastName, dateOfBirth
+               , address, phone, nationalityCountryID, email);
+            if (validationResult.IsFailure)
+            {
+                return Result.Failure(validationResult.Error);
+            }
+
+            FirstName = firstName;
+            SecondName = secondName;
+            ThirdName = thirdName;
+            LastName = lastName;
+            DateOfBirth = dateOfBirth;
+            Gender = gender;
+            Address = address;
+            Phone = phone;
+            Email = email;
+            NationalityCountryID = nationalityCountryID;
+            ImagePath = imagePath;
+
+            return Result.Success();
+        }
     }
 }
