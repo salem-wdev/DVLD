@@ -1,11 +1,11 @@
 ﻿using DVLD.Core.Common;
+using DVLD.Core.Enums;
+
 namespace DVLD.Core.Interfaces
 {
     public interface IFileStorageService
     {
-        bool CreateFolderIfDoesNotExist(string FolderPath);
-        string ReplaceFileNameWithGUID(string sourceFile);
-        Task<Result<string>> CopyFileToDestinationFolderWithGUIDAsync(string sourceFile, string destinationFolder);
+        Task<Result<string>> CopyFileToDestinationFolderWithGUIDAsync(string sourceFile, StorageFolder subFolderPath);
         bool DeleteFile(string sourceFile);
         bool IsFileExists(string sourceFile);
     }
