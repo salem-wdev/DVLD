@@ -4,7 +4,7 @@ namespace DVLD.Core.DTOs.People
 {
     public record PersonResponseDTO(
 
-        int? PersonID,
+        int PersonID,
 
         string NationalNo,
         string FirstName,
