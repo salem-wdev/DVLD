@@ -1,7 +1,9 @@
 using DVLD.Core.Interfaces;
 using DVLD.Core.Services;
+using DVLD.Core.Settings;
 using DVLD.Infrastructure.Repositories;
 using DVLD.Shared;
+using DVLD.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,9 @@ builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<IPersonService, PersonService>();
 builder.Services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+builder.Services.Configure<FileStorageSettings>(
+    builder.Configuration.GetSection(FileStorageSettings.SectionName));
+builder.Services.AddScoped<IFileStorageService, FileStorageService>();
 
 var app = builder.Build();
 
