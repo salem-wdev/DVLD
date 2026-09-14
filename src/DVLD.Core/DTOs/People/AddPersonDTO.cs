@@ -1,13 +1,14 @@
-﻿using System;
+﻿using DVLD.Core.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using DVLD.Core.Enums;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace DVLD.Core.DTOs.People
 {
-     public record PersonRequestDTO(
-
-        int? PersonID,
-
+    public record AddPersonDTO
+        (
         string NationalNo,
         string FirstName,
         string SecondName,
@@ -21,6 +22,7 @@ namespace DVLD.Core.DTOs.People
         string? Email,
         int NationalityCountryID,
         string? ImagePath
-    )
-    { }
+        )
+    {
+    }
 }

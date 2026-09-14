@@ -5,8 +5,8 @@ namespace DVLD.Core.Interfaces
 {
     public interface IPersonService
     {
-        Task<Result<PersonResponseDTO>> AddNewAsync(AddPersonRequestDTO person);
-        Task<Result<PersonResponseDTO>> UpdateAsync(PersonRequestDTO person);
+        Task<Result<PersonResponseDTO>> AddNewAsync(AddPersonDTO person);
+        Task<Result<PersonResponseDTO>> UpdateAsync(UpdatePersonDTO person);
         Task<Result> DeleteAsync(int personID);
         Task<Result<PersonResponseDTO>> FindAsync(int personID);
         Task<Result<PersonResponseDTO>> FindAsync(string nationalNo);
