@@ -12,7 +12,7 @@ namespace DVLD.Core.Interfaces
         Task<Result<PersonResponseDTO>> FindAsync(string nationalNo);
         Task<bool> IsExistsAsync(int personID);
         Task<bool> IsExistsAsync(string nationalNo);
-        Task<bool> IsNationalNoUsedAsync(int personID, string nationalNo);
+        Task<bool> IsNationalNoUsedAsync(string nationalNo, int? personID = null);
         Task<Result<IEnumerable<PersonResponseDTO>>> GetAllAsync();
         Task<bool> HasPeopleAsync();
     }
