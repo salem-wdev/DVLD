@@ -1,11 +1,11 @@
-﻿using DVLD.Core.Common;
-using DVLD.Core.DTOs.People;
-using DVLD.Core.Entities;
-using DVLD.Core.Enums;
-using DVLD.Core.Interfaces;
+﻿using DVLD.Domain.Common;
+using DVLD.Application.DTOs.People;
+using DVLD.Domain.Entities;
+using DVLD.Domain.Enums;
+using DVLD.Application.Interfaces;
 using System;
 
-namespace DVLD.Core.Services
+namespace DVLD.Application.Services
 {
     public class PersonService : IPersonService
     {

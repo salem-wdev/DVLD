@@ -1,6 +1,6 @@
-﻿using DVLD.Core.DTOs;
+﻿using DVLD.Application.DTOs;
 
-namespace DVLD.Core.Interfaces;
+namespace DVLD.Application.Interfaces;
 
 public interface ICountryService
 {

@@ -1,11 +1,6 @@
-﻿using DVLD.Core.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DVLD.Domain.Enums;
 
-namespace DVLD.Core.DTOs.People
+namespace DVLD.Application.DTOs.People
 {
     public record AddPersonDTO
         (

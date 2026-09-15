@@ -1,7 +1,7 @@
-﻿using DVLD.Core.Entities;
-using DVLD.Core.Common;
+﻿using DVLD.Domain.Entities;
+using DVLD.Domain.Common;
 
-namespace DVLD.Core.Interfaces
+namespace DVLD.Application.Interfaces
 {
     public interface IPersonRepository
     {

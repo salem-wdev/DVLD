@@ -1,8 +1,7 @@
-﻿using DVLD.Core.DTOs;
-using DVLD.Core.Entities;
-using DVLD.Core.Interfaces;
+﻿using DVLD.Application.DTOs;
+using DVLD.Application.Interfaces;
 
-namespace DVLD.Core.Services;
+namespace DVLD.Application.Services;
 
 public class CountryService : ICountryService
 {
