@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using DVLD.Core.DTOs;
-using DVLD.Core.Interfaces;
+using DVLD.Application.DTOs;
+using DVLD.Application.Interfaces;
 
 namespace DVLD.Api.Controllers;
 

@@ -1,4 +1,4 @@
-﻿using DVLD.Core.Interfaces;
+﻿using DVLD.Application.Interfaces;
 
 namespace DVLD.Shared
 {
