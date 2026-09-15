@@ -1,4 +1,4 @@
-﻿namespace DVLD.Core.Entities
+﻿namespace DVLD.Domain.Entities
 {
     public class Country
     {

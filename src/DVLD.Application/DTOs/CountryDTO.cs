@@ -1,4 +1,4 @@
-﻿namespace DVLD.Core.DTOs;
+﻿namespace DVLD.Application.DTOs;
 
 public class CountryDTO
 {

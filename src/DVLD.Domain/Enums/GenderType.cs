@@ -1,4 +1,4 @@
-﻿namespace DVLD.Core.Enums
+﻿namespace DVLD.Domain.Enums
 {
     public enum GenderType
     {

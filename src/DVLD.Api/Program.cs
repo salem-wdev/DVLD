@@ -1,6 +1,6 @@
-using DVLD.Core.Interfaces;
-using DVLD.Core.Services;
-using DVLD.Core.Settings;
+using DVLD.Application.Interfaces;
+using DVLD.Application.Services;
+using DVLD.Infrastructure.Settings;
 using DVLD.Infrastructure.Repositories;
 using DVLD.Shared;
 using DVLD.Infrastructure.Services;

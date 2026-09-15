@@ -1,8 +1,8 @@
-﻿using DVLD.Core.Common;
-using DVLD.Core.Enums;
+﻿using DVLD.Domain.Common;
+using DVLD.Domain.Enums;
 
 
-namespace DVLD.Core.Entities
+namespace DVLD.Domain.Entities
 {
     public class Person
     {

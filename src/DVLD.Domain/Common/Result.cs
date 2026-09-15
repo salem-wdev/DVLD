@@ -1,4 +1,4 @@
-﻿namespace DVLD.Core.Common
+﻿namespace DVLD.Domain.Common
 {
     /// <summary>
     /// Represents the outcome of an operation that does not return data.

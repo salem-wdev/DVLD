@@ -1,8 +1,8 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
-using DVLD.Core.Entities;
-using DVLD.Core.Interfaces;
+using DVLD.Domain.Entities;
+using DVLD.Application.Interfaces;
 
 namespace DVLD.Infrastructure.Repositories;
 

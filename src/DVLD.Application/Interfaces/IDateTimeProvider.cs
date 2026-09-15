@@ -1,4 +1,4 @@
-﻿namespace DVLD.Core.Interfaces
+﻿namespace DVLD.Application.Interfaces
 {
     public interface IDateTimeProvider
     {

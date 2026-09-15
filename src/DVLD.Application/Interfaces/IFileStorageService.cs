@@ -1,7 +1,7 @@
-﻿using DVLD.Core.Common;
-using DVLD.Core.Enums;
+﻿using DVLD.Domain.Common;
+using DVLD.Domain.Enums;
 
-namespace DVLD.Core.Interfaces
+namespace DVLD.Application.Interfaces
 {
     public interface IFileStorageService
     {

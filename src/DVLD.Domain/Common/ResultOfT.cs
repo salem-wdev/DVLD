@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DVLD.Core.Common
+﻿namespace DVLD.Domain.Common
 {
     /// <summary>
     /// Represents the outcome of an operation that returns a value on success.

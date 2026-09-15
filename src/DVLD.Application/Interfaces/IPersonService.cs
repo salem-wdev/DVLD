@@ -1,7 +1,7 @@
-﻿using DVLD.Core.DTOs.People;
-using DVLD.Core.Common;
+﻿using DVLD.Domain.Common;
+using DVLD.Application.DTOs.People;
 
-namespace DVLD.Core.Interfaces
+namespace DVLD.Application.Interfaces
 {
     public interface IPersonService
     {

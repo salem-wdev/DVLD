@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using DVLD.Core.Enums;
-namespace DVLD.Core.DTOs.People
+﻿using DVLD.Domain.Enums;
+namespace DVLD.Application.DTOs.People
 {
      public record UpdatePersonDTO(
 

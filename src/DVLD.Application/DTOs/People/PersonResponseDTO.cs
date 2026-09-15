@@ -1,6 +1,6 @@
-﻿using DVLD.Core.Enums;
+﻿using DVLD.Domain.Enums;
 
-namespace DVLD.Core.DTOs.People
+namespace DVLD.Application.DTOs.People
 {
     public record PersonResponseDTO(
 

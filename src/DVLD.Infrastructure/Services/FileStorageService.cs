@@ -1,8 +1,8 @@
-﻿using DVLD.Core.Common;
-using DVLD.Core.Enums;
-using DVLD.Core.Interfaces;
-using DVLD.Core.Settings;
+﻿using DVLD.Domain.Enums;
+using DVLD.Application.Interfaces;
+using DVLD.Infrastructure.Settings;
 using Microsoft.Extensions.Options;
+using DVLD.Domain.Common;
 
 namespace DVLD.Infrastructure.Services
 {

@@ -1,6 +1,4 @@
-﻿using DVLD.Core.Enums;
-
-namespace DVLD.Core.Settings
+﻿namespace DVLD.Infrastructure.Settings
 {
     public class FileStorageSettings
     {
