@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\DVLD.Infrastructure\DVLD.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\DVLD.Shared\DVLD.Shared.csproj" />
     <ProjectReference Include="..\DVLD.Core\DVLD.Core.csproj" />
+    <ProjectReference Include="..\DVLD.Infrastructure\DVLD.Infrastructure.csproj" />
+    <ProjectReference Include="..\DVLD.Shared\DVLD.Shared.csproj" />
   </ItemGroup>
 
 </Project>
