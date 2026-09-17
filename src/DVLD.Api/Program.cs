@@ -14,8 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 // -----------------------------------------------------------------------------
 builder.Host.UseSerilog((context, configuration) => configuration
     .WriteTo.Console()
-    .WriteTo.Seq("http://localhost:5341"));
-
+    .WriteTo.Seq(context.Configuration["Seq:ServerUrl"] ?? "http://localhost:5341"));
 // -----------------------------------------------------------------------------
 // 2. Controller & API Explorer Registration
 // -----------------------------------------------------------------------------
