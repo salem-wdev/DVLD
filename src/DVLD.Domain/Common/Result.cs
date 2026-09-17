@@ -9,17 +9,17 @@
     {
         public bool IsSuccess { get; }
         public bool IsFailure => !IsSuccess;
-        public string? Error { get; }
+        public Error? Error { get; }
 
         /// <summary>
         /// Enforces domain invariants to guarantee mutual exclusivity between success and failure states.
         /// </summary>
-        protected Result(bool isSuccess, string? error)
+        protected Result(bool isSuccess, Error? error)
         {
-            if (isSuccess && !string.IsNullOrWhiteSpace(error))
+            if (isSuccess && error!= null)
                 throw new InvalidOperationException("A successful result cannot contain an error message.");
 
-            if (!isSuccess && string.IsNullOrWhiteSpace(error))
+            if (!isSuccess && error == null)
                 throw new InvalidOperationException("A failure result must specify an error message.");
 
             IsSuccess = isSuccess;
@@ -34,6 +34,6 @@
         /// <summary>
         /// Creates a failed operation outcome with a specific error description.
         /// </summary>
-        public static Result Failure(string error) => new(false, error);
+        public static Result Failure(Error error) => new(false, error);
     }
 }
