@@ -28,7 +28,8 @@ builder.Services.AddSwaggerGen();
 // -----------------------------------------------------------------------------
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<ICountryService, CountryService>();
-// builder.Services.AddScoped<IPersonService, PersonService>();
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+builder.Services.AddScoped<IPersonService, PersonService>();
 
 // Time provider abstraction for testability and flexibility
 builder.Services.AddSingleton<IDateTimeProvider, DateTimeProvider>();

@@ -17,7 +17,7 @@
             ? _value!
             : throw new InvalidOperationException($"Cannot access '{nameof(Value)}' on a failed result. Error: {Error}");
 
-        protected Result(T? value, bool isSuccess, string? error)
+        protected Result(T? value, bool isSuccess, Error? error)
             : base(isSuccess, error)
         {
             _value = value;
@@ -31,6 +31,6 @@
         /// <summary>
         /// Creates a failed operation outcome with a specific error description.
         /// </summary>
-        public static new Result<T> Failure(string error) => new(default, false, error);
+        public static new Result<T> Failure(Error error) => new(default, false, error);
     }
 }
