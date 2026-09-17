@@ -46,26 +46,26 @@ namespace DVLD.Domain.Entities
 
             if (emptyField.Name != null)
             {
-                return Result.Failure($"The field '{emptyField.Name}' is required and cannot be empty.");
+                return Result.Failure(SharedErrors.InvalidInput<Person>($"The field '{emptyField.Name}' is required and cannot be empty."));
             }
 
             if (NationalNo != null)
             {
                 if (string.IsNullOrWhiteSpace(NationalNo))
-                    return Result.Failure("The field 'NationalNo' is required and cannot be empty.");
+                    return Result.Failure(SharedErrors.InvalidInput<Person>("The field 'NationalNo' is required and cannot be empty."));
 
                 if (NationalNo.Length != 14 || !NationalNo.All(char.IsDigit))
-                    return Result.Failure("Invalid national number. It must be a 14-digit number.");
+                    return Result.Failure(SharedErrors.InvalidInput<Person>("Invalid national number. It must be a 14-digit number."));
             }
 
             if (NationalityCountryID < 1)
             {
-                return Result.Failure("Invalid nationality country ID.");
+                return Result.Failure(SharedErrors.InvalidInput<Person>("Invalid nationality country ID."));
             }
 
             if (!string.IsNullOrWhiteSpace(Email) && !Email.Contains("@"))
             {
-                return Result.Failure("Invalid email format.");
+                return Result.Failure(SharedErrors.InvalidInput<Person>("Invalid email format."));
             }
             return Result.Success();
         }
@@ -104,7 +104,7 @@ namespace DVLD.Domain.Entities
     string? email, int nationalityCountryID, string? imagePath)
         {
             if (personID <= 0)
-                return Result<Person>.Failure("Invalid Person ID.");
+                return Result<Person>.Failure(SharedErrors.InvalidInput<Person>("Invalid Person ID."));
 
             var validationResult = _IsValidInfo(nationalNo, firstName, secondName, lastName, dateOfBirth
                 , address, phone, nationalityCountryID, email);

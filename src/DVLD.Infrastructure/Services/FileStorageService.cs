@@ -1,8 +1,9 @@
-﻿using DVLD.Domain.Enums;
-using DVLD.Application.Interfaces;
+﻿using DVLD.Application.Interfaces;
+using DVLD.Application.Services;
+using DVLD.Domain.Common;
+using DVLD.Domain.Enums;
 using DVLD.Infrastructure.Settings;
 using Microsoft.Extensions.Options;
-using DVLD.Domain.Common;
 
 namespace DVLD.Infrastructure.Services
 {
@@ -23,15 +24,15 @@ namespace DVLD.Infrastructure.Services
         public async Task<Result<string>> CopyFileToDestinationFolderWithGUIDAsync(string sourceFile, StorageFolder subFolder)
         {
             if (string.IsNullOrWhiteSpace(sourceFile))
-                return Result<string>.Failure("Source file path cannot be empty.");
+                return Result<string>.Failure(SharedErrors.InvalidInput("File", "Source file path cannot be empty."));
 
             if (!File.Exists(sourceFile))
-                return Result<string>.Failure("Source file does not exist.");
+                return Result<string>.Failure(SharedErrors.InvalidInput("File", "Source file does not exist."));
 
             var targetDirectory = Path.Combine(_basePath, subFolder.ToString());
 
             if (!CreateFolderIfDoesNotExist(targetDirectory))
-                return Result<string>.Failure("Failed to create the target directory.");
+                return Result<string>.Failure(SharedErrors.InvalidInput("File", "Failed to create the target directory."));
 
             string destinationFileName = GenerateUniqueFileName(sourceFile);
             string destinationFile = Path.Combine(targetDirectory, destinationFileName);
@@ -59,7 +60,7 @@ namespace DVLD.Infrastructure.Services
             catch (Exception ex)
             {
                 DeleteFile(destinationFile);
-                return Result<string>.Failure($"I/O error occurred while copying the file: {ex.Message}");
+                return Result<string>.Failure(SharedErrors.InvalidInput("File", $"I/O error occurred while copying the file: {ex.Message}"));
             }
 
             return Result<string>.Success(destinationFile);

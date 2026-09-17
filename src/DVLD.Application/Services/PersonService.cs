@@ -28,16 +28,16 @@ namespace DVLD.Application.Services
         public async Task<Result<PersonResponseDTO>> AddNewAsync(AddPersonDTO personDTO)
         {
             if (personDTO == null)
-                return Result<PersonResponseDTO>.Failure("PersonResponseDTO is empty");
+                return Result<PersonResponseDTO>.Failure(SharedErrors.InvalidInput<Person>("PersonResponseDTO is empty"));
 
             // Check if the date of birth is in the future
             if (personDTO.DateOfBirth >dateTimeProvider.UtcNow)
-                return Result<PersonResponseDTO>.Failure("Date of birth cannot be in the future.");
+                return Result<PersonResponseDTO>.Failure(SharedErrors.InvalidInput<Person>("Date of birth cannot be in the future."));
 
             // Check if the national number is already used by another person
             if (await personRepository.IsNationalNoUsedAsync(personDTO.NationalNo))
             {
-                return Result<PersonResponseDTO>.Failure("National number is already used");
+                return Result<PersonResponseDTO>.Failure(SharedErrors.InvalidInput<Person>("National number is already used"));
             }
 
             string? newImagePath = null;
@@ -57,7 +57,7 @@ namespace DVLD.Application.Services
                     newImagePath = copyResult.Value;
                 }
                 else
-                    return Result<PersonResponseDTO>.Failure("Image file does not exist");
+                    return Result<PersonResponseDTO>.Failure(SharedErrors.NotFound<Person>("Image file does not exist"));
             }
 
             Result<Person> person = Person.Create(
@@ -120,11 +120,11 @@ namespace DVLD.Application.Services
         public async Task<Result<PersonResponseDTO>> UpdateAsync(UpdatePersonDTO personDTO)
         {
             if (personDTO == null)
-                return Result<PersonResponseDTO>.Failure("PersonResponseDTO is empty");
+                return Result<PersonResponseDTO>.Failure(SharedErrors.InvalidInput<Person>("PersonResponseDTO is empty"));
 
             // Check if the date of birth is in the future
             if (personDTO.DateOfBirth > dateTimeProvider.UtcNow)
-                return Result<PersonResponseDTO>.Failure("Date of birth cannot be in the future.");
+                return Result<PersonResponseDTO>.Failure(SharedErrors.InvalidInput<Person>("Date of birth cannot be in the future."));
 
             // Check if the national number is already used by another person
             var person = await personRepository.GetByIDAsync(personDTO.PersonID);
@@ -156,7 +156,7 @@ namespace DVLD.Application.Services
                     newImagePath = copyResult.Value;
                 }
                 else
-                    return Result<PersonResponseDTO>.Failure("Image file does not exist");
+                    return Result<PersonResponseDTO>.Failure(SharedErrors.NotFound<Person>("Image file does not exist"));
             }
 
             // Update the person entity with the new details
@@ -226,7 +226,7 @@ namespace DVLD.Application.Services
         public async Task<Result<PersonResponseDTO>> FindAsync(int personID)
         {
             if (personID <= 0)
-                return Result<PersonResponseDTO>.Failure("Invalid person ID");
+                return Result<PersonResponseDTO>.Failure(SharedErrors.InvalidInput<Person>("Invalid person ID"));
 
             var personInfo = await personRepository.GetByIDAsync(personID);
 
@@ -358,9 +358,9 @@ namespace DVLD.Application.Services
             if (nationalNo != null)
             {
                 if (string.IsNullOrWhiteSpace(nationalNo))
-                    return Result.Failure("The field 'NationalNo' is required and cannot be empty.");
+                    return Result.Failure(SharedErrors.InvalidInput<Person>("The field 'NationalNo' is required and cannot be empty."));
                 if (nationalNo.Length != 14 || !nationalNo.All(char.IsDigit))
-                    return Result.Failure("Invalid national number. It must be a 14-digit number.");
+                    return Result.Failure(SharedErrors.InvalidInput<Person>("Invalid national number. It must be a 14-digit number."));
             }
             return Result.Success();
         }
