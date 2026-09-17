@@ -1,3 +1,4 @@
+using Serilog;
 using DVLD.Application.Interfaces;
 using DVLD.Application.Services;
 using DVLD.Infrastructure.Settings;
@@ -16,13 +17,19 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<ICountryService, CountryService>();
-builder.Services.AddScoped<IPersonService, PersonService>();
+//builder.Services.AddScoped<IPersonService, PersonService>();
 builder.Services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 builder.Services.Configure<FileStorageSettings>(
     builder.Configuration.GetSection(FileStorageSettings.SectionName));
 builder.Services.AddScoped<IFileStorageService, FileStorageService>();
 
+builder.Host.UseSerilog((context, configuration) => configuration
+    .WriteTo.Console()
+    .WriteTo.Seq("http://localhost:5341"));
+
 var app = builder.Build();
+
+app.UseSerilogRequestLogging();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
