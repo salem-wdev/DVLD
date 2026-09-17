@@ -2,26 +2,42 @@
 {
     public static class SharedErrors
     {
+        // Base string-based methods
+        public static Error NotFound(string entityName, string detail = "") =>
+            new Error($"{entityName}.NotFound", $"The {entityName} was not found. {detail}".Trim());
+
+        public static Error AddFailed(string entityName, string detail = "") =>
+            new Error($"{entityName}.AddFailed", $"Failed to add the {entityName}. {detail}".Trim());
+
+        public static Error UpdateFailed(string entityName, string detail = "") =>
+            new Error($"{entityName}.UpdateFailed", $"Failed to update the {entityName}. {detail}".Trim());
+
+        public static Error DeleteFailed(string entityName, string detail = "") =>
+            new Error($"{entityName}.DeleteFailed", $"Failed to delete the {entityName}. {detail}".Trim());
+
+        public static Error InvalidInput(string entityName, string detail) =>
+            new Error($"{entityName}.InvalidInput", detail);
+
+        public static Error Conflict(string entityName, string detail) =>
+            new Error($"{entityName}.Conflict", detail);
+
+        // Generic overloads delegating to the base methods
         public static Error NotFound<T>(string detail = "") =>
-            new Error($"{typeof(T).Name}.NotFound",
-                      $"The {typeof(T).Name} was not found. {detail}".Trim());
+            NotFound(typeof(T).Name, detail);
 
         public static Error AddFailed<T>(string detail = "") =>
-            new Error($"{typeof(T).Name}.AddFailed",
-                      $"Failed to add the {typeof(T).Name}. {detail}".Trim());
+            AddFailed(typeof(T).Name, detail);
 
         public static Error UpdateFailed<T>(string detail = "") =>
-            new Error($"{typeof(T).Name}.UpdateFailed",
-                      $"Failed to update the {typeof(T).Name}. {detail}".Trim());
+            UpdateFailed(typeof(T).Name, detail);
 
         public static Error DeleteFailed<T>(string detail = "") =>
-            new Error($"{typeof(T).Name}.DeleteFailed",
-                      $"Failed to delete the {typeof(T).Name}. {detail}".Trim());
+            DeleteFailed(typeof(T).Name, detail);
 
         public static Error InvalidInput<T>(string detail) =>
-            new Error($"{typeof(T).Name}.InvalidInput", detail);
+            InvalidInput(typeof(T).Name, detail);
 
         public static Error Conflict<T>(string detail) =>
-            new Error($"{typeof(T).Name}.Conflict", detail);
+            Conflict(typeof(T).Name, detail);
     }
 }
