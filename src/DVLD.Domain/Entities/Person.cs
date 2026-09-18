@@ -67,6 +67,10 @@ namespace DVLD.Domain.Entities
             {
                 return Result.Failure(SharedErrors.InvalidInput<Person>("Invalid email format."));
             }
+
+            if (!Phone.All(char.IsDigit))
+                return Result.Failure(SharedErrors.InvalidInput<Person>("Invalid Phone Number, most be Numbers only"));
+
             return Result.Success();
         }
        
