@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD.Domain", "src\DVLD.Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD.Application", "src\DVLD.Application\DVLD.Application.csproj", "{63F4C482-74B9-BAA2-D7E5-B028EA343A78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD.Domain.UnitTests", "DVLD.Domain.UnitTests\DVLD.Domain.UnitTests.csproj", "{67D98F8D-C648-442F-8B6F-BB57D3F84A1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD.Domain.UnitTests", "tests\DVLD.Domain.UnitTests\DVLD.Domain.UnitTests.csproj", "{EFDDE1DC-6541-892A-6B5D-A69C1EBEC22D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
