@@ -119,6 +119,8 @@ namespace DVLD.Application.Services
 
         public async Task<Result<PersonResponseDTO>> UpdateAsync(UpdatePersonDTO personDTO)
         {
+            bool isImageUpdated = false;
+
             if (personDTO == null)
                 return Result<PersonResponseDTO>.Failure(SharedErrors.InvalidInput<Person>("PersonResponseDTO is empty"));
 
@@ -136,14 +138,9 @@ namespace DVLD.Application.Services
             // Set old image path to newImagePath variable, so we do not loss the old image path if the new image path is not provided in the DTO
             string? newImagePath = person.Value.ImagePath;
 
-            // If the new image path is empty and the old image path is not empty, delete the old image file
-            if (string.IsNullOrWhiteSpace(personDTO.ImagePath) && !string.IsNullOrWhiteSpace(person.Value.ImagePath))
-            {
-                if (fileStorageService.DeleteFile(person.Value.ImagePath))
-                    newImagePath = null;
-            }
+            
             // If the new image path is not empty and the old image path is not empty and they are different, copy the new image file to the storage folder and delete the old image file
-            else if (personDTO.ImagePath != person.Value.ImagePath)
+            if (!string.IsNullOrWhiteSpace(personDTO.ImagePath) && personDTO.ImagePath != person.Value.ImagePath)
             {
                 // Check if the new image file exists
                 if (fileStorageService.IsFileExists(personDTO.ImagePath))
@@ -154,10 +151,13 @@ namespace DVLD.Application.Services
                         return Result<PersonResponseDTO>.Failure(copyResult.Error);
 
                     newImagePath = copyResult.Value;
+                    isImageUpdated = true;
                 }
                 else
                     return Result<PersonResponseDTO>.Failure(SharedErrors.NotFound<Person>("Image file does not exist"));
             }
+
+            string oldImage = person.Value.ImagePath;
 
             // Update the person entity with the new details
             var result = person.Value.UpdateDetails(
@@ -171,21 +171,36 @@ namespace DVLD.Application.Services
                 personDTO.Phone,
                 personDTO.Email,
                 personDTO.NationalityCountryID,
-                newImagePath);
+                personDTO.RemoveImage? "": newImagePath
+                );
 
             // Check if the update was successful
             if (result.IsFailure)
+            {
+                if (isImageUpdated && !string.IsNullOrWhiteSpace(newImagePath))
+                {
+                    fileStorageService.DeleteFile(newImagePath);
+                }
                 return Result<PersonResponseDTO>.Failure(result.Error);
-
+            }
             // Update the person entity in the database
             var updateResult = await personRepository.UpdateAsync(person.Value);
 
-            // Check if the update was successful in database
-            if(updateResult.IsFailure)
-                return Result<PersonResponseDTO>.Failure(updateResult.Error);
-            else
-                fileStorageService.DeleteFile(person.Value.ImagePath); // Delete old image if adding was ssucceful
 
+            // Check if the update was successful in database
+            if (updateResult.IsFailure)
+            {
+                if(isImageUpdated && !string.IsNullOrWhiteSpace(newImagePath))
+                {
+                    fileStorageService.DeleteFile(newImagePath);
+                }
+                return Result<PersonResponseDTO>.Failure(updateResult.Error);
+            }
+            else
+            {
+                if ((isImageUpdated || personDTO.RemoveImage) && !string.IsNullOrWhiteSpace(oldImage))
+                    fileStorageService.DeleteFile(oldImage); // Delete old image if adding was ssucceful
+            }
             // Return the updated person details as a PersonResponseDTO
             return Result<PersonResponseDTO>.Success(new PersonResponseDTO
             (
@@ -201,7 +216,7 @@ namespace DVLD.Application.Services
                 person.Value.Phone,
                 person.Value.Email,
                 person.Value.NationalityCountryID,
-                newImagePath
+                person.Value.ImagePath
             ));
         }
 
