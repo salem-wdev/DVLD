@@ -1,11 +1,18 @@
 ﻿using DVLD.Domain.Common;
 using DVLD.Domain.Enums;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
 
 
 namespace DVLD.Domain.Entities
 {
     public class Person
     {
+        // High-performance compiled regex for initial structural syntax validation
+        private static readonly Regex EmailFormatRegex = new(
+            @"^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$",
+            RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
         public int? PersonID { get; private set; }
 
         public string NationalNo { get; private set; }
@@ -63,9 +70,11 @@ namespace DVLD.Domain.Entities
                 return Result.Failure(SharedErrors.InvalidInput<Person>("Invalid nationality country ID."));
             }
 
-            if (!string.IsNullOrWhiteSpace(Email) && !Email.Contains("@"))
+            var emailvalidation = ValidateEmail(Email);
+
+            if (emailvalidation.IsFailure)
             {
-                return Result.Failure(SharedErrors.InvalidInput<Person>("Invalid email format."));
+                return Result.Failure(emailvalidation.Error);
             }
 
             if (!Phone.All(char.IsDigit))
@@ -78,6 +87,8 @@ namespace DVLD.Domain.Entities
             string? thirdName, string lastName, DateTime dateOfBirth, GenderType gender, string address, string phone,
             string? email, int nationalityCountryID, string? imagePath)
         {
+            if (email != null)
+                email = email.Trim();
 
             var validationResult = _IsValidInfo(nationalNo, firstName, secondName, lastName, dateOfBirth
                 , address, phone, nationalityCountryID, email);
@@ -166,6 +177,42 @@ namespace DVLD.Domain.Entities
             Email = email;
             NationalityCountryID = nationalityCountryID;
             ImagePath = imagePath;
+
+            return Result.Success();
+        }
+
+        private static Result ValidateEmail(string? email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return Result.Failure(SharedErrors.InvalidInput<Person>("Email cannot be empty."));
+
+            string trimmedEmail = email.Trim();
+
+            // 1. Length constraint according to RFC 5321 / RFC 5322
+            if (trimmedEmail.Length > 254)
+                return Result.Failure(SharedErrors.InvalidInput<Person>("Email exceeds the maximum allowed length of 254 characters."));
+
+            // 2. Structural pattern validation (ensures valid characters, single '@', and domain separator)
+            if (!EmailFormatRegex.IsMatch(trimmedEmail))
+                return Result.Failure(SharedErrors.InvalidInput<Person>("Email format is invalid."));
+
+            // 3. Strict RFC parsing and domain structure validation via BCL MailAddress
+            try
+            {
+                var mailAddress = new MailAddress(trimmedEmail);
+
+                // Ensure the parsed address matches the input exactly (prevents display name exploits like 'Name <email@domain.com>')
+                if (mailAddress.Address != trimmedEmail)
+                    return Result.Failure(SharedErrors.InvalidInput<Person>("Email format is invalid."));
+
+                // Ensure the domain part contains a top-level domain separator (rejects local addresses like 'user@localhost')
+                if (!mailAddress.Host.Contains('.'))
+                    return Result.Failure(SharedErrors.InvalidInput<Person>("Email must contain a valid domain name."));
+            }
+            catch (FormatException)
+            {
+                return Result.Failure(SharedErrors.InvalidInput<Person>("Email format is invalid."));
+            }
 
             return Result.Success();
         }
