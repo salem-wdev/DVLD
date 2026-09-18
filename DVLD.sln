@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD.Domain", "src\DVLD.Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD.Application", "src\DVLD.Application\DVLD.Application.csproj", "{63F4C482-74B9-BAA2-D7E5-B028EA343A78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD.Domain.UnitTests", "DVLD.Domain.UnitTests\DVLD.Domain.UnitTests.csproj", "{67D98F8D-C648-442F-8B6F-BB57D3F84A1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{63F4C482-74B9-BAA2-D7E5-B028EA343A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63F4C482-74B9-BAA2-D7E5-B028EA343A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63F4C482-74B9-BAA2-D7E5-B028EA343A78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67D98F8D-C648-442F-8B6F-BB57D3F84A1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67D98F8D-C648-442F-8B6F-BB57D3F84A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67D98F8D-C648-442F-8B6F-BB57D3F84A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67D98F8D-C648-442F-8B6F-BB57D3F84A1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{27E63431-4EBC-F0EC-6F1D-D4D3CE2E1C76} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{C8334599-FFAF-6898-B353-1E2EEDB5B183} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{63F4C482-74B9-BAA2-D7E5-B028EA343A78} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{67D98F8D-C648-442F-8B6F-BB57D3F84A1D} = {6670FA07-AA7E-4528-AD09-6ABCED9711C9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {393C27C2-609E-4C88-A162-2A155CE1B074}
