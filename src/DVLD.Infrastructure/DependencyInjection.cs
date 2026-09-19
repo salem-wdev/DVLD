@@ -12,60 +12,47 @@ namespace DVLD.Infrastructure;
 public static class DependencyInjection
 {
     /// <summary>
-    /// Registers infrastructure core services, database persistence components, 
-    /// and dynamically discovers and registers all domain event handlers.
+    /// Registers database persistence, event dispatching infrastructure, 
+    /// and automatically scans and registers domain event handlers.
     /// </summary>
     public static IServiceCollection AddInfrastructure(
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        // Register core persistence and event orchestration infrastructure
+        // Register core lifecycle services
         services.AddScoped<DbSession>();
         services.AddScoped<IEventAggregator, EventAggregator>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-        // Scan and register open-generic event handlers across the application assembly
+        // Register handlers using the marker interface
         services.RegisterDomainEventHandlers();
 
         return services;
     }
 
     /// <summary>
-    /// Scans the application assembly using reflection to automatically register all implementations
-    /// of <see cref="IBeforeCommitHandler{T}"/> and <see cref="IAfterCommitHandler{T}"/> with Scoped lifetime.
+    /// Scans the application assembly for concrete types implementing <see cref="IEventHandler"/>
+    /// and registers their corresponding closed generic interfaces.
     /// </summary>
     private static void RegisterDomainEventHandlers(this IServiceCollection services)
     {
-        // Locate the application assembly containing the domain event handlers
         var applicationAssembly = AppDomain.CurrentDomain.GetAssemblies()
             .FirstOrDefault(a => a.GetName().Name == "DVLD.Application")
             ?? Assembly.Load("DVLD.Application");
 
-        var handlerInterfaceTypes = new[]
+        var handlerTypes = applicationAssembly.GetTypes()
+            .Where(t => typeof(IEventHandler).IsAssignableFrom(t) && !t.IsAbstract && !t.IsInterface);
+
+        foreach (var type in handlerTypes)
         {
-            typeof(IBeforeCommitHandler<>),
-            typeof(IAfterCommitHandler<>)
-        };
+            var genericInterfaces = type.GetInterfaces()
+                .Where(i => i.IsGenericType &&
+                           (i.GetGenericTypeDefinition() == typeof(IBeforeCommitHandler<>) ||
+                            i.GetGenericTypeDefinition() == typeof(IAfterCommitHandler<>)));
 
-        // Scan concrete classes and register matching generic handler interfaces
-        foreach (var type in applicationAssembly.GetTypes())
-        {
-            if (type.IsAbstract || type.IsInterface)
+            foreach (var implementedInterface in genericInterfaces)
             {
-                continue;
-            }
-
-            var implementedInterfaces = type.GetInterfaces();
-
-            foreach (var implementedInterface in implementedInterfaces)
-            {
-                if (implementedInterface.IsGenericType &&
-                    handlerInterfaceTypes.Contains(implementedInterface.GetGenericTypeDefinition()))
-                {
-                    // Register the closed generic interface with its concrete implementation
-                    // Example: services.AddScoped<IBeforeCommitHandler<LicenseSuspendedEvent>, SuspendLicenseHandler>();
-                    services.AddScoped(implementedInterface, type);
-                }
+                services.AddScoped(implementedInterface, type);
             }
         }
     }
