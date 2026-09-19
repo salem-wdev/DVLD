@@ -1,10 +1,11 @@
-using Serilog;
 using DVLD.Application.Interfaces;
 using DVLD.Application.Services;
-using DVLD.Infrastructure.Settings;
+using DVLD.Infrastructure;
 using DVLD.Infrastructure.Repositories;
-using DVLD.Shared;
 using DVLD.Infrastructure.Services;
+using DVLD.Infrastructure.Settings;
+using DVLD.Shared;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,7 @@ builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 builder.Services.AddScoped<IPersonService, PersonService>();
+builder.Services.AddInfrastructure(builder.Configuration);
 
 // Time provider abstraction for testability and flexibility
 builder.Services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
